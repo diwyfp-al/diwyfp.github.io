@@ -6,20 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #19215A; }
-    header { background-color: #19215A; color: white; padding: 2rem; text-align: center; }
-    nav { background: #e3e3e3; padding: 1rem; text-align: center; }
+    header { background-color: #19215A; color: white; padding: 2rem; text-align: center; position: fixed; top: 0; width: 100%; z-index: 1000; }
+    nav { background: #e3e3e3; padding: 1rem; text-align: center; position: fixed; top: 7rem; width: 100%; z-index: 999; }
     nav a { margin: 0 1rem; color: #19215A; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem; }
-    .hero { background-image: url('hero-los-angeles.png'); background-size: cover; background-position: center; color: white; padding: 6rem 2rem; text-align: center; }
+    section { padding: 2rem; margin-top: 12rem; }
+    .hero { background-image: url('INSERT-HERO-IMAGE-URL'); background-size: cover; background-position: center; color: white; padding: 6rem 2rem; text-align: center; }
     .section-title { font-size: 1.5rem; margin-bottom: 1rem; }
     .card { background: white; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     footer { background-color: #19215A; color: white; text-align: center; padding: 1rem; font-size: 0.9rem; }
+    sup { font-size: 0.6em; vertical-align: super; }
+    .sticky-button {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: #19215A;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+    .sticky-button:hover {
+      background-color: #14194a;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="DIWY_Logo.png" alt="DIWY Logo" style="max-width: 300px;"><br>
-    <p>Do it for yourself — not by yourself.</p>
+    <h1>DIWY Financial Planning</h1>
+    <p>Plan for yourself—not by yourself<sup>™</sup></p>
   </header>
 
   <nav>
@@ -29,6 +46,8 @@
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <a href="https://app.precisefp.com/w/raabzv" class="sticky-button" target="_blank">Schedule a Call</a>
 
   <div class="hero">
     <h2>Your Financial Co-Pilot</h2>
