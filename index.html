@@ -67,6 +67,15 @@
 
     window.onload = showNextMessage;
   </script>
+
+<style>
+  .crossed {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+</style>
+
+	
 </head>
 	
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
@@ -92,7 +101,7 @@
 	
   <!-- Hero Image with Animation Overlay -->
 	
-  <section class="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+  <section class="relative w-full h-[33vh] md:h-[33vh] overflow-hidden">
     <img src="HeroImage.jpg" alt="Virtual collaborative financial planning concept" class="w-full h-full object-cover" loading="lazy">
     <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
       <div id="message-container" class="message-cycle bg-white bg-opacity-80 px-6 py-4 rounded-md shadow-md text-center" aria-live="polite"></div>
