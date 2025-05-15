@@ -13,8 +13,11 @@
 <head>
   <meta charset="UTF-8">
   <title>DIWY Financial Planning</title>
-  <link rel="icon" type="image/png" href="DIWY_Logo_19315A_on_Transparent_7336x1810_20250402.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advice-only financial planning for DIYers. Flat-fee, fiduciary, hourly, and collaborative planning options—accessible to everyone.">
+  <meta name="keywords" content="fee-only, fiduciary, flat fee, hourly planning, advice-only financial planning, financial advisor near me, DIY financial planning, DIWY, collaborative planning">
+  <meta name="author" content="DIWY Financial Planning">
+  <link rel="icon" type="image/png" href="DIWY_Logo_19315A_on_Transparent_7336x1810_20250402.png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     :root {
@@ -25,15 +28,23 @@
     .hover\:bg-diwy-dark:hover { background-color: #0f143c; }
 
     .message-cycle {
-      font-size: 1.875rem;
-      line-height: 2.25rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--diwy-blue);
-      height: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100px;
+    }
+
+    @media (min-width: 640px) {
+      .message-cycle { font-size: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .message-cycle { font-size: 1.875rem; }
+    }
+    @media (min-width: 1024px) {
+      .message-cycle { font-size: 2.25rem; }
     }
 
     .crossed {
@@ -42,8 +53,7 @@
     }
   </style>
 </head>
-
-<body class="bg-gray-50 text-gray-800 pt-20">
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
 
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -52,35 +62,37 @@
         <span class="text-xl font-bold text-diwy"></span>
       </div>
       <div class="hidden md:flex items-center space-x-6 text-sm">
-	<a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
-	<a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
+        <a href="#" class="text-gray-700 hover:text-diwy">Home</a>
+        <a href="#" class="text-gray-700 hover:text-diwy">About</a>
         <a href="services.html" class="text-gray-700 hover:text-diwy">Services and Fees</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-	<a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
+        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
+        <a href="#" class="text-gray-700 hover:text-diwy">Resources</a>
+        <a href="#" class="text-gray-700 hover:text-diwy">FAQs</a>
         <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy">Client Portal</a>
-        <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">Schedule a Free Intro Call</a>
+        <a href="#" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">Schedule a Free Intro Call</a>
       </div>
     </div>
   </header>
 
-  <!-- Static Overwrite Animation Section -->
-  <section class="bg-white py-16 px-6 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <div id="message-container" class="message-cycle"></div>
+  <!-- Hero Image with Animation Overlay -->
+  <section class="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <img src="SampleHeroImage-ChatGPTImage.png" alt="Hero Image" class="w-full h-full object-cover">
+    <div class="absolute inset-0 flex items-center justify-center px-4">
+      <div id="message-container" class="message-cycle bg-white bg-opacity-80 px-6 py-4 rounded-md shadow-md text-center" aria-live="polite"></div>
     </div>
   </section>
 
   <script>
     const messages = [
-      "You can do-it-yourself (DIY) or ...",
-      "You can do-it-yourself (DIY) or ...",
-      "You can let someone do-it-for-you (DIFY) or ...",
-      "You can let someone do-it-for-you (DIFY) or ...",
-      "You can let someone do-it-with-you (DIWY) ✅",
-      "With DIWY Financial Planning you can<br>Plan for yourself—not by yourself™"
+      "You can do-it-yourself (DIY)...",
+      "You can do-it-yourself (DIY)...",
+      "You can let someone do-it-for-you (DIFY)...",
+      "You can let someone do-it-for-you (DIFY)...",
+      "Or you can let us do-it-with-you (DIWY) ✅",
+      "With DIWY Financial Planning you can Plan for yourself—not by yourself™"
     ];
 
-    const delays = [4000, 2000, 4000, 2000, 10000, 10000];
+    const delays = [3000, 3000, 3000, 3000, 3000, 10000];
     const container = document.getElementById("message-container");
 
     let index = 0;
@@ -112,48 +124,6 @@
 
 <!-- Continue with Planning Isn't One-Size-Fits-All, etc. -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head><link rel="icon" type="image/png" href="DIWY_Logo_19315A_on_Transparent_7336x1810_20250402.png">
-DIWY Planning - About & Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --diwy-blue: #19215A;
-    }
-    .text-diwy { color: var(--diwy-blue); }
-    .bg-diwy { background-color: var(--diwy-blue); }
-    .hover\:bg-diwy-dark:hover { background-color: #0f143c; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-<!-- Header with Logo -->
-
-<header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <div class="flex items-center space-x-4">
-      <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-10">
-      <span class="text-xl font-bold text-diwy"></span>
-    </div>
-    <div class="hidden md:flex items-center space-x-6 text-sm">
-      	<a href="#" class="text-gray-700 hover:text-diwy">Home</a>
-	<a href="#" class="text-gray-700 hover:text-diwy">About</a>
-	<a href="services.html" class="text-gray-700 hover:text-diwy">Services and Fees</a>
-	<a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
-	<a href="#" class="text-gray-700 hover:text-diwy">Resources</a>
-	<a href="#" class="text-gray-700 hover:text-diwy">FAQs</a>
-	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy">Client Portal</a>
-	<a href="#" class="text-gray-700 hover:text-diwy">Contact</a>
-	<!-- New Button -->
-	<a href="#" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">
-        Schedule a Free Intro Call
-      </a>
-    </div>
-  </div>
-</header>
-
-  <!-- ABOUT PAGE -->
   <section class="bg-white py-16 px-6 md:px-12">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl font-bold mb-4 text-diwy">Plan for yourself&mdash;not by yourself<sup>™</sup><br></h1>
@@ -176,8 +146,9 @@ DIWY Planning - About & Services</title>
     </div>
   </section>
 
-  <!--  -->
+<!--  -->
 
+	
   <section class="bg-blue-100 py-12 px-6 md:px-12">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-2xl font-semibold text-center mb-10 text-diwy">Collaborative Planning</h2>
