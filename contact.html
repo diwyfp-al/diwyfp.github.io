@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | DIWY Financial Planning®</title>
+  <link rel="icon" type="image/png" href="LogoDIWY20250324MO.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+    }
+    .text-diwy { color: var(--diwy-blue); }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: #0f143c; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-20">
+
+  <!-- Header -->
+  <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Logo" class="h-10">
+        <span class="text-xl font-bold text-diwy"></span>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
+        <a href="index.html#services" class="text-gray-700 hover:text-diwy">Services</a>
+        <a href="index.html#about" class="text-gray-700 hover:text-diwy">About</a>
+        <a href="contact.html" class="text-diwy font-semibold">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="max-w-3xl mx-auto py-20 px-6 md:px-0">
+    <h1 class="text-3xl font-bold text-diwy mb-6 text-center">Let’s Talk</h1>
+    <p class="text-center text-gray-700 mb-10">
+      Have a question, want to learn more, or ready to schedule a free intro call? Use the form below and we’ll get back to you shortly.
+    </p>
+
+    <form action="#" method="POST" class="bg-white p-8 rounded-lg shadow-md space-y-6">
+      <div>
+        <label for="name" class="block font-semibold text-sm mb-1">Full Name</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-md px-4 py-2"/>
+      </div>
+
+      <div>
+        <label for="email" class="block font-semibold text-sm mb-1">Email Address</label>
+        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-md px-4 py-2"/>
+      </div>
+
+      <div>
+        <label for="message" class="block font-semibold text-sm mb-1">Message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded-md px-4 py-2"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="bg-diwy text-white px-6 py-2 rounded-md shadow hover:bg-diwy-dark">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 DIWY Financial Planning®. All rights reserved.
+  </footer>
+
+</body>
+</html>
