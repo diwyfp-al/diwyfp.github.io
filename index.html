@@ -10,18 +10,35 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>$1
+<head>
+
+  <meta charset="UTF-8">
+  <title>DIWY Financial Planning</title>
+
+  <!-- Meta tags go here -->
+	
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advice-only financial planning for DIYers. Flat-fee, fiduciary, hourly, and collaborative planning options—accessible to everyone.">
+  <meta name="keywords" content="fee-only, fiduciary, flat fee, hourly planning, advice-only financial planning, financial advisor near me, DIY financial planning, DIWY, collaborative planning">
+  <meta name="author" content="DIWY Financial Planning">
+
+  <!-- Other tags (favicon, styles, scripts) follow -->
+	
+  <link rel="icon" type="image/png" href="DIWY_Logo_19315A_on_Transparent_7336x1810_20250402.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	
   <script defer>
     const messages = [
-      "You can do-it-yourself (DIY)...",
-      "You can do-it-yourself (DIY)...",
-      "You can let someone do-it-for-you (DIFY)...",
-      "You can let someone do-it-for-you (DIFY)...",
-      "Or you can let us do-it-with-you (DIWY) ✅",
-      "With DIWY Financial Planning you can Plan for yourself—not by yourself™"
+        "You can do-it-yourself (DIY)",
+	"You can do-it-yourself (DIY)",
+	"You can let someone do-it-for-you (DIFY)",
+	"You can let someone do-it-for-you (DIFY)",
+	"You can let someone do-it-with-you (DIWY)",
+	"You can let someone do-it-with-you (DIWY) ✅",
+	"DIWY Financial Planning: Plan for yourself—not by yourself™"
     ];
 
-    const delays = [3000, 3000, 3000, 3000, 3000, 10000];
+    const delays = [4000, 1000, 4000, 1000, 4000, 2000, 10000];
     let index = 0;
     let cycleCount = 0;
     const maxCycles = 5;
@@ -50,13 +67,14 @@
 
     window.onload = showNextMessage;
   </script>
+
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
 
 <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <div class="flex items-center space-x-4">
       <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-10">
-      <span class="text-xl font-bold text-diwy"></span>
+      <span class="text-xl font-bold text-diwy">DIWY</span>
     </div>
     <div class="hidden md:flex items-center space-x-6 text-sm">
       <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
@@ -71,6 +89,7 @@
 </header>
 
   <!-- Hero Image with Animation Overlay -->
+	
   <section class="relative w-full h-[500px] md:h-[600px] overflow-hidden">
     <img src="SampleHeroImage-ChatGPTImage.png" alt="Financial journey concept landscape" class="w-full h-full object-cover" loading="lazy">
     <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
@@ -79,46 +98,8 @@
     </div>
   </section>
 
-  <script>
-    const messages = [
-        "You can do-it-yourself (DIY)",
-	"You can do-it-yourself (DIY)",
-	"You can let someone do-it-for-you (DIFY)",
-	"You can let someone do-it-for-you (DIFY)",
-	"You can let somone do-it-with-you (DIWY)",
-	"You can let somone do-it-with-you (DIWY) ✅",
-	"DIWY Financial Planning: Plan for yourself—not by yourself™"
-    ];
-    const delays = [3000, 1000, 3000, 1000, 3000, 1000, 10000];
-    const container = document.getElementById("message-container");
-
-    let index = 0;
-    let cycleCount = 0;
-    const maxCycles = 5;
-
-    function showNextMessage() {
-      container.classList.remove("crossed");
-      container.textContent = messages[index];
-
-      if (index === 1 || index === 3) {
-        container.classList.add("crossed");
-      }
-
-      setTimeout(() => {
-        index++;
-        if (index >= messages.length) {
-          index = 0;
-          cycleCount++;
-        }
-        if (cycleCount < maxCycles) {
-          showNextMessage();
-        }
-      }, delays[index]);
-    }
-
-    window.onload = showNextMessage;
-  </script>
-
+</head>
+	
 <!-- Continue with Planning Isn't One-Size-Fits-All, etc. -->
 
   <section class="bg-white py-16 px-6 md:px-12">
@@ -166,7 +147,7 @@
   <section class="py-12 px-6 md:px-12">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-2xl font-semibold mb-4 text-diwy">And if you decide to work with another advisor or go back to DIY…</h2>
-      <p class="text-gray-700">We’ll equip you with the tools, and confidence to go solo or transition to another professional with ease.</p>
+      <p class="text-gray-700">We’ll equip you with the tools and confidence to go solo or smoothly transition to another professional.</p>
     </div>
   </section>
 
