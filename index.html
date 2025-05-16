@@ -69,6 +69,20 @@
   </script>
 
 <style>
+  :root {
+    --diwy-blue: #19215A;
+    --diwy-dark: #0f143c;
+  }
+  .bg-diwy {
+    background-color: var(--diwy-blue);
+  }
+  .hover\:bg-diwy-dark:hover {
+    background-color: var(--diwy-dark);
+  }
+  .text-diwy {
+    color: var(--diwy-blue);
+  }
+
   .crossed {
     text-decoration: line-through;
     color: #aaa;
@@ -115,9 +129,11 @@
 	      class="message-cycle text-white text-center drop-shadow-lg text-2xl md:text-4xl lg:text-5xl" 
 	      aria-live="polite" 
 	      role="status"></div>
-    <a href="#services" 
-	    class="mt-6 inline-block bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold">
-	    Explore Services</a>
+        <div class="w-full flex justify-center">
+	  <a href="#services" 
+	  class="mt-6 inline-block bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold">
+	  Click Here to Learn More</a>
+	</div>
     </div>
   </section>
 	
