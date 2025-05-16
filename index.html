@@ -115,26 +115,17 @@
 	
   <!-- Hero Image with Animation Overlay -->
 	
-  <section class="relative w-screen overflow-hidden" style="height: 400px;">
-    <img src="HeroImage.jpg" 
-	    class="absolute inset-0 w-full h-full object-cover" 
-	    style="filter: brightness(0.5);" 
-	    loading="lazy" 
-	    alt="Virtual collaborative financial planning concept">
+ <section class="relative h-screen bg-fixed bg-center bg-cover" style="background-image: url('HeroImage.jpg');">
 	  
   <!-- Overlay Content-->
 	  
-    <div class="absolute inset-0 z-10 flex flex-col items-center justify-start pt-10 px-4 text-center">
-      <div id="message-container" 
-	      class="message-cycle text-white text-center drop-shadow-lg text-2xl md:text-4xl lg:text-5xl" 
-	      aria-live="polite" 
-	      role="status"></div>
-        <div class="w-full flex justify-center">
-	  <a href="#services" 
-	  class="mt-6 inline-block bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold">
-	  Click Here to Learn More</a>
-	</div>
-    </div>
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white px-4">
+    <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">DIWY Financial Planning</h1>
+    <p class="text-xl mt-4 drop-shadow-lg">Plan for yourself — not by yourself™</p>
+    <a href="#services" class="mt-6 bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold">
+      Explore Services
+    </a>
+  </div>
   </section>
 	
 <!-- Continue with Planning Isn't One-Size-Fits-All, etc. -->
