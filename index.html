@@ -35,7 +35,7 @@
 	"You can let someone do-it-for-you (DIFY)",
 	"or ...",
 	"You can let someone do-it-with-you (DIWY)",
-	"DIWY Financial Planning: Plan for yourself—not by yourself™"
+	"DIWY Financial Planning<br>Plan for yourself—not by yourself™"
     ];
 
     const delays = [4000, 2000, 4000, 2000, 3000, 5000, 10000];
@@ -47,7 +47,7 @@
       const container = document.getElementById("message-container");
       if (!container) return;
       container.classList.remove("crossed");
-      container.textContent = messages[index];
+      container.innerHTML = messages[index];
 
       if (index === 1 || index === 3) {
         container.classList.add("crossed");
