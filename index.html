@@ -115,23 +115,34 @@
 	
   <!-- Hero Image with Animation Overlay -->
 	
-<section class="relative h-screen bg-center bg-cover" 
-	style="background-image: url('HeroImage.jpg'); background-attachment: fixed;">
-	
+<section class="relative h-screen bg-center bg-cover"
+         style="background-image: url('HeroImage.jpg'); background-attachment: fixed;">
   <!-- Overlay Content -->
-	
   <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center text-white px-4">
-    <div id="message-container"
-         class="message-cycle text-white drop-shadow-lg text-2xl md:text-4xl lg:text-5xl"
-         aria-live="polite"
-         role="status">
-      DIWY Financial Planning<br>Plan for yourself—not by yourself™
+    
+    <!-- Static Headline -->
+    <div class="mb-4">
+      <h1 class="text-3xl md:text-5xl font-bold">DIWY Financial Planning</h1>
+      <p class="text-lg md:text-2xl mt-2">Plan for yourself—not by yourself<sup>™</sup></p>
     </div>
+
+    <!-- Call to Action -->
     <a href="#services"
-       class="mt-6 bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
+       class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
       Explore Services
     </a>
+
+    <!-- Rotating Message -->
+    <div id="message-container"
+         class="message-cycle text-white drop-shadow-lg text-xl md:text-2xl lg:text-3xl mt-6"
+         aria-live="polite"
+         role="status">
+      <!-- fallback message -->
+      DIWY Financial Planning: Plan for yourself—not by yourself™
+    </div>
+
   </div>
+	
 </section>
 
 	
