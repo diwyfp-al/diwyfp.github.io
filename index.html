@@ -278,5 +278,12 @@
 	
 </footer>
 
+<!-- Force page to reload and start at the top of the page -->
+<script>
+  window.addEventListener('load', () => {
+    history.replaceState(null, '', location.pathname);
+    window.scrollTo(0, 0);
+  });
+</script>
 </body>
 </html>
