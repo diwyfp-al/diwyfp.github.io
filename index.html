@@ -177,10 +177,10 @@
     <!-- DIWY: The Best of Both Worlds -->
     <div class="text-center mb-6">
       <h2 class="text-2xl font-semibold text-diwy mb-1">DIWY: The Best of Both Worlds</h2>
-      <div class="relative inline-block">
+      <div class="relative inline-block group">
         <p class="text-sm text-gray-700 inline-flex items-center justify-center gap-2">
           Maintain control, lower costs, and access expertise.
-          <button aria-label="Legend: Advantage and Limitation" class="cursor-pointer text-gray-500 text-xs focus:outline-none focus:ring-2 focus:ring-diwy rounded relative" onclick="document.getElementById('tooltip').classList.toggle('hidden')">
+          <button aria-label="Legend: Advantage and Limitation" id="tooltip-button" class="cursor-pointer text-gray-500 text-xs focus:outline-none focus:ring-2 focus:ring-diwy rounded relative">
             ⓘ
           </button>
         </p>
@@ -236,8 +236,20 @@
       *Refers to having the training, time, tools, and temperament to manage a financial plan — including taxes, investments, insurance, and estate planning.
     </p>
   </div>
-</section>
 
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    const button = document.getElementById('tooltip-button');
+    document.addEventListener('click', (e) => {
+      if (tooltip && !tooltip.contains(e.target) && !button.contains(e.target)) {
+        tooltip.classList.add('hidden');
+      }
+    });
+    button.addEventListener('click', () => {
+      tooltip.classList.toggle('hidden');
+    });
+  </script>
+</section>
 
 <!-- Financial Planning Is a Process—Not an Event -->
 	
