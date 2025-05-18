@@ -1,0 +1,92 @@
+<!-- 20250518SU 0020et -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIWY Morph Animation Test</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col items-center justify-center min-h-screen p-6">
+
+  <div id="morph-text" class="text-4xl md:text-6xl font-bold text-diwy mb-12 transition-all duration-700">
+    DIY
+  </div>
+
+  <table id="morph-table" class="hidden table-auto border border-gray-300 text-sm text-left">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border px-4 py-2 font-semibold">Approach</th>
+        <th class="border px-4 py-2 font-semibold">Expertise</th>
+        <th class="border px-4 py-2 font-semibold">Guidance</th>
+        <th class="border px-4 py-2 font-semibold">Control</th>
+        <th class="border px-4 py-2 font-semibold">Custody</th>
+        <th class="border px-4 py-2 font-semibold">Fees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="fade-in">
+        <td class="border px-4 py-2 font-semibold">DIY</td>
+        <td class="border px-4 py-2">Client</td>
+        <td class="border px-4 py-2">Self-guided</td>
+        <td class="border px-4 py-2">Client</td>
+        <td class="border px-4 py-2">Client</td>
+        <td class="border px-4 py-2">Minimal</td>
+      </tr>
+      <tr class="fade-in">
+        <td class="border px-4 py-2 font-semibold">DIWY</td>
+        <td class="border px-4 py-2">Collaborative</td>
+        <td class="border px-4 py-2">Advisor-assisted</td>
+        <td class="border px-4 py-2">Client</td>
+        <td class="border px-4 py-2">Client</td>
+        <td class="border px-4 py-2">As-needed</td>
+      </tr>
+      <tr class="fade-in">
+        <td class="border px-4 py-2 font-semibold">DIFY</td>
+        <td class="border px-4 py-2">Advisor</td>
+        <td class="border px-4 py-2">Advisor-managed</td>
+        <td class="border px-4 py-2">Advisor</td>
+        <td class="border px-4 py-2">Advisor</td>
+        <td class="border px-4 py-2">Ongoing</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const morphText = document.getElementById("morph-text");
+    const table = document.getElementById("morph-table");
+    const rows = table.querySelectorAll(".fade-in");
+
+    const stages = ["DIY", "DIFY", "DIWY"];
+    let stage = 0;
+
+    function showNextStage() {
+      morphText.textContent = stages[stage];
+      stage++;
+      if (stage < stages.length) {
+        setTimeout(showNextStage, 1000);
+      } else {
+        table.classList.remove("hidden");
+        rows.forEach((row, index) => {
+          setTimeout(() => row.classList.add("show"), index * 400);
+        });
+      }
+    }
+
+    setTimeout(showNextStage, 1000);
+  </script>
+
+</body>
+</html>
