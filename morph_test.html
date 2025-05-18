@@ -8,14 +8,14 @@
   <title>DIWY Morph Animation Test</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .fade-in {
+    .slide-in {
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .fade-in.show {
+    .slide-in.show {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   </style>
 </head>
@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="fade-in">
+      <tr class="slide-in">
         <td class="border px-4 py-2 font-semibold">DIY</td>
         <td class="border px-4 py-2">Client</td>
         <td class="border px-4 py-2">Self-guided</td>
@@ -45,7 +45,7 @@
         <td class="border px-4 py-2">Client</td>
         <td class="border px-4 py-2">Minimal</td>
       </tr>
-      <tr class="fade-in">
+      <tr class="slide-in">
         <td class="border px-4 py-2 font-semibold">DIWY</td>
         <td class="border px-4 py-2">Collaborative</td>
         <td class="border px-4 py-2">Advisor-assisted</td>
@@ -53,7 +53,7 @@
         <td class="border px-4 py-2">Client</td>
         <td class="border px-4 py-2">As-needed</td>
       </tr>
-      <tr class="fade-in">
+      <tr class="slide-in">
         <td class="border px-4 py-2 font-semibold">DIFY</td>
         <td class="border px-4 py-2">Advisor</td>
         <td class="border px-4 py-2">Advisor-managed</td>
@@ -67,7 +67,7 @@
   <script>
     const morphText = document.getElementById("morph-text");
     const table = document.getElementById("morph-table");
-    const rows = table.querySelectorAll(".fade-in");
+    const rows = table.querySelectorAll(".slide-in");
 
     const stages = ["DIY", "DIFY", "DIWY"];
     let stage = 0;
