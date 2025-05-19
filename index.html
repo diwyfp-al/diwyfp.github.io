@@ -341,7 +341,7 @@
 
   <section class="bg-white py-12 px-6 md:px-12">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-semibold mb-6 text-diwy">Why Choose DIWY™ Financial Planning</h2>
+      <h2 class="text-2xl font-semibold mb-6 text-diwy">Why Choose DIWY Financial Planning</h2>
       <div class="grid md:grid-cols-2 gap-6 text-left">
         <div><strong>Experience and Expertise</strong><br>
 		Knowledge with no product sales.</div>
@@ -388,50 +388,33 @@
 	
 </footer>
 
-  <script defer src="https://unpkg.com/lucide@latest">
-    const messages = [
-        "You can do-it-yourself (DIY)",
-	"You can do-it-yourself (DIY)",
-	"You can let someone do-it-for-you (DIFY)",
-	"You can let someone do-it-for-you (DIFY)",
-	"or ...",
-	"You can let us do-it-with-you (DIWY)",
-	"Collaborative, Holistic, Modular and On-Demand"
-    ];
+<!-- Lucide icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
 
-    const delays = [3000, 2000, 3000, 2000, 3000, 4000, 10000];
-    let index = 0;
-    let cycleCount = 0;
-    const maxCycles = 5;
-
-    function showNextMessage() {
-      const container = document.getElementById("message-container");
-
-      if (!container) return;
-      container.classList.remove("crossed");
-      container.innerHTML = messages[index];
-
-      if (index === 1 || index === 3) {
-        container.classList.add("crossed");
-      }
-      setTimeout(() => {
-        index++;
-        if (index >= messages.length) {
-          index = 0;
-          cycleCount++;
-        }
-        if (cycleCount < maxCycles) {
-          showNextMessage();
-        }
-      }, delays[index]);
-    }
-    window.onload = showNextMessage;
-    window.onload = () => lucide.createIcons();
-  </script>
-
-<!-- Force page to reload and start at the top of the page -->
+<!-- Animation and init scripts -->
 <script>
+  // message animation script
+  const messages = [ ... ];
+  const delays = [ ... ];
+  let index = 0, cycleCount = 0, maxCycles = 5;
+
+  function showNextMessage() {
+    const container = document.getElementById("message-container");
+    if (!container) return;
+    container.classList.remove("crossed");
+    container.innerHTML = messages[index];
+    if (index === 1 || index === 3) container.classList.add("crossed");
+
+    setTimeout(() => {
+      index = (index + 1) % messages.length;
+      if (index === 0) cycleCount++;
+      if (cycleCount < maxCycles) showNextMessage();
+    }, delays[index]);
+  }
+
   window.addEventListener('load', () => {
+    showNextMessage();
+    lucide.createIcons();
     history.replaceState(null, '', location.pathname);
     window.scrollTo(0, 0);
   });
