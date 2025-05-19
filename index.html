@@ -388,36 +388,11 @@
 	
 </footer>
 
-<!-- Lucide icons -->
+<!-- External icon library -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
-<!-- Animation and init scripts -->
-<script>
-  // message animation script
-  const messages = [ ... ];
-  const delays = [ ... ];
-  let index = 0, cycleCount = 0, maxCycles = 5;
+<!-- Main JS file -->
+<script src="main.js"></script>
 
-  function showNextMessage() {
-    const container = document.getElementById("message-container");
-    if (!container) return;
-    container.classList.remove("crossed");
-    container.innerHTML = messages[index];
-    if (index === 1 || index === 3) container.classList.add("crossed");
-
-    setTimeout(() => {
-      index = (index + 1) % messages.length;
-      if (index === 0) cycleCount++;
-      if (cycleCount < maxCycles) showNextMessage();
-    }, delays[index]);
-  }
-
-  window.addEventListener('load', () => {
-    showNextMessage();
-    lucide.createIcons();
-    history.replaceState(null, '', location.pathname);
-    window.scrollTo(0, 0);
-  });
-</script>
 </body>
 </html>
