@@ -67,6 +67,11 @@
     window.onload = showNextMessage;
   </script>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  window.onload = () => lucide.createIcons();
+</script>
+
 <style>
   :root {
     --diwy-blue: #19215A;
@@ -175,60 +180,103 @@
       </div>
     </div>
 
-<!-- Comparison Table -->
-<table class="min-w-full table-fixed border border-gray-200 text-sm text-left whitespace-normal leading-tight">
-  <thead>
-    <tr class="bg-gray-100">
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-16">Approach</th>
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-20">Expertise*</th>
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-24">Guidance</th>
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-20">Control</th>
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-20">Custody</th>
-      <th class="border px-1 py-0.5 text-diwy font-semibold text-sm w-20">Fees</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="border px-1 py-0.5 font-semibold relative group">
-        DIY
-        <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-          Do-it-yourself
-        </span>
-      </td>
-      <td class="border px-1 py-0.5 bg-red-50 text-red-800">Client</td>
-      <td class="border px-1 py-0.5 bg-red-50 text-red-800">Self-guided</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Minimal</td>
-    </tr>
-    <tr>
-      <td class="border px-1 py-0.5 font-semibold relative group">
-        DIWY
-        <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-          Do-it-with-you
-        </span>
-      </td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Collaborative</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-assisted</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">As-needed</td>
-    </tr>
-    <tr>
-      <td class="border px-1 py-0.5 font-semibold relative group">
-        DIFY
-        <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-          Do-it-for-you
-        </span>
-      </td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor</td>
-      <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-managed</td>
-      <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
-      <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
-      <td class="border px-1 py-0.5 bg-red-50 text-red-800">Ongoing</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Responsive Comparison Table (Desktop and Mobile Views) -->
+
+<!-- Desktop Table (visible on md and up) -->
+<div class="overflow-x-auto hidden md:block">
+  <table class="min-w-full table-fixed border border-gray-200 text-left whitespace-normal leading-tight">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Approach</th>
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Expertise*</th>
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Guidance</th>
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Control</th>
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Custody</th>
+        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Fees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-1 py-0.5 font-semibold relative group">
+          DIY
+          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            Do-it-yourself
+          </span>
+        </td>
+        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Client</td>
+        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Self-guided</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Minimal</td>
+      </tr>
+      <tr>
+        <td class="border px-1 py-0.5 font-semibold relative group">
+          DIWY
+          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            Do-it-with-you
+          </span>
+        </td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Collaborative</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-assisted</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">As-needed</td>
+      </tr>
+      <tr>
+        <td class="border px-1 py-0.5 font-semibold relative group">
+          DIFY
+          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
+            Do-it-for-you
+          </span>
+        </td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor</td>
+        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-managed</td>
+        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
+        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
+        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Ongoing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Mobile Stacked Cards (visible below md) -->
+<div class="md:hidden space-y-4">
+  <!-- DIY -->
+  <div class="border rounded shadow-sm p-4 bg-white">
+    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
+      <i data-lucide="tool" class="w-4 h-4 text-gray-600"></i> DIY <span class="text-xs text-gray-500">(Do-it-yourself)</span>
+    </div>
+    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Expertise:</strong> Client</div>
+    <div><i data-lucide="map" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Guidance:</strong> Self-guided</div>
+    <div><i data-lucide="toggle-left" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Control:</strong> Client</div>
+    <div><i data-lucide="lock" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Custody:</strong> Client</div>
+    <div><i data-lucide="dollar-sign" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Fees:</strong> Minimal</div>
+  </div>
+
+  <!-- DIWY -->
+  <div class="border rounded shadow-sm p-4 bg-white">
+    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
+      <i data-lucide="users" class="w-4 h-4 text-gray-600"></i> DIWY <span class="text-xs text-gray-500">(Do-it-with-you)</span>
+    </div>
+    <div><i data-lucide="user-check" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Expertise:</strong> Collaborative</div>
+    <div><i data-lucide="map-pin" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Guidance:</strong> Advisor-assisted</div>
+    <div><i data-lucide="toggle-left" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Control:</strong> Client</div>
+    <div><i data-lucide="lock" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Custody:</strong> Client</div>
+    <div><i data-lucide="repeat" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Fees:</strong> As-needed</div>
+  </div>
+
+  <!-- DIFY -->
+  <div class="border rounded shadow-sm p-4 bg-white">
+    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
+      <i data-lucide="handshake" class="w-4 h-4 text-gray-600"></i> DIFY <span class="text-xs text-gray-500">(Do-it-for-you)</span>
+    </div>
+    <div><i data-lucide="user-check" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Expertise:</strong> Advisor</div>
+    <div><i data-lucide="navigation" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Guidance:</strong> Advisor-managed</div>
+    <div><i data-lucide="toggle-right" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Control:</strong> Advisor</div>
+    <div><i data-lucide="lock" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Custody:</strong> Advisor</div>
+    <div><i data-lucide="credit-card" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Fees:</strong> Ongoing</div>
+  </div>
+</div>
 
 
     <!-- Footnote -->
