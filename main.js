@@ -31,6 +31,34 @@ function showNextMessage() {
   }, delays[index]);
 }
 
+// --- Mobile Menu Toggle ---
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('[data-mobile-menu-link]');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden'); // Toggle visibility of the menu
+            menuIconOpen.classList.toggle('hidden'); // Toggle between open/close icon
+            menuIconClose.classList.toggle('hidden');
+            // Prevent scrolling on the body when mobile menu is open
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        // Close mobile menu when a link inside it is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden'); // Hide the menu
+                menuIconOpen.classList.remove('hidden'); // Show hamburger icon
+                menuIconClose.classList.add('hidden'); // Hide close icon
+                document.body.classList.remove('overflow-hidden'); // Re-enable body scroll
+            });
+        });
+    }
+
 // Run after the page loads
 window.addEventListener('load', () => {
   showNextMessage();
