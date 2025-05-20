@@ -65,16 +65,36 @@
     <div class="flex items-center space-x-4">
       <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
     </div>
-    <div role="navigation" class="hidden md:flex items-center space-x-6 text-sm">
+
+    <nav role="navigation" class="hidden md:flex items-center space-x-6 text-sm">
       <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
       <a href="services_and_fees.html" class="text-gray-700 hover:text-diwy">Services and Fees</a>
       <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
       <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
       <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy">Client Portal</a>
-      <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">Schedule a Free Intro Call</a>
+      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
+      <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+    </nav>
+
+    <div class="md:hidden">
+      <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
   </div>
+
+  <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
+    <a href="about.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>About</a>
+    <a href="services_and_fees.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services and Fees</a>
+    <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Are We a Fit</a>
+    <a href="resources.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
+    <a href="faqs.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
+    <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Client Portal</a>
+    <a href="https://app.precisefp.com/w/raabzv" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Schedule a Free Intro Call</a>
+  </nav>
 </header>
 	
 <!-- Hero Image with Animation Overlay -->
@@ -261,7 +281,7 @@
 <section class="bg-blue-100 py-12 px-6 md:px-12">
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-2xl font-semibold text-center mb-4 text-diwy">Financial Planning Is a Process—Not an Event</h2>
-    <p class="text-lg mb-6">Receive ongoing resources and support without ongoing fees.</p>
+    <p class="text-lg mb-6">Access support as needed—no subscription, no strings.</p>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="bg-white p-6 rounded-lg shadow">
         <h3 class="text-xl font-semibold mb-2 text-center">Holistic</h3>
