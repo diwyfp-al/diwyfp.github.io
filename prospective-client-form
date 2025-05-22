@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prospective Client Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 0.25rem;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Prospective Client Intake Form</h2>
+  <form id="clientForm">
+    <label>
+      Full Name:
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Phone Number:
+      <input type="tel" name="phone" required placeholder="e.g., (123) 456-7890">
+      <span id="phoneError" class="error"></span>
+    </label>
+
+    <label>
+      ZIP Code:
+      <input type="text" name="zip" id="zip" required placeholder="e.g., 12345 or 12345-6789">
+      <span id="zipError" class="error"></span>
+    </label>
+
+    <label>
+      State:
+      <input type="text" name="state" id="state" readonly>
+    </label>
+
+    <button type="submit">Submit</button>
+    <p id="formStatus"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById('clientForm');
+    const zipInput = document.getElementById('zip');
+    const stateInput = document.getElementById('state');
+    const zipError = document.getElementById('zipError');
+    const phoneError = document.getElementById('phoneError');
+    const statusMessage = document.getElementById('formStatus');
+
+    function isValidPhone(phone) {
+      return /^(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/.test(phone);
+    }
+
+    function isValidZip(zip) {
+      return /^\d{5}(-\d{4})?$/.test(zip);
+    }
+
+    zipInput.addEventListener('blur', () => {
+      const zip = zipInput.value.trim();
+      zipError.textContent = '';
+      stateInput.value = '';
+
+      if (!isValidZip(zip)) {
+        zipError.textContent = 'Invalid ZIP or ZIP+4 code.';
+        return;
+      }
+
+      const shortZip = zip.substring(0, 5);
+      fetch(`https://api.zippopotam.us/us/${shortZip}`)
+        .then(response => {
+          if (!response.ok) throw new Error("ZIP code not found.");
+          return response.json();
+        })
+        .then(data => {
+          const state = data.places[0].state;
+          stateInput.value = state;
+        })
+        .catch(() => {
+          zipError.textContent = 'Could not determine state for this ZIP.';
+        });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const phone = form.phone.value.trim();
+      phoneError.textContent = '';
+      statusMessage.textContent = '';
+
+      if (!isValidPhone(phone)) {
+        phoneError.textContent = 'Invalid phone number format.';
+        return;
+      }
+
+      statusMessage.textContent = 'Form submitted successfully!';
+      statusMessage.className = 'success';
+      form.reset();
+      stateInput.value = '';
+    });
+  </script>
+</body>
+</html>
