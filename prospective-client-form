@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prospective Client Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
+      background: #f5f5f5;
       padding: 2rem;
-      background-color: #f9f9f9;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #19215A;
     }
     label {
       display: block;
       margin-top: 1rem;
+      font-weight: bold;
     }
     input {
-      padding: 0.5rem;
       width: 100%;
-      max-width: 400px;
+      padding: 0.5rem;
       margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #19215A;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
     .error {
       color: red;
@@ -26,50 +49,46 @@
     }
     .success {
       color: green;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h2>Prospective Client Intake Form</h2>
+
   <form id="clientForm">
-    <label>
-      Full Name:
-      <input type="text" name="name" required>
-    </label>
+    <h2>Prospective Client Intake</h2>
 
-    <label>
-      Email:
-      <input type="email" name="email" required>
-    </label>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
 
-    <label>
-      Phone Number:
-      <input type="tel" name="phone" required placeholder="e.g., (123) 456-7890">
-      <span id="phoneError" class="error"></span>
-    </label>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-    <label>
-      ZIP Code:
-      <input type="text" name="zip" id="zip" required placeholder="e.g., 12345 or 12345-6789">
-      <span id="zipError" class="error"></span>
-    </label>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required placeholder="e.g., (123) 456-7890">
+    <div id="phoneError" class="error"></div>
 
-    <label>
-      State:
-      <input type="text" name="state" id="state" readonly>
-    </label>
+    <label for="zip">ZIP Code</label>
+    <input type="text" id="zip" name="zip" required placeholder="e.g., 12345 or 12345-6789">
+    <div id="zipError" class="error"></div>
+
+    <label for="state">State</label>
+    <input type="text" id="state" name="state" readonly>
 
     <button type="submit">Submit</button>
-    <p id="formStatus"></p>
+    <div id="formStatus" class="success"></div>
   </form>
 
   <script>
-    const form = document.getElementById('clientForm');
-    const zipInput = document.getElementById('zip');
-    const stateInput = document.getElementById('state');
-    const zipError = document.getElementById('zipError');
-    const phoneError = document.getElementById('phoneError');
-    const statusMessage = document.getElementById('formStatus');
+    const form = document.getElementById("clientForm");
+    const phoneInput = document.getElementById("phone");
+    const zipInput = document.getElementById("zip");
+    const stateInput = document.getElementById("state");
+    const phoneError = document.getElementById("phoneError");
+    const zipError = document.getElementById("zipError");
+    const formStatus = document.getElementById("formStatus");
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_lrRMbxyQLiorjEi0ih-H1a20orsnoLBKq3wxsQkgUpwBZ9vo2TwW-Q_CJY8t5MGCLQ/exec";
 
     function isValidPhone(phone) {
       return /^(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/.test(phone);
@@ -79,13 +98,13 @@
       return /^\d{5}(-\d{4})?$/.test(zip);
     }
 
-    zipInput.addEventListener('blur', () => {
+    zipInput.addEventListener("blur", () => {
       const zip = zipInput.value.trim();
-      zipError.textContent = '';
-      stateInput.value = '';
+      zipError.textContent = "";
+      stateInput.value = "";
 
       if (!isValidZip(zip)) {
-        zipError.textContent = 'Invalid ZIP or ZIP+4 code.';
+        zipError.textContent = "Invalid ZIP or ZIP+4 code.";
         return;
       }
 
@@ -96,29 +115,54 @@
           return response.json();
         })
         .then(data => {
-          const state = data.places[0].state;
-          stateInput.value = state;
+          stateInput.value = data.places[0].state;
         })
         .catch(() => {
-          zipError.textContent = 'Could not determine state for this ZIP.';
+          zipError.textContent = "Could not determine state for this ZIP.";
         });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      const phone = form.phone.value.trim();
-      phoneError.textContent = '';
-      statusMessage.textContent = '';
+      phoneError.textContent = "";
+      zipError.textContent = "";
+      formStatus.textContent = "";
+
+      const phone = phoneInput.value.trim();
+      const zip = zipInput.value.trim();
 
       if (!isValidPhone(phone)) {
-        phoneError.textContent = 'Invalid phone number format.';
+        phoneError.textContent = "Invalid phone number format.";
         return;
       }
 
-      statusMessage.textContent = 'Form submitted successfully!';
-      statusMessage.className = 'success';
-      form.reset();
-      stateInput.value = '';
+      if (!isValidZip(zip)) {
+        zipError.textContent = "Invalid ZIP or ZIP+4 code.";
+        return;
+      }
+
+      const formData = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        phone: phone,
+        zip: zip,
+        state: stateInput.value.trim()
+      };
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.text())
+      .then(msg => {
+        formStatus.textContent = msg === "Success" ? "Form submitted successfully!" : "Submission failed.";
+        if (msg === "Success") form.reset();
+        stateInput.value = "";
+      })
+      .catch(() => {
+        formStatus.textContent = "There was an error submitting the form.";
+      });
     });
   </script>
 </body>
