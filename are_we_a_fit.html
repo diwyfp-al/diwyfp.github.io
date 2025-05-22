@@ -1,97 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Are We a Fit? | DIWY Planning</title>
-  <link rel="icon" type="image/png" href="LogoDIWY20250324MO.png">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are We a Fit | DIWY Financial Planning</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     :root {
       --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
     }
-    .text-diwy { color: var(--diwy-blue); }
     .bg-diwy { background-color: var(--diwy-blue); }
-    .hover\:bg-diwy-dark:hover { background-color: #0f143c; }
+    .text-diwy { color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .fade-slide {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .fade-slide.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 pt-20">
-  <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-4">
-        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-10">
-        <span class="text-xl font-bold text-diwy"></span>
-      </div>
-      <div class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
-        <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
-        <a href="index.html#services" class="text-gray-700 hover:text-diwy">Services</a>
-        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
-        <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy">Client Portal</a>
-        <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">
-          Schedule a Free Intro Call
-        </a>
-      </div>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <img src="LogoDIWY20250324MO.png" alt="DIWY Logo" class="h-16">
+    <nav class="hidden md:flex space-x-6 text-sm">
+      <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
+      <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
+      <a href="planning-process.html" class="text-gray-700 hover:text-diwy">Process</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-32 px-6 md:px-12">
+  <section class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-diwy mb-4">Are We a Fit?</h1>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto">We work with motivated individuals, couples, and families who want to take control of their financial lives without giving up independence.</p>
+  </section>
+
+  <section class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="p-6 rounded-lg bg-white shadow fade-slide">
+      <img src="icon-mass-market.svg" alt="Mass Market Icon" class="h-16 mx-auto mb-4">
+      <h2 class="text-xl font-semibold text-diwy mb-2">Mass Market</h2>
+      <p>Starting out or starting over. Whether it's debt, savings, or first-time investing—we're here to help you build your foundation.</p>
     </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-6">Are We a Fit?</h2>
-    <p class="mb-6 text-lg">
-      At DIWY Planning, we believe in meaningful partnerships. We're not for everyone—and that's okay. We do our best work with people who are ready to actively participate in their financial journey.
-    </p>
-
-    <div class="bg-white p-6 rounded-lg shadow mb-6">
-      <h3 class="text-xl font-semibold mb-4">You might be a good fit if:</h3>
-      <ul class="list-disc list-inside space-y-2">
-        <li>You value collaboration and want a financial planning partner, not just a product pusher.</li>
-        <li>You’re a first-generation wealth builder or transitioning from DIY to getting professional guidance.</li>
-        <li>You prefer flat, transparent fees over hidden costs or asset-based pricing.</li>
-        <li>You’re open to honest conversations and ready to take action.</li>
-      </ul>
+    <div class="p-6 rounded-lg bg-white shadow fade-slide">
+      <img src="icon-mass-affluent.svg" alt="Mass Affluent Icon" class="h-16 mx-auto mb-4">
+      <h2 class="text-xl font-semibold text-diwy mb-2">Mass Affluent</h2>
+      <p>For those building momentum and complexity. We'll help you optimize cash flow, taxes, and goals-based planning.</p>
     </div>
-
-    <div class="bg-white p-6 rounded-lg shadow mb-6">
-      <h3 class="text-xl font-semibold mb-4">We might not be the best fit if:</h3>
-      <ul class="list-disc list-inside space-y-2">
-        <li>You’re only looking for investment management or stock tips.</li>
-        <li>You’re seeking a one-size-fits-all financial product or quick fix.</li>
-        <li>You’re not ready to commit time to the planning process.</li>
-        <li>You’re not comfortable with virtual meetings or digital tools.</li>
-      </ul>
+    <div class="p-6 rounded-lg bg-white shadow fade-slide">
+      <img src="icon-independence.svg" alt="Independent Thinkers Icon" class="h-16 mx-auto mb-4">
+      <h2 class="text-xl font-semibold text-diwy mb-2">Independent Thinkers</h2>
+      <p>You want advice, not sales. You're comfortable managing money but value a guide for planning. We work with you, not above you.</p>
     </div>
+  </section>
 
-    <p class="text-lg mb-8">
-      If you're still reading and nodding your head—chances are good we should talk.
-    </p>
+  <div class="text-center mt-12">
+    <a href="https://app.precisefp.com/w/raabzv" target="_blank" rel="noopener noreferrer"
+       class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark transition">
+      Schedule a Free Intro Call
+    </a>
+  </div>
+</main>
 
-    <a href="contact.html" class="inline-block bg-diwy text-white px-6 py-3 rounded hover:bg-diwy-dark">Schedule a Call</a>
-  </main>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-      <div class="flex flex-col items-center md:items-start space-y-2">
-        <p class="font-semibold text-diwy">DIWY Financial Planning</p>
-        <p class="text-xs">Plan for yourself—not by yourself™</p>
-      </div>
-      <div class="flex flex-col space-y-1">
-        <a href="index.html" class="hover:text-diwy">Home</a>
-        <a href="index.html#services" class="hover:text-diwy">Services</a>
-        <a href="about.html" class="hover:text-diwy">About</a>
-        <a href="contact.html" class="hover:text-diwy">Contact</a>
-        <a href="faqs.html" class="hover:text-diwy">FAQs</a>
-        <a href="portal.html" class="hover:text-diwy">Client Portal</a>
-      </div>
-      <div class="flex flex-col space-y-2 text-xs">
-        <p>DIWY Financial Planning is a registered investment adviser in the state of California.</p>
-        <p>Information provided is for educational purposes and is not intended as investment advice.</p>
-      </div>
-    </div>
-    <div class="mt-6 border-t border-gray-100 pt-4 text-center text-xs text-gray-500">
-      &copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.
-    </div>
-  </footer>
+  document.querySelectorAll('.fade-slide').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
 </body>
 </html>
