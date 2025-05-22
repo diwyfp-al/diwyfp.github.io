@@ -54,20 +54,7 @@
 <script src="https://unpkg.com/topojson-client@3"></script>
 
 <script>
-  const stateStatus = {
-    "CA": "Registered",
-    "FL": "Planned",
-    "NY": "Planned",
-    "OR": "Planned",
-    "TX": "Avoid",
-    "LA": "Avoid",
-    "NV": "Avoid",
-    "NE": "Avoid",
-    "HI": "Avoid",
-    "SD": "Avoid"
-  };
-
-  const colors = {
+  const colorMap = {
     "Registered": "green",
     "Planned": "gold",
     "Avoid": "red",
@@ -86,15 +73,17 @@
   };
 
   let tableData = [];
-  let clientCounts = {};
+  let stateData = {}; // keyed by state code
 
-  // Fetch client counts from Google Apps Script
-  fetch("https://your-google-script-url") // REPLACE with your deployed Apps Script URL
+  fetch("https://YOUR_SCRIPT_URL") // Replace with actual deployed Apps Script URL
     .then(response => response.json())
-    .then(data => {
-      // expected: [{ state: "CA", clients: 18 }, ...]
-      data.forEach(row => {
-        clientCounts[row.state] = parseInt(row.clients);
+    .then(rows => {
+      rows.forEach(row => {
+        const abbr = row.State;
+        stateData[abbr] = {
+          clients: parseInt(row.Clients),
+          status: row.RegistrationStatus
+        };
       });
       buildMapAndTable();
     });
@@ -109,9 +98,8 @@
         states.features.forEach(f => {
           const fips = f.id.toString().padStart(2, '0');
           const abbr = fipsToAbbr[fips];
-          const status = stateStatus[abbr] || "De Minimis OK";
-          const fillColor = colors[status];
-          const count = clientCounts[abbr] || 0;
+          const info = stateData[abbr] || { clients: 0, status: "De Minimis OK" };
+          const fillColor = colorMap[info.status] || "gray";
 
           // draw map
           const geojson = L.geoJSON(f, {
@@ -122,10 +110,9 @@
               fillColor: fillColor
             }
           }).addTo(map);
-          geojson.bindPopup(`<strong>${abbr}</strong><br>Status: ${status}<br>Clients: ${count}`);
+          geojson.bindPopup(`<strong>${abbr}</strong><br>Status: ${info.status}<br>Clients: ${info.clients}`);
 
-          // store data for sorting and filtering
-          tableData.push({ state: abbr, status, clients: count });
+          tableData.push({ state: abbr, status: info.status, clients: info.clients });
         });
 
         renderTable(tableData);
@@ -156,7 +143,7 @@
         return 0;
       });
 
-      applyFilters(); // apply current filters to new sort
+      applyFilters(); // apply current filters after sorting
     });
   });
 
