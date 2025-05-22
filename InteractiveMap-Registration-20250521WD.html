@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DIWY Client Eligibility Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 600px; }
+    .legend { background: white; padding: 6px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<h2>Client Eligibility by State – DIWY Financial Planning</h2>
+<div id="map"></div>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DIWY Client Eligibility Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 600px; }
+    .legend { background: white; padding: 6px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<h2>Client Eligibility by State – DIWY Financial Planning</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+
+<script>
+  const map = L.map('map').setView([37.8, -96], 4);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const stateStatus = {
+    "CA": "Registered",
+    "FL": "Planned",
+    "NY": "Planned",
+    "OR": "Planned",
+    "TX": "Avoid",
+    "LA": "Avoid",
+    "NV": "Avoid",
+    "NE": "Avoid",
+    "HI": "Avoid",
+    "SD": "Avoid"
+  };
+
+  const colors = {
+    "Registered": "green",
+    "Planned": "gold",
+    "Avoid": "red",
+    "De Minimis OK": "lightgray"
+  };
+
+  // Map of FIPS code to state abbreviations
+  const fipsToAbbr = {
+    "01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA", "08": "CO", "09": "CT",
+    "10": "DE", "11": "DC", "12": "FL", "13": "GA", "15": "HI", "16": "ID", "17": "IL",
+    "18": "IN", "19": "IA", "20": "KS", "21": "KY", "22": "LA", "23": "ME", "24": "MD",
+    "25": "MA", "26": "MI", "27": "MN", "28": "MS", "29": "MO", "30": "MT", "31": "NE",
+    "32": "NV", "33": "NH", "34": "NJ", "35": "NM", "36": "NY", "37": "NC", "38": "ND",
+    "39": "OH", "40": "OK", "41": "OR", "42": "PA", "44": "RI", "45": "SC", "46": "SD",
+    "47": "TN", "48": "TX", "49": "UT", "50": "VT", "51": "VA", "53": "WA", "54": "WV",
+    "55": "WI", "56": "WY"
+  };
+
+  fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json")
+    .then(response => response.json())
+    .then(topoData => {
+      const states = topojson.feature(topoData, topoData.objects.states);
+
+      states.features.forEach(f => {
+        const fips = f.id.toString().padStart(2, '0');
+        const abbr = fipsToAbbr[fips];
+        const status = stateStatus[abbr] || "De Minimis OK";
+        const fillColor = colors[status];
+
+        const geojson = L.geoJSON(f, {
+          style: {
+            color: "#444",
+            weight: 1,
+            fillOpacity: 0.7,
+            fillColor: fillColor
+          }
+        }).addTo(map);
+
+        geojson.bindPopup(`<strong>${abbr}</strong><br>Status: ${status}`);
+      });
+    });
+
+  const legend = L.control({position: 'bottomleft'});
+  legend.onAdd = function () {
+    const div = L.DomUtil.create('div', 'legend');
+    div.innerHTML = `
+      <strong>Legend</strong><br>
+      <span style="background:green;color:white;padding:2px 6px;">&nbsp;</span> Registered<br>
+      <span style="background:gold;padding:2px 6px;">&nbsp;</span> Planned<br>
+      <span style="background:red;color:white;padding:2px 6px;">&nbsp;</span> Avoid<br>
+      <span style="background:lightgray;padding:2px 6px;">&nbsp;</span> De Minimis OK
+    `;
+    return div;
+  };
+  legend.addTo(map);
+</script>
+
+</body>
+</html>
