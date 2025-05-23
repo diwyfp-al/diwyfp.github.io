@@ -37,7 +37,7 @@
       font-size: 1.25rem;
     }
     h3.active::after {
-      content: "\2212";
+      content: "−";
     }
     .accordion-content {
       display: none;
@@ -127,39 +127,39 @@
 
     <h3 class="active" onclick="toggleAccordion(this)">Section 1: Basic Information</h3>
     <div class="accordion-content active">
-      <label class="required">How were you referred to this page</label>
-      <input type="text" name="referral" required>
+      <label for="referral" class="required">How were you referred to this page</label>
+      <input type="text" id="referral" name="referral" required>
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">First Name</label>
-          <input type="text" name="firstName" required>
+          <label for="firstName" class="required">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
         </div>
         <div class="form-group">
-          <label class="required">Last Name</label>
-          <input type="text" name="lastName" required>
+          <label for="lastName" class="required">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">Residential ZIP Code</label>
-          <input type="text" id="zip" name="zip" pattern="\d{5}" required placeholder="5-digits only 12345">
+          <label for="zip" class="required">Residential ZIP Code</label>
+          <input type="text" id="zip" name="zip" pattern="\\d{5}" required placeholder="5-digits only 12345">
           <div id="zipError" class="error"></div>
         </div>
         <div class="form-group">
-          <label>State</label>
+          <label for="state">State</label>
           <input type="text" id="state" name="state" readonly>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">Email Address</label>
+          <label for="email" class="required">Email Address</label>
           <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
-          <label class="required">Mobile Phone Number</label>
+          <label for="phone" class="required">Mobile Phone Number</label>
           <input type="tel" id="phone" name="phone" required placeholder="e.g., 123-456-7890">
           <div id="phoneError" class="error"></div>
         </div>
@@ -170,113 +170,112 @@
     <div class="accordion-content">
       <div class="form-row">
         <div class="form-group">
-          <label class="required">What is your Federal Tax Filing Status</label>
-          <select name="taxFilingStatus" required>
+          <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
+          <select name="taxFilingStatus" id="taxFilingStatus" required>
             <option value="">Select...</option>
-            <option value="Single">Single</option>
-            <option value="Married Filing Jointly">Married Filing Jointly</option>
-            <option value="Married Filing Separately">Married Filing Separately</option>
-            <option value="Head of Household">Head of Household</option>
-            <option value="Qualifying Surviving Spouse">Qualifying Surviving Spouse</option>
+            <option>Single</option>
+            <option>Married Filing Jointly</option>
+            <option>Married Filing Separately</option>
+            <option>Head of Household</option>
+            <option>Qualifying Surviving Spouse</option>
           </select>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">Relationship Status</label>
-          <select name="relationshipStatus" required>
+          <label for="relationshipStatus" class="required">Relationship Status</label>
+          <select name="relationshipStatus" id="relationshipStatus" required>
             <option value="">Select...</option>
-            <option value="Single">Single</option>
-            <option value="Married">Married</option>
-            <option value="Partnered">Partnered</option>
-            <option value="Divorced">Divorced</option>
-            <option value="Widowed">Widowed</option>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Partnered</option>
+            <option>Divorced</option>
+            <option>Widowed</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="required">Do you have any dependents?</label>
-          <select name="dependents" required>
+          <label for="dependents" class="required">Do you have any dependents?</label>
+          <select name="dependents" id="dependents" required>
             <option value="">Select...</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option>Yes</option>
+            <option>No</option>
           </select>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">Employment Status</label>
-          <select name="employmentStatus" required onchange="toggleOther(this, 'employmentOther')">
+          <label for="employmentStatus" class="required">Employment Status</label>
+          <select name="employmentStatus" id="employmentStatus" required onchange="toggleOther(this, 'employmentOther')">
             <option value="">Select...</option>
-            <option value="W-2">W-2</option>
-            <option value="Self-Employed">Self-Employed</option>
-            <option value="Investments">Investments</option>
-            <option value="Unemployed">Unemployed</option>
-            <option value="Other">Other</option>
+            <option>W-2</option>
+            <option>Self-Employed</option>
+            <option>Investments</option>
+            <option>Unemployed</option>
+            <option>Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Specify if Other</label>
-          <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify" style="display:none">
+        <div class="form-group" id="employmentOtherGroup" style="display:none">
+          <label for="employmentOther">Specify if Other</label>
+          <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify">
         </div>
       </div>
 
-      <label class="required">Do you rent or own your primary residence?</label>
-      <select name="housingStatus" required onchange="toggleOther(this, 'housingOther')">
+      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
+      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOther')">
         <option value="">Select...</option>
-        <option value="Rent">Rent</option>
-        <option value="Own">Own</option>
-        <option value="Other">Other</option>
+        <option>Rent</option>
+        <option>Own</option>
+        <option>Other</option>
       </select>
       <input type="text" name="housingOther" id="housingOther" placeholder="If other, please specify" style="display:none">
 
       <div class="form-row">
         <div class="form-group">
-          <label class="required">Active US Military</label>
+          <label for="activeMilitary" class="required">Active US Military</label>
           <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
             <option value="">Select...</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Prefer not to answer">Prefer not to answer</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Prefer not to answer</option>
           </select>
         </div>
         <div class="form-group" id="veteranGroup" style="display:none">
-          <label>If no: US Military Veteran</label>
-          <select name="veteran">
+          <label for="veteran">If no: US Military Veteran</label>
+          <select name="veteran" id="veteran">
             <option value="">Select...</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Prefer not to answer">Prefer not to answer</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Prefer not to answer</option>
           </select>
         </div>
       </div>
     </div>
 
+    <button type="submit">Submit</button>
     <div id="preview"></div>
-
-    <script>
-      function toggleAccordion(header) {
-        const content = header.nextElementSibling;
-        header.classList.toggle("active");
-        content.classList.toggle("active");
-      }
-
-      function toggleOther(selectOrCheckbox, targetId) {
-        const isOther = selectOrCheckbox.tagName === 'SELECT'
-          ? selectOrCheckbox.value === 'Other'
-          : selectOrCheckbox.checked;
-        const input = document.getElementById(targetId);
-        if (input) {
-          input.style.display = isOther ? 'block' : 'none';
-        }
-      }
-
-      function toggleVeteranQuestion(select) {
-        const veteranGroup = document.getElementById('veteranGroup');
-        veteranGroup.style.display = select.value === 'No' ? 'block' : 'none';
-      }
-    </script>
   </form>
+
+  <script>
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      header.classList.toggle("active");
+      content.classList.toggle("active");
+    }
+
+    function toggleOther(select, inputId) {
+      const input = document.getElementById(inputId);
+      const label = input?.previousElementSibling;
+      const show = select.value === 'Other';
+      if (input) input.style.display = show ? 'block' : 'none';
+      if (label) label.style.display = show ? 'block' : 'none';
+    }
+
+    function toggleVeteranQuestion(select) {
+      const veteranGroup = document.getElementById('veteranGroup');
+      veteranGroup.style.display = select.value === 'No' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
