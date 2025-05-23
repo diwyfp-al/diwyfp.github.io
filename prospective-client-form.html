@@ -182,7 +182,54 @@
         </div>
       </div>
 
-      <!-- Additional questions such as Relationship Status, Dependents, Employment, Housing, and Military go here -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">Relationship Status</label>
+          <select name="relationshipStatus" required>
+            <option value="">Select...</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Partnered">Partnered</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="required">Do you have any dependents?</label>
+          <select name="dependents" required>
+            <option value="">Select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="required">Employment Status</label>
+          <select name="employmentStatus" required onchange="toggleOther(this, 'employmentOther')">
+            <option value="">Select...</option>
+            <option value="W-2">W-2</option>
+            <option value="Self-Employed">Self-Employed</option>
+            <option value="Investments">Investments</option>
+            <option value="Unemployed">Unemployed</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Specify if Other</label>
+          <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify" style="display:none">
+        </div>
+      </div>
+
+      <label class="required">Do you rent or own your primary residence?</label>
+      <select name="housingStatus" required onchange="toggleOther(this, 'housingOther')">
+        <option value="">Select...</option>
+        <option value="Rent">Rent</option>
+        <option value="Own">Own</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" name="housingOther" id="housingOther" placeholder="If other, please specify" style="display:none">
 
       <div class="form-row">
         <div class="form-group">
@@ -191,6 +238,7 @@
             <option value="">Select...</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
+            <option value="Prefer not to answer">Prefer not to answer</option>
           </select>
         </div>
         <div class="form-group" id="veteranGroup" style="display:none">
