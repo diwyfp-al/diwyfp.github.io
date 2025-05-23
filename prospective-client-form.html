@@ -309,7 +309,7 @@
 
   <div class="form-row">
     <div class="form-group">
-      <label for="activeMilitary" class="required">Active US Military</label>
+      <label for="activeMilitary" class="required">Active US Military?</label>
       <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
         <option value="">Select...</option>
         <option>Yes</option>
@@ -318,7 +318,7 @@
       </select>
     </div>
     <div class="form-group" id="veteranGroup" style="display:none">
-      <label for="veteran">US Military Veteran</label>
+      <label for="veteran">US Military Veteran?</label>
       <select name="veteran" id="veteran">
         <option value="">Select...</option>
         <option>Yes</option>
@@ -341,6 +341,7 @@
     <label><input type="checkbox" name="topics" value="Financial Independence / Retirement"> <span>Financial Independence / Retirement</span></label>
     <label><input type="checkbox" name="topics" value="Savings / Investments"> <span>Savings / Investments</span></label>
     <label><input type="checkbox" name="topics" value="Tax Planning"> <span>Tax Planning</span></label>
+    <label><input type="checkbox" name="topics" value="Risk Management / Insurance"> <span>Risk Management / Insurance</span></label>
     <label><input type="checkbox" name="topics" value="Asset Protection"> <span>Asset Protection</span></label>
     <label><input type="checkbox" name="topics" value="Estate / Legacy Planning"> <span>Estate / Legacy Planning</span></label>
     <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOtherGroup')"> <span>Other</span></label>
