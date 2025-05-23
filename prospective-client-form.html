@@ -125,10 +125,19 @@
   <form id="clientForm">
     <h2>Client Intake Form</h2>
 
-    <h3 class="active" onclick="toggleAccordion(this)">Section 1: Basic Information</h3>
+    <h3 class="active" onclick="toggleAccordion(this)">Contact Information</h3>
     <div class="accordion-content active">
       <label for="referral" class="required">How were you referred to this page</label>
       <input type="text" id="referral" name="referral" maxlength="100" required>
+
+      <!-- 
+      Google
+      Online Advertisement
+      DIWY Financial Planning Website
+      Referral from Friend, Family, Colleague, etc.
+      Social Media or Podcast
+      Other (Please Specify)
+      -->
 
       <div class="form-row">
         <div class="form-group">
@@ -144,7 +153,7 @@
       <div class="form-row">
         <div class="form-group">
           <label for="zip" class="required">Residential ZIP Code</label>
-          <input type="text" id="zip" name="zip" pattern="\d{5}" maxlength="50" required placeholder="5-digits only 12345">
+          <input type="text" id="zip" name="zip" pattern="\d{5}" maxlength="5" required placeholder="5-digits only 12345">
           <div id="zipError" class="error"></div>
         </div>
         <div class="form-group">
@@ -160,15 +169,18 @@
         </div>
         <div class="form-group">
           <label for="phone" class="required">Mobile Phone Number</label>
-          <input type="tel" id="phone" name="phone" required placeholder="e.g., 123-456-7890">
+          <input type="tel" id="phone" name="phone" maxlength="10" required placeholder="e.g., 123-456-7890">
           <div id="phoneError" class="error"></div>
         </div>
       </div>
     </div>
 
+<!-- Your email will be used for authentication. You will not receive unsolicited / spam email  -->
+<!-- Add a footnote that number and email will only be used for validation and permitted communication. No Spam no sharing Promise -->
+
 <!-- Section 2 --> 
 
-<h3 onclick="toggleAccordion(this)">Section 2: Personal & Household</h3>
+<h3 onclick="toggleAccordion(this)">Demographic Information</h3>
 <div class="accordion-content">
   <div class="form-row">
     <div class="form-group">
@@ -188,8 +200,8 @@
       <label for="gender" class="required">Gender</label>
       <select name="gender" id="gender" required>
         <option value="">Select...</option>
-        <option>Male</option>
         <option>Female</option>
+        <option>Male</option>
         <option>Non-binary</option>
         <option>Prefer not to answer</option>
       </select>
@@ -226,13 +238,21 @@
   <div class="form-row">
     <div class="form-group">
       <label for="employmentStatus" class="required">Employment Status</label>
-      <select name="employmentStatus" id="employmentStatus" required onchange="toggleOther(this, 'employmentOther')">
+      <select name="employmentStatus" id="employmentStatus" required onchange="toggleOther(this, 'employmentOtherGroup', 'employmentOther')">
         <option value="">Select...</option>
-        <option>W-2</option>
-        <option>Self-Employed</option>
-        <option>Investments</option>
-        <option>Unemployed</option>
-        <option>Other</option>
+        <option value="W-2 Full-time">W-2 (Full-time)</option>
+        <option value="W-2 Part-time">W-2 (Part-time)</option>
+        <option value="Self-Employed / Independent Contractor">Self-Employed / Independent Contractor</option>
+        <option value="Business Owner">Business Owner</option>
+        <option value="Managing a Household / Caregiver">Managing a Household / Caregiver</option>
+        <option value="Student">Student</option>
+        <option value="Disabled">Disabled</option>
+        <option value="Unemployed - Seeking Employment">Unemployed and Seeking Employment</option>
+        <option value="Unemployed - Not Seeking Employment">Unemployed and not Seeking Employment</option>
+        <option value="On Leave">On Leave (e.g. Medical, Parental, Sabbatical)</option>
+        <option value="Retired">Retired</option>
+        <option value="Financially Independent">Financially Independent (Not Employed)</option>
+        <option value="Other">Other</option>
       </select>
     </div>
     <div class="form-group">
