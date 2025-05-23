@@ -135,7 +135,7 @@
       <div class="form-row">
         <div class="form-group">
           <label class="required">Residential ZIP Code</label>
-          <input type="text" id="zip" name="zip" required placeholder="e.g., 12345 or 12345-6789">
+          <input type="text" id="zip" name="zip" required placeholder="5-digit only">
           <div id="zipError" class="error"></div>
         </div>
         <div class="form-group">
@@ -164,15 +164,22 @@
           <label class="required">Age Range</label>
           <select name="ageRange" required>
             <option value="">Select...</option>
-            <option>18–24</option><option>25–34</option><option>35–44</option>
-            <option>45–54</option><option>55–64</option><option>65+</option>
+            <option>18–24</option>
+            <option>25–34</option>
+            <option>35–44</option>
+            <option>45–54</option>
+            <option>55–64</option>
+            <option>65+</option>
           </select>
         </div>
         <div class="form-group">
           <label class="required">Gender</label>
           <select name="gender" required>
             <option value="">Select...</option>
-            <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to answer</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to answer</option>
           </select>
         </div>
       </div>
@@ -182,14 +189,23 @@
           <label class="required">Relationship Status</label>
           <select name="relationshipStatus" required>
             <option value="">Select...</option>
-            <option>Single</option><option>Married</option><option>Partnered</option><option>Divorced</option><option>Widowed</option>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Partnered</option>
+            <option>Divorced</option>
+            <option>Widowed</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="required">Do you have any dependents?</label>
+          <label class="required"># of dependents?</label>
           <select name="dependents" required>
             <option value="">Select...</option>
-            <option>Yes</option><option>No</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
           </select>
         </div>
       </div>
