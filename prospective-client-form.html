@@ -55,6 +55,7 @@
             flex: 1;
             min-width: 250px;
         }
+        
         /* Specific styling for labels that are NOT inside a fieldset */
         label {
             display: block;
@@ -64,15 +65,37 @@
 
 
 fieldset label {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.25rem 0;
+  font-weight: normal;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+
+fieldset label input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+}
+
+fieldset label span {
+  flex: 1;
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+        /*<!--
+fieldset label {
   display: inline-flex;
   align-items: center;
   margin: 0.25rem 0;
   font-weight: normal;
   gap: 0.5rem;
 }
-
+-->*/
         
-        <!--
+        /*<!--
         /* Styling for labels *inside* a fieldset (checkboxes) */
         fieldset label {
             display: flex;
@@ -88,7 +111,7 @@ fieldset label {
             white-space: normal;
             flex: 1; /* Allow the span to take available space */
         }
-        -->
+        -->*/
 
 input[type="checkbox"] {
   margin: 0;
@@ -97,14 +120,14 @@ input[type="checkbox"] {
 }
 
         
-        <!-- 
+        /*<!-- 
         /* Styling for checkboxes specifically */
         input[type="checkbox"] {
             margin-right: 0.5rem;
             flex-shrink: 0; /* Prevent checkbox from shrinking */
             margin-top: 0.25rem; /* Fine-tune vertical alignment with text if flex-start is used */
         }
-        -->
+        -->*/
 
         input, select, textarea {
             width: 100%;
@@ -197,7 +220,7 @@ input[type="checkbox"] {
                 </div>
                 <div class="form-group">
                     <label for="phone" class="required">Mobile Phone Number</label>
-                    <input type="tel" id="phone" name="phone" maxlength="10" required placeholder="e.g., 123-456-7890">
+                    <input type="tel" id="phone" name="phone" maxlength="20" required placeholder="e.g., 123-456-7890">
                     <div id="phoneError" class="error"></div>
                 </div>
             </div>
