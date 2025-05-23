@@ -338,30 +338,33 @@
     <div id="preview"></div>
   </form>
 
-  <script>
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      header.classList.toggle("active");
-      content.classList.toggle("active");
-    }
+<script>
+  function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    header.classList.toggle("active");
+    content.classList.toggle("active");
+  }
 
-    function toggleOther(selectOrCheckbox, inputId) {
-      const isOther = selectOrCheckbox.tagName === 'SELECT'
-        ? selectOrCheckbox.value === 'Other'
-        : selectOrCheckbox.checked;
-      const input = document.getElementById(inputId);
-      const label = input?.previousElementSibling;
-      if (input) input.style.display = isOther ? 'block' : 'none';
-      if (label && label.tagName === 'LABEL') label.style.display = isOther ? 'block' : 'none';
-    }
+  function toggleOther(selectOrCheckbox, inputId) {
+    const isOther = selectOrCheckbox.tagName === 'SELECT'
+      ? selectOrCheckbox.value === 'Other'
+      : selectOrCheckbox.checked;
 
-    function toggleVeteranQuestion(select) {
-      document.getElementById('veteranGroup').style.display = select.value === 'No' ? 'block' : 'none';
-    }
+    const input = document.getElementById(inputId);
+    const group = input?.closest('.form-group');
 
-    function toggleRelationship(select) {
-      document.getElementById('relationshipStatusGroup').style.display = select.value === 'Single' ? 'block' : 'none';
+    if (group) {
+      group.style.display = isOther ? 'block' : 'none';
     }
-  </script>
+  }
+
+  function toggleVeteranQuestion(select) {
+    document.getElementById('veteranGroup').style.display = select.value === 'No' ? 'block' : 'none';
+  }
+
+  function toggleRelationship(select) {
+    document.getElementById('relationshipStatusGroup').style.display = select.value === 'Single' ? 'block' : 'none';
+  }
+</script>
 </body>
 </html>
