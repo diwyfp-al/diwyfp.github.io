@@ -172,6 +172,7 @@
           <label for="ageRange" class="required">Age Range</label>
           <select name="ageRange" id="ageRange" required>
             <option value="">Select...</option>
+            <option>Under 18</option>
             <option>18–24</option>
             <option>25–34</option>
             <option>35–44</option>
@@ -191,6 +192,7 @@
           </select>
         </div>
       </div>
+    
       <div class="form-row">
         <div class="form-group">
           <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
@@ -207,11 +209,13 @@
           <label for="relationshipStatus" class="required">Relationship Status</label>
           <select name="relationshipStatus" id="relationshipStatus">
             <option value="">Select...</option>
-            <option>Single</option>
-            <option>Married</option>
-            <option>Partnered</option>
-            <option>Divorced</option>
-            <option>Widowed</option>
+            <option>Single, Never Married</option>
+            <option>Single, Divorced</option>
+            <option>Single, Widowed</option>
+            <option>Single, In a Commited Relationship</option>
+            <option>Legally Separated</option>
+            <option>Registered Domestic Partnership</option>
+            <option>Other</option>
           </select>
         </div>
       </div>
@@ -229,11 +233,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="dependents" class="required">Do you have any dependents?</label</label>
+          <label for="dependents" class="required"># of Dependents</label</label>
           <select name="dependents" id="dependents" required>
             <option value="">Select...</option>
-            <option>Yes</option>
-            <option>No</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
           </select>
         </div>
       </div>
@@ -274,6 +282,7 @@
       </div>
     </div>
 
+    <!-- Section 3: Planning Topics and Devices -->
     <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
     <div class="accordion-content">
       <fieldset>
