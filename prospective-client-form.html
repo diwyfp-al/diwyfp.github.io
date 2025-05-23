@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Comprehensive Client Intake Form</title>
+
+    
 <style>
   body {
     font-family: sans-serif;
@@ -77,26 +79,33 @@
     font-weight: bold;
   }
 
-  /* CHECKBOX LABELS INSIDE FIELDSETS */
+  /* COMPACT & MOBILE-OPTIMIZED CHECKBOX LAYOUT */
+  fieldset {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
   fieldset label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
     margin: 0.25rem 0;
     font-weight: normal;
-    gap: 0.5rem;
-    line-height: 1.4;
+    line-height: 1.2;
   }
 
   fieldset label input[type="checkbox"] {
-    margin-top: 0.2rem;
-    flex: 0 0 auto;
+    margin: 0;
+    flex-shrink: 0;
     cursor: pointer;
   }
 
   fieldset label span {
     flex: 1;
-    white-space: normal;
     word-break: break-word;
+    white-space: normal;
     cursor: pointer;
   }
 
@@ -119,13 +128,12 @@
     box-shadow: 0 0 4px rgba(25, 33, 90, 0.4);
   }
 
-  fieldset {
-    margin-top: 1rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  input#firstName, input#lastName {
+    width: 30ch;
+    max-width: 100%;
   }
 
+    
   button {
     margin-top: 2rem;
     padding: 0.75rem 1.5rem;
@@ -169,7 +177,24 @@
     padding: 1rem;
     border-radius: 4px;
   }
+
+  /* RESPONSIVE TWEAKS */
+  @media (max-width: 600px) {
+    fieldset label {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    fieldset label span {
+      font-size: 0.95rem;
+    }
+
+    fieldset {
+      padding: 0.75rem;
+    }
+  }
 </style>
+
 
     
 </head>
@@ -182,16 +207,16 @@
             <label for="referral" class="required">How were you referred to this page</label>
             <input type="text" id="referral" name="referral" maxlength="100" required>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName" class="required">First Name</label>
-                    <input type="text" id="firstName" name="firstName" maxlength="25" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName" class="required">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" maxlength="25" required>
-                </div>
-            </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" class="required">First Name</label>
+            <input type="text" id="firstName" name="firstName" maxlength="30" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="required">Last Name</label>
+            <input type="text" id="lastName" name="lastName" maxlength="30" required>
+          </div>
+        </div>
 
             <div class="form-row">
                 <div class="form-group">
