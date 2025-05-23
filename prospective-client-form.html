@@ -330,47 +330,57 @@
 </div>
 
     <!-- Section 3: Planning Topics and Devices -->
-    <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
-    <div class="accordion-content">
-      <fieldset>
-        <legend>What would you like to discuss during our meeting?</legend>
-        <label><input type="checkbox" name="topics" value="Organizing / Simplifying Finances">Organizing / Simplifying Finances</label>
-        <label><input type="checkbox" name="topics" value="Budgeting / Cash Management">Budgeting / Cash Management</label>
-        <label><input type="checkbox" name="topics" value="Credit / Debt Management">Credit / Debt Management</label>
-        <label><input type="checkbox" name="topics" value="Financial Independence / Retirement">Financial Independence / Retirement</label>
-        <label><input type="checkbox" name="topics" value="Savings / Investments">Savings / Investments</label>
-        <label><input type="checkbox" name="topics" value="Tax Planning">Tax Planning</label>
-        <label><input type="checkbox" name="topics" value="Asset Protection">Asset Protection</label>
-        <label><input type="checkbox" name="topics" value="Estate / Legacy Planning">Estate / Legacy Planning</label>
-        <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOther')">Other</label>
-        <input type="text" name="topicsOther" id="topicsOther" maxlength="50" placeholder="Please specify other areas of interest" style="display:none">
-      </fieldset>
+    
+<h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
+<div class="accordion-content">
+  <fieldset>
+    <legend>What would you like to discuss during our meeting?</legend>
+    <label><input type="checkbox" name="topics" value="Organizing / Simplifying Finances"> <span>Organizing / Simplifying Finances</span></label>
+    <label><input type="checkbox" name="topics" value="Budgeting / Cash Management"> <span>Budgeting / Cash Management</span></label>
+    <label><input type="checkbox" name="topics" value="Credit / Debt Management"> <span>Credit / Debt Management</span></label>
+    <label><input type="checkbox" name="topics" value="Financial Independence / Retirement"> <span>Financial Independence / Retirement</span></label>
+    <label><input type="checkbox" name="topics" value="Savings / Investments"> <span>Savings / Investments</span></label>
+    <label><input type="checkbox" name="topics" value="Tax Planning"> <span>Tax Planning</span></label>
+    <label><input type="checkbox" name="topics" value="Asset Protection"> <span>Asset Protection</span></label>
+    <label><input type="checkbox" name="topics" value="Estate / Legacy Planning"> <span>Estate / Legacy Planning</span></label>
+    <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOtherGroup')"> <span>Other</span></label>
+    <div class="form-group" id="topicsOtherGroup" style="display:none">
+        <label for="topicsOther">Please specify other areas of interest</label>
+        <input type="text" name="topicsOther" id="topicsOther" maxlength="50" placeholder="Please specify other areas of interest">
+    </div>
+  </fieldset>
 
-      <label for="additionalInfo">Please use the space below to share any additional information (max 1500 characters)</label>
-      <textarea name="additionalInfo" id="additionalInfo" maxlength="1500"></textarea>
+  <label for="additionalInfo">Please use the space below to share any additional information (max 1500 characters)</label>
+  <textarea name="additionalInfo" id="additionalInfo" maxlength="1500"></textarea>
 
-      <fieldset>
-        <legend>Which of the following devices do you use?</legend>
-        <label><input type="checkbox" name="devices" value="Android Phone">Android Phone</label>
-        <label><input type="checkbox" name="devices" value="iPhone">iPhone</label>
-        <label><input type="checkbox" name="devices" value="Other Phone" onchange="toggleOther(this, 'phoneOther')">Other Phone</label>
-        <input type="text" name="phoneOther" id="phoneOther" maxlength="50" placeholder="Please specify what device(s) you use" style="display:none">
-
-        <label><input type="checkbox" name="devices" value="Laptop - Apple">Laptop - Apple</label>
-        <label><input type="checkbox" name="devices" value="Laptop - Windows">Laptop - Windows</label>
-        <label><input type="checkbox" name="devices" value="Desktop - Apple">Desktop - Apple</label>
-        <label><input type="checkbox" name="devices" value="Desktop - Windows">Desktop - Windows</label>
-
-        <label><input type="checkbox" name="devices" value="Tablet - Android">Tablet - Android</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Apple">Tablet - Apple</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Windows">Tablet - Windows</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOther')">Tablet - Other</label>
-        <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify" style="display:none">
-
-        <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
-      </fieldset>
+  <fieldset>
+    <legend>Which of the following devices do you use?</legend>
+    <label><input type="checkbox" name="devices" value="Android Phone"> <span>Android Phone</span></label>
+    <label><input type="checkbox" name="devices" value="iPhone"> <span>iPhone</span></label>
+    <label><input type="checkbox" name="devices" value="Other Phone" onchange="toggleOther(this, 'phoneOtherGroup')"> <span>Other Phone</span></label>
+    <div class="form-group" id="phoneOtherGroup" style="display:none">
+        <label for="phoneOther">Please specify what device(s) you use</label>
+        <input type="text" name="phoneOther" id="phoneOther" maxlength="50" placeholder="Please specify what device(s) you use">
     </div>
 
+    <label><input type="checkbox" name="devices" value="Laptop - Apple"> <span>Laptop - Apple</span></label>
+    <label><input type="checkbox" name="devices" value="Laptop - Windows"> <span>Laptop - Windows</span></label>
+    <label><input type="checkbox" name="devices" value="Desktop - Apple"> <span>Desktop - Apple</span></label>
+    <label><input type="checkbox" name="devices" value="Desktop - Windows"> <span>Desktop - Windows</span></label>
+
+    <label><input type="checkbox" name="devices" value="Tablet - Android"> <span>Tablet - Android</span></label>
+    <label><input type="checkbox" name="devices" value="Tablet - Apple"> <span>Tablet - Apple</span></label>
+    <label><input type="checkbox" name="devices" value="Tablet - Windows"> <span>Tablet - Windows</span></label>
+    <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOtherGroup')"> <span>Tablet - Other</span></label>
+    <div class="form-group" id="tabletOtherGroup" style="display:none">
+        <label for="tabletOther">If other, please specify</label>
+        <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify">
+    </div>
+
+    <label><input type="checkbox" name="devices" value="Don’t have a computer"> <span>Don’t have a computer</span></label>
+  </fieldset>
+</div>
+    
     <button type="submit">Submit</button>
     <div id="preview"></div>
   </form>
