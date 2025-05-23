@@ -144,7 +144,7 @@
       <div class="form-row">
         <div class="form-group">
           <label for="zip" class="required">Residential ZIP Code</label>
-          <input type="text" id="zip" name="zip" pattern="\\d{5}" required placeholder="5-digits only 12345">
+          <input type="text" id="zip" name="zip" pattern="\d{5}" required placeholder="5-digits only 12345">
           <div id="zipError" class="error"></div>
         </div>
         <div class="form-group">
@@ -171,35 +171,24 @@
       <div class="form-row">
         <div class="form-group">
           <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
-          <select name="taxFilingStatus" id="taxFilingStatus" required>
+          <select name="taxFilingStatus" id="taxFilingStatus" required onchange="toggleRelationship(this)">
             <option value="">Select...</option>
-            <option>Single</option>
-            <option>Married Filing Jointly</option>
-            <option>Married Filing Separately</option>
-            <option>Head of Household</option>
-            <option>Qualifying Surviving Spouse</option>
+            <option value="Single">Single</option>
+            <option value="Married Filing Jointly">Married Filing Jointly</option>
+            <option value="Married Filing Separately">Married Filing Separately</option>
+            <option value="Head of Household">Head of Household</option>
+            <option value="Qualifying Surviving Spouse">Qualifying Surviving Spouse</option>
           </select>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
+        <div class="form-group" id="relationshipStatusGroup" style="display:none">
           <label for="relationshipStatus" class="required">Relationship Status</label>
-          <select name="relationshipStatus" id="relationshipStatus" required>
+          <select name="relationshipStatus" id="relationshipStatus">
             <option value="">Select...</option>
             <option>Single</option>
             <option>Married</option>
             <option>Partnered</option>
             <option>Divorced</option>
             <option>Widowed</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="dependents" class="required">Do you have any dependents?</label>
-          <select name="dependents" id="dependents" required>
-            <option value="">Select...</option>
-            <option>Yes</option>
-            <option>No</option>
           </select>
         </div>
       </div>
@@ -216,10 +205,19 @@
             <option>Other</option>
           </select>
         </div>
-        <div class="form-group" id="employmentOtherGroup" style="display:none">
-          <label for="employmentOther">Specify if Other</label>
-          <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify">
+        <div class="form-group">
+          <label for="dependents" class="required">Do you have any dependents?</label>
+          <select name="dependents" id="dependents" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
         </div>
+      </div>
+
+      <div class="form-group" id="employmentOtherGroup" style="display:none">
+        <label for="employmentOther">Specify if Other</label>
+        <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify">
       </div>
 
       <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
@@ -253,6 +251,47 @@
       </div>
     </div>
 
+    <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
+    <div class="accordion-content">
+      <fieldset>
+        <legend>What would you like to discuss during our meeting?</legend>
+        <label><input type="checkbox" name="topics" value="Organizing / Simplifying Finances">Organizing / Simplifying Finances</label>
+        <label><input type="checkbox" name="topics" value="Budgeting / Cash Management">Budgeting / Cash Management</label>
+        <label><input type="checkbox" name="topics" value="Credit / Debt Management">Credit / Debt Management</label>
+        <label><input type="checkbox" name="topics" value="Financial Independence / Retirement">Financial Independence / Retirement</label>
+        <label><input type="checkbox" name="topics" value="Savings / Investments">Savings / Investments</label>
+        <label><input type="checkbox" name="topics" value="Tax Planning">Tax Planning</label>
+        <label><input type="checkbox" name="topics" value="Asset Protection">Asset Protection</label>
+        <label><input type="checkbox" name="topics" value="Estate / Legacy Planning">Estate / Legacy Planning</label>
+        <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOther')">Other</label>
+        <input type="text" name="topicsOther" id="topicsOther" placeholder="If other, please specify" style="display:none">
+      </fieldset>
+
+      <label for="additionalInfo">Please use the space below to share any additional information (max 1500 characters)</label>
+      <textarea name="additionalInfo" id="additionalInfo" maxlength="1500"></textarea>
+
+      <fieldset>
+        <legend>Which of the following devices do you use?</legend>
+        <label><input type="checkbox" name="devices" value="Android Phone">Android Phone</label>
+        <label><input type="checkbox" name="devices" value="iPhone">iPhone</label>
+        <label><input type="checkbox" name="devices" value="Other Phone" onchange="toggleOther(this, 'phoneOther')">Other Phone</label>
+        <input type="text" name="phoneOther" id="phoneOther" placeholder="If other, please specify" style="display:none">
+
+        <label><input type="checkbox" name="devices" value="Laptop - Apple">Laptop - Apple</label>
+        <label><input type="checkbox" name="devices" value="Laptop - Windows">Laptop - Windows</label>
+        <label><input type="checkbox" name="devices" value="Desktop - Apple">Desktop - Apple</label>
+        <label><input type="checkbox" name="devices" value="Desktop - Windows">Desktop - Windows</label>
+
+        <label><input type="checkbox" name="devices" value="Tablet - Android">Tablet - Android</label>
+        <label><input type="checkbox" name="devices" value="Tablet - Apple">Tablet - Apple</label>
+        <label><input type="checkbox" name="devices" value="Tablet - Windows">Tablet - Windows</label>
+        <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOther')">Tablet - Other</label>
+        <input type="text" name="tabletOther" id="tabletOther" placeholder="If other, please specify" style="display:none">
+
+        <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
+      </fieldset>
+    </div>
+
     <button type="submit">Submit</button>
     <div id="preview"></div>
   </form>
@@ -264,17 +303,22 @@
       content.classList.toggle("active");
     }
 
-    function toggleOther(select, inputId) {
+    function toggleOther(selectOrCheckbox, inputId) {
+      const isOther = selectOrCheckbox.tagName === 'SELECT'
+        ? selectOrCheckbox.value === 'Other'
+        : selectOrCheckbox.checked;
       const input = document.getElementById(inputId);
       const label = input?.previousElementSibling;
-      const show = select.value === 'Other';
-      if (input) input.style.display = show ? 'block' : 'none';
-      if (label) label.style.display = show ? 'block' : 'none';
+      if (input) input.style.display = isOther ? 'block' : 'none';
+      if (label && label.tagName === 'LABEL') label.style.display = isOther ? 'block' : 'none';
     }
 
     function toggleVeteranQuestion(select) {
-      const veteranGroup = document.getElementById('veteranGroup');
-      veteranGroup.style.display = select.value === 'No' ? 'block' : 'none';
+      document.getElementById('veteranGroup').style.display = select.value === 'No' ? 'block' : 'none';
+    }
+
+    function toggleRelationship(select) {
+      document.getElementById('relationshipStatusGroup').style.display = select.value === 'Single' ? 'block' : 'none';
     }
   </script>
 </body>
