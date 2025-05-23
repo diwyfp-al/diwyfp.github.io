@@ -60,15 +60,32 @@
       margin-top: 1rem;
       font-weight: bold;
     }
+    
     fieldset label {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* Align checkbox to the top of the text */
       margin: 0.25rem 0;
+      padding-bottom: 0.5rem; /* Add some space below each option */
       font-weight: normal;
+      flex-wrap: nowrap; /* Prevent wrapping of the checkbox and text */
     }
+
+    fieldset label span {
+        white-space: normal; /* Allow text to wrap naturally if needed */
+    }
+
+    <!-- 
     input[type="checkbox"] {
       margin-right: 0.5rem;
     }
+    -->
+
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      flex-shrink: 0; /* Prevent checkbox from shrinking */
+      margin-top: 0.25rem; /* Fine-tune vertical alignment with text if flex-start is used */
+    }
+    
     input, select, textarea {
       width: 100%;
       padding: 0.5rem;
@@ -271,7 +288,7 @@
 
   <div class="form-group" id="employmentOtherGroup" style="display:none">
     <label for="employmentOther">Specify if Other</label>
-    <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify" maxlength="50">
+    <input type="text" name="employmentOther" id="employmentOther" placeholder="Please specify other employment status" maxlength="50">
   </div>
 
   <div class="form-row">
@@ -286,7 +303,7 @@
     </div>
     <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
       <label for="housingOther">If other, please specify</label>
-      <input type="text" name="housingOther" id="housingOther" placeholder="If other, please specify" maxlength="100">
+      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
     </div>
   </div>
 
@@ -326,7 +343,7 @@
         <label><input type="checkbox" name="topics" value="Asset Protection">Asset Protection</label>
         <label><input type="checkbox" name="topics" value="Estate / Legacy Planning">Estate / Legacy Planning</label>
         <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOther')">Other</label>
-        <input type="text" name="topicsOther" id="topicsOther" placeholder="If other, please specify" style="display:none">
+        <input type="text" name="topicsOther" id="topicsOther" maxlength="50" placeholder="Please specify other areas of interest" style="display:none">
       </fieldset>
 
       <label for="additionalInfo">Please use the space below to share any additional information (max 1500 characters)</label>
@@ -337,7 +354,7 @@
         <label><input type="checkbox" name="devices" value="Android Phone">Android Phone</label>
         <label><input type="checkbox" name="devices" value="iPhone">iPhone</label>
         <label><input type="checkbox" name="devices" value="Other Phone" onchange="toggleOther(this, 'phoneOther')">Other Phone</label>
-        <input type="text" name="phoneOther" id="phoneOther" placeholder="If other, please specify" style="display:none">
+        <input type="text" name="phoneOther" id="phoneOther" maxlength="50" placeholder="Please specify what device(s) you use" style="display:none">
 
         <label><input type="checkbox" name="devices" value="Laptop - Apple">Laptop - Apple</label>
         <label><input type="checkbox" name="devices" value="Laptop - Windows">Laptop - Windows</label>
@@ -348,7 +365,7 @@
         <label><input type="checkbox" name="devices" value="Tablet - Apple">Tablet - Apple</label>
         <label><input type="checkbox" name="devices" value="Tablet - Windows">Tablet - Windows</label>
         <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOther')">Tablet - Other</label>
-        <input type="text" name="tabletOther" id="tabletOther" placeholder="If other, please specify" style="display:none">
+        <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify" style="display:none">
 
         <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
       </fieldset>
