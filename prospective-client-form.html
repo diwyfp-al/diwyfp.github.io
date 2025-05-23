@@ -84,50 +84,11 @@ fieldset label span {
   word-break: break-word;
 }
 
-
-        /*<!--
-fieldset label {
-  display: inline-flex;
-  align-items: center;
-  margin: 0.25rem 0;
-  font-weight: normal;
-  gap: 0.5rem;
-}
--->*/
-        
-        /*<!--
-        /* Styling for labels *inside* a fieldset (checkboxes) */
-        fieldset label {
-            display: flex;
-            align-items: flex-start; /* Align checkbox to the top of the text */
-            margin: 0.25rem 0;
-            padding-bottom: 0.5rem; /* Add some space below each option */
-            font-weight: normal;
-            flex-wrap: nowrap; /* Prevent wrapping of the checkbox and its immediate text */
-        }
-
-        /* Allow the text portion of the checkbox label to wrap if needed */
-        fieldset label span {
-            white-space: normal;
-            flex: 1; /* Allow the span to take available space */
-        }
-        -->*/
-
 input[type="checkbox"] {
   margin: 0;
   flex-shrink: 0;
   margin-top: 0.25rem;
 }
-
-        
-        /*<!-- 
-        /* Styling for checkboxes specifically */
-        input[type="checkbox"] {
-            margin-right: 0.5rem;
-            flex-shrink: 0; /* Prevent checkbox from shrinking */
-            margin-top: 0.25rem; /* Fine-tune vertical alignment with text if flex-start is used */
-        }
-        -->*/
 
         input, select, textarea {
             width: 100%;
@@ -498,6 +459,35 @@ input[type="checkbox"] {
         zipInput.addEventListener('blur', () => {
             fetchStateFromZip(zipInput.value);
         });
+
+function formatPhoneNumber(value) {
+    let digits = value.replace(/\D/g, '');
+    if (digits.length === 11 && digits.startsWith('1')) {
+      digits = digits.substring(1);
+    }
+    if (digits.length !== 10) {
+      return '';
+    }
+    return `${digits.substring(0, 3)}-${digits.substring(3, 6)}-${digits.substring(6)}`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phone');
+    
+    phoneInput.addEventListener('blur', () => {
+      const formatted = formatPhoneNumber(phoneInput.value);
+      if (formatted) {
+        phoneInput.value = formatted;
+      } else {
+        document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number';
+      }
+    });
+
+    phoneInput.addEventListener('input', () => {
+      document.getElementById('phoneError').textContent = '';
+    });
+  });
+        
     </script>
 </body>
 </html>
