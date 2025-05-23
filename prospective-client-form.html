@@ -400,20 +400,21 @@ input[type="checkbox"] {
         }
 
         // Updated toggleOther to hide/show the target group ID
-        function toggleOther(selectOrCheckbox, groupId) {
-            const isOther = selectOrCheckbox.tagName === 'SELECT'
-                ? selectOrCheckbox.value === 'Other'
-                : selectOrCheckbox.checked;
-
-            const group = document.getElementById(groupId); // Directly get the group div by its ID
-            if (group) {
-                group.style.display = isOther ? 'block' : 'none';
-                // Optionally clear the input if hidden
-                const input = group.querySelector('input[type="text"], select'); // Also consider select if the group contains a select
-                if (!isOther && input) {
-                    input.value = ''; // Reset to default/empty
-                }
-            }
+        function toggleOther(selectOrCheckbox, inputId) {
+          const isOther = selectOrCheckbox.tagName === 'SELECT'
+            ? selectOrCheckbox.value === 'Other'
+            : selectOrCheckbox.checked;
+        
+          const input = document.getElementById(inputId);
+          const label = input?.previousElementSibling;
+          const group = input?.closest('.form-group');
+        
+          if (group) group.style.display = isOther ? 'block' : 'none';
+          if (input) {
+            input.required = isOther;
+            input.style.display = isOther ? 'block' : 'none';
+            if (!isOther) input.value = '';
+          }
         }
 
         function toggleVeteranQuestion(select) {
