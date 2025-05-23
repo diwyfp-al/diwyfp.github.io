@@ -60,6 +60,15 @@
       margin-top: 1rem;
       font-weight: bold;
     }
+    fieldset label {
+      display: flex;
+      align-items: center;
+      margin: 0.25rem 0;
+      font-weight: normal;
+    }
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
     input, select, textarea {
       width: 100%;
       padding: 0.5rem;
@@ -116,189 +125,64 @@
   <form id="clientForm">
     <h2>Client Intake Form</h2>
 
-    <h3 class="active" onclick="toggleAccordion(this)">Section 1: Basic Information</h3>
-    <div class="accordion-content active">
-      <label class="required">How were you referred to this page</label>
-      <input type="text" name="referral" required>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">First Name</label>
-          <input type="text" name="firstName" required>
-        </div>
-        <div class="form-group">
-          <label class="required">Last Name</label>
-          <input type="text" name="lastName" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Residential ZIP Code</label>
-          <input type="text" id="zip" name="zip" required placeholder="e.g., 12345 or 12345-6789">
-          <div id="zipError" class="error"></div>
-        </div>
-        <div class="form-group">
-          <label>State</label>
-          <input type="text" id="state" name="state" readonly>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Email Address</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label class="required">Mobile Phone Number</label>
-          <input type="tel" id="phone" name="phone" required placeholder="e.g., (123) 456-7890">
-          <div id="phoneError" class="error"></div>
-        </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="required">What is your Federal Tax Filing Status</label>
+        <select name="taxFilingStatus" required>
+          <option value="">Select...</option>
+          <option value="Single">Single</option>
+          <option value="Married Filing Jointly">Married Filing Jointly</option>
+          <option value="Married Filing Separately">Married Filing Separately</option>
+          <option value="Head of Household">Head of Household</option>
+          <option value="Qualifying Surviving Spouse">Qualifying Surviving Spouse</option>
+        </select>
       </div>
     </div>
 
-    <h3 onclick="toggleAccordion(this)">Section 2: Personal & Household</h3>
-    <div class="accordion-content">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Age Range</label>
-          <select name="ageRange" required>
-            <option value="">Select...</option>
-            <option>18–24</option><option>25–34</option><option>35–44</option>
-            <option>45–54</option><option>55–64</option><option>65+</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="required">Gender</label>
-          <select name="gender" required>
-            <option value="">Select...</option>
-            <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to answer</option>
-          </select>
-        </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="required">Active US Military</label>
+        <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
       </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Relationship Status</label>
-          <select name="relationshipStatus" required>
-            <option value="">Select...</option>
-            <option>Single</option><option>Married</option><option>Partnered</option><option>Divorced</option><option>Widowed</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="required">Do you have any dependents?</label>
-          <select name="dependents" required>
-            <option value="">Select...</option>
-            <option>Yes</option><option>No</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Employment Status</label>
-          <select name="employmentStatus" required onchange="toggleOther(this, 'employmentOther')">
-            <option value="">Select...</option>
-            <option>W-2</option>
-            <option>Self-Employed</option>
-            <option>Investments</option>
-            <option>Unemployed</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Specify if Other</label>
-          <input type="text" name="employmentOther" id="employmentOther" style="display:none">
-        </div>
-      </div>
-
-      <label class="required">Do you rent or own your primary residence?</label>
-      <select name="housingStatus" required onchange="toggleOther(this, 'housingOther')">
-        <option value="">Select...</option>
-        <option>Rent</option>
-        <option>Own</option>
-        <option>Other</option>
-      </select>
-      <input type="text" name="housingOther" id="housingOther" placeholder="If other, please specify" style="display:none">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="required">Active US Military</label>
-          <select name="activeMilitary" required>
-            <option value="">Select...</option>
-            <option>Yes</option><option>No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>If no: US Military Veteran</label>
-          <select name="veteran">
-            <option value="">Select...</option>
-            <option>Yes</option><option>No</option><option>Prefer not to answer</option>
-          </select>
-        </div>
+      <div class="form-group" id="veteranGroup" style="display:none">
+        <label>If no: US Military Veteran</label>
+        <select name="veteran">
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Prefer not to answer">Prefer not to answer</option>
+        </select>
       </div>
     </div>
 
-    <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
-    <div class="accordion-content">
-      <fieldset>
-        <legend>What would you like to discuss during our meeting?</legend>
-        <label><input type="checkbox" name="topics" value="Organizing / Simplifying Finances"> Organizing / Simplifying Finances</label>
-        <label><input type="checkbox" name="topics" value="Budgeting / Cash Management"> Budgeting / Cash Management</label>
-        <label><input type="checkbox" name="topics" value="Credit / Debt Management"> Credit / Debt Management</label>
-        <label><input type="checkbox" name="topics" value="Financial Independence / Retirement"> Financial Independence / Retirement</label>
-        <label><input type="checkbox" name="topics" value="Savings / Investments"> Savings / Investments</label>
-        <label><input type="checkbox" name="topics" value="Tax Planning"> Tax Planning</label>
-        <label><input type="checkbox" name="topics" value="Asset Protection"> Asset Protection</label>
-        <label><input type="checkbox" name="topics" value="Estate / Legacy Planning"> Estate / Legacy Planning</label>
-        <label><input type="checkbox" name="topics" value="Other" onchange="toggleOther(this, 'topicsOther')"> Other</label>
-        <input type="text" name="topicsOther" id="topicsOther" placeholder="If other, please specify" style="display:none">
-      </fieldset>
+    <div id="preview"></div>
 
-      <label>Please use the space below to share any additional information (max 1500 characters)</label>
-      <textarea name="additionalInfo" maxlength="1500"></textarea>
-
-      <fieldset>
-        <legend>Which of the following devices do you use?</legend>
-        <label><input type="checkbox" name="devices" value="Mobile Phone - Android"> Android Phone</label>
-        <label><input type="checkbox" name="devices" value="Mobile Phone - iPhone"> iPhone</label>
-        <label><input type="checkbox" name="devices" value="Mobile Phone - Other" onchange="toggleOther(this, 'phoneOther')"> Other Phone</label>
-        <input type="text" name="phoneOther" id="phoneOther" placeholder="If other, please specify" style="display:none">
-        <label><input type="checkbox" name="devices" value="Laptop - Apple"> Laptop - Apple</label>
-        <label><input type="checkbox" name="devices" value="Laptop - Windows"> Laptop - Windows</label>
-        <label><input type="checkbox" name="devices" value="Desktop - Apple"> Desktop - Apple</label>
-        <label><input type="checkbox" name="devices" value="Desktop - Windows"> Desktop - Windows</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Android"> Tablet - Android</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Apple"> Tablet - Apple</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Windows"> Tablet - Windows</label>
-        <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOther')"> Tablet - Other</label>
-        <input type="text" name="tabletOther" id="tabletOther" placeholder="If other, please specify" style="display:none">
-        <label><input type="checkbox" name="devices" value="Don’t have a computer"> Don’t have a computer</label>
-      </fieldset>
-    </div>
-
-    <button type="submit">Preview Before Submit</button>
-    <div id="formStatus" class="success"></div>
-  </form>
-
-  <div id="preview"></div>
-
-  <script>
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      header.classList.toggle("active");
-      content.classList.toggle("active");
-    }
-
-    function toggleOther(selectOrCheckbox, targetId) {
-      const isOther = selectOrCheckbox.tagName === 'SELECT' 
-        ? selectOrCheckbox.value === 'Other' 
-        : selectOrCheckbox.checked;
-      const input = document.getElementById(targetId);
-      if (input) {
-        input.style.display = isOther ? 'block' : 'none';
+    <script>
+      function toggleAccordion(header) {
+        const content = header.nextElementSibling;
+        header.classList.toggle("active");
+        content.classList.toggle("active");
       }
-    }
-  </script>
+
+      function toggleOther(selectOrCheckbox, targetId) {
+        const isOther = selectOrCheckbox.tagName === 'SELECT'
+          ? selectOrCheckbox.value === 'Other'
+          : selectOrCheckbox.checked;
+        const input = document.getElementById(targetId);
+        if (input) {
+          input.style.display = isOther ? 'block' : 'none';
+        }
+      }
+
+      function toggleVeteranQuestion(select) {
+        const veteranGroup = document.getElementById('veteranGroup');
+        veteranGroup.style.display = select.value === 'No' ? 'block' : 'none';
+      }
+    </script>
+  </form>
 </body>
 </html>
