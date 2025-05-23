@@ -127,7 +127,7 @@
 
     <h3 class="active" onclick="toggleAccordion(this)">Section 1: Basic Information</h3>
     <div class="accordion-content active">
-      <label for="referral" class="required">How were you referred to this page</label>
+      <label for="referral" class="required">How were you referred to this page</label</label>
       <input type="text" id="referral" name="referral" required>
 
       <div class="form-row">
@@ -166,8 +166,31 @@
       </div>
     </div>
 
-    <h3 onclick="toggleAccordion(this)">Section 2: Personal & Household</h3>
-    <div class="accordion-content">
+    
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ageRange" class="required">Age Range</label>
+          <select name="ageRange" id="ageRange" required>
+            <option value="">Select...</option>
+            <option>18–24</option>
+            <option>25–34</option>
+            <option>35–44</option>
+            <option>45–54</option>
+            <option>55–64</option>
+            <option>65+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="gender" class="required">Gender</label>
+          <select name="gender" id="gender" required>
+            <option value="">Select...</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to answer</option>
+          </select>
+        </div>
+      </div>
       <div class="form-row">
         <div class="form-group">
           <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
@@ -206,7 +229,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="dependents" class="required">Do you have any dependents?</label>
+          <label for="dependents" class="required">Do you have any dependents?</label</label>
           <select name="dependents" id="dependents" required>
             <option value="">Select...</option>
             <option>Yes</option>
@@ -220,7 +243,7 @@
         <input type="text" name="employmentOther" id="employmentOther" placeholder="If other, please specify">
       </div>
 
-      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
+      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label</label>
       <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOther')">
         <option value="">Select...</option>
         <option>Rent</option>
@@ -231,7 +254,7 @@
 
       <div class="form-row">
         <div class="form-group">
-          <label for="activeMilitary" class="required">Active US Military</label>
+          <label for="activeMilitary" class="required">Active US Military</label</label>
           <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
             <option value="">Select...</option>
             <option>Yes</option>
