@@ -222,6 +222,22 @@
   </div>
 
   <div class="form-row">
+    <div class="form-group" style="flex: 1">
+      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
+      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
+        <option value="">Select...</option>
+        <option>Rent</option>
+        <option>Own</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
+      <label for="housingOther">If other, please specify</label>
+      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
+    </div>
+  </div>
+    
+  <div class="form-row">
     <div class="form-group">
       <label for="zip" class="required">Residential ZIP Code</label>
       <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 6ch;" required placeholder="12345">
@@ -336,21 +352,6 @@
     <input type="text" name="employmentOther" id="employmentOther" placeholder="Please specify other employment status" maxlength="50">
   </div>
 
-  <div class="form-row">
-    <div class="form-group" style="flex: 1">
-      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
-      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
-        <option value="">Select...</option>
-        <option>Rent</option>
-        <option>Own</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
-      <label for="housingOther">If other, please specify</label>
-      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
-    </div>
-  </div>
 
   <div class="form-row">
     <div class="form-group">
