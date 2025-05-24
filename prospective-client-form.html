@@ -209,7 +209,7 @@
     </div>
 
 <h3 onclick="toggleAccordion(this)">About You</h3>
-<div class="accordion-content">
+<div class="accordion-content active">
   <div class="form-row">
     <div class="form-group">
       <label for="firstName" class="required">First Name</label>
@@ -224,7 +224,7 @@
   <div class="form-row">
     <div class="form-group">
       <label for="zip" class="required">Residential ZIP Code</label>
-      <input type="text" id="zip" name="zip" pattern="\d{5}" maxlength="5" style="width: 6ch;" required placeholder="12345">
+      <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 6ch;" required placeholder="12345">
       <div id="zipError" class="error"></div>
     </div>
   </div>
@@ -240,136 +240,136 @@
       <div id="phoneError" class="error"></div>
     </div>
   </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="ageRange" class="required">Age Range</label>
+      <select name="ageRange" id="ageRange" required>
+        <option value="">Select...</option>
+        <option>Under 18</option>
+        <option>18–24</option>
+        <option>25–34</option>
+        <option>35–44</option>
+        <option>45–54</option>
+        <option>55–64</option>
+        <option>65+</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="gender" class="required">Gender</label>
+      <select name="gender" id="gender" required>
+        <option value="">Select...</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Non-binary</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
+      <select name="taxFilingStatus" id="taxFilingStatus" required onchange="toggleRelationship(this)">
+        <option value="">Select...</option>
+        <option value="Single">Single</option>
+        <option value="Married Filing Jointly">Married Filing Jointly</option>
+        <option value="Married Filing Separately">Married Filing Separately</option>
+        <option value="Head of Household">Head of Household</option>
+        <option value="Qualifying Surviving Spouse">Qualifying Surviving Spouse</option>
+      </select>
+    </div>
+    <div class="form-group" id="relationshipStatusGroup" style="display:none">
+      <label for="relationshipStatus" class="required">Relationship Status</label>
+      <select name="relationshipStatus" id="relationshipStatus">
+        <option value="">Select...</option>
+        <option>Single, Never Married</option>
+        <option>Single, Divorced</option>
+        <option>Single, Widowed</option>
+        <option>Single, In a Committed Relationship</option>
+        <option>Legally Separated</option>
+        <option>Registered Domestic Partnership</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="employmentStatus" class="required">Employment Status</label>
+      <select name="employmentStatus" id="employmentStatus" required onchange="toggleOther(this, 'employmentOtherGroup')">
+        <option value="">Select...</option>
+        <option value="W-2 Full-time">W-2 (Full-time)</option>
+        <option value="W-2 Part-time">W-2 (Part-time)</option>
+        <option value="Self-Employed / Independent Contractor">Self-Employed / Independent Contractor</option>
+        <option value="Business Owner">Business Owner</option>
+        <option value="Managing a Household / Caregiver">Managing a Household / Caregiver</option>
+        <option value="Student">Student</option>
+        <option value="Disabled">Disabled</option>
+        <option value="Unemployed - Seeking Employment">Unemployed and Seeking Employment</option>
+        <option value="Unemployed - Not Seeking Employment">Unemployed and not Seeking Employment</option>
+        <option value="On Leave">On Leave (e.g. Medical, Parental, Sabbatical)</option>
+        <option value="Retired">Retired</option>
+        <option value="Financially Independent">Financially Independent (Not Employed)</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="dependents" class="required"># of Dependents</label>
+      <select name="dependents" id="dependents" required>
+        <option value="">Select...</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5+</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group" id="employmentOtherGroup" style="display:none">
+    <label for="employmentOther">Specify if Other</label>
+    <input type="text" name="employmentOther" id="employmentOther" placeholder="Please specify other employment status" maxlength="50">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group" style="flex: 1">
+      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
+      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
+        <option value="">Select...</option>
+        <option>Rent</option>
+        <option>Own</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
+      <label for="housingOther">If other, please specify</label>
+      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="activeMilitary" class="required">Active US Military?</label>
+      <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </div>
+    <div class="form-group" id="veteranGroup" style="display:none">
+      <label for="veteran">US Military Veteran?</label>
+      <select name="veteran" id="veteran">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Prefer not to answer</option>
+      </select>
+    </div>
+  </div>
 </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="ageRange" class="required">Age Range</label>
-                    <select name="ageRange" id="ageRange" required>
-                        <option value="">Select...</option>
-                        <option>Under 18</option>
-                        <option>18–24</option>
-                        <option>25–34</option>
-                        <option>35–44</option>
-                        <option>45–54</option>
-                        <option>55–64</option>
-                        <option>65+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="gender" class="required">Gender</label>
-                    <select name="gender" id="gender" required>
-                        <option value="">Select...</option>
-                        <option>Female</option>
-                        <option>Male</option>
-                        <option>Non-binary</option>
-                        <option>Prefer not to answer</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
-                    <select name="taxFilingStatus" id="taxFilingStatus" required onchange="toggleRelationship(this)">
-                        <option value="">Select...</option>
-                        <option value="Single">Single</option>
-                        <option value="Married Filing Jointly">Married Filing Jointly</option>
-                        <option value="Married Filing Separately">Married Filing Separately</option>
-                        <option value="Head of Household">Head of Household</option>
-                        <option value="Qualifying Surviving Spouse">Qualifying Surviving Spouse</option>
-                    </select>
-                </div>
-                <div class="form-group" id="relationshipStatusGroup" style="display:none">
-                    <label for="relationshipStatus" class="required">Relationship Status</label>
-                    <select name="relationshipStatus" id="relationshipStatus">
-                        <option value="">Select...</option>
-                        <option>Single, Never Married</option>
-                        <option>Single, Divorced</option>
-                        <option>Single, Widowed</option>
-                        <option>Single, In a Committed Relationship</option>
-                        <option>Legally Separated</option>
-                        <option>Registered Domestic Partnership</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="employmentStatus" class="required">Employment Status</label>
-                    <select name="employmentStatus" id="employmentStatus" required onchange="toggleOther(this, 'employmentOtherGroup')">
-                        <option value="">Select...</option>
-                        <option value="W-2 Full-time">W-2 (Full-time)</option>
-                        <option value="W-2 Part-time">W-2 (Part-time)</option>
-                        <option value="Self-Employed / Independent Contractor">Self-Employed / Independent Contractor</option>
-                        <option value="Business Owner">Business Owner</option>
-                        <option value="Managing a Household / Caregiver">Managing a Household / Caregiver</option>
-                        <option value="Student">Student</option>
-                        <option value="Disabled">Disabled</option>
-                        <option value="Unemployed - Seeking Employment">Unemployed and Seeking Employment</option>
-                        <option value="Unemployed - Not Seeking Employment">Unemployed and not Seeking Employment</option>
-                        <option value="On Leave">On Leave (e.g. Medical, Parental, Sabbatical)</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Financially Independent">Financially Independent (Not Employed)</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="dependents" class="required"># of Dependents</label>
-                    <select name="dependents" id="dependents" required>
-                        <option value="">Select...</option>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5+</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group" id="employmentOtherGroup" style="display:none">
-                <label for="employmentOther">Specify if Other</label>
-                <input type="text" name="employmentOther" id="employmentOther" placeholder="Please specify other employment status" maxlength="50">
-            </div>
-
-            <div class="form-row">
-                <div class="form-group" style="flex: 1">
-                    <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
-                    <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
-                        <option value="">Select...</option>
-                        <option>Rent</option>
-                        <option>Own</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
-                    <label for="housingOther">If other, please specify</label>
-                    <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="activeMilitary" class="required">Active US Military?</label>
-                    <select name="activeMilitary" id="activeMilitary" required onchange="toggleVeteranQuestion(this)">
-                        <option value="">Select...</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                        <option>Prefer not to answer</option>
-                    </select>
-                </div>
-                <div class="form-group" id="veteranGroup" style="display:none">
-                    <label for="veteran">US Military Veteran?</label>
-                    <select name="veteran" id="veteran">
-                        <option value="">Select...</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                        <option>Prefer not to answer</option>
-                    </select>
-                </div>
-            </div>
 
         <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
         <div class="accordion-content">
