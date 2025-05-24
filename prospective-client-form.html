@@ -199,14 +199,19 @@
     
 </head>
 <body>
-    <form id="clientForm">
-        <h2>Client Intake Form</h2>
+    
+<form id="clientForm">
+  <h2>Client Intake Form</h2>
 
-<h3 class="active" onclick="toggleAccordion(this)">How were you referred?</h3>
-<div class="accordion-content active">
-  <label for="referral" class="required">How were you referred to this page</label>
-  <input type="text" id="referral" name="referral" maxlength="100" required>
-</div>
+  <div>
+    <h3>How were you referred to this page?</h3>
+    <div class="accordion-content">
+      <label for="referral" class="required">How were you referred to this page</label>
+      <input type="text" id="referral" name="referral" maxlength="100" required>
+    </div>
+  </div>
+
+   
 
 <h3 onclick="toggleAccordion(this)">Contact Information</h3>
 <div class="accordion-content">
