@@ -258,18 +258,21 @@
         <option>Other</option>
       </select>
     </div>
-    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
-      <label for="housingOther">If other, please specify</label>
-      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
-    </div>
-  </div>
-    
-  <div class="form-row">
-    <div class="form-group">
+            <div class="form-group">
       <label for="zip" class="required">Residential ZIP Code</label>
       <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 6ch;" required placeholder="12345">
       <div id="zipError" class="error"></div>
     </div>
+
+  </div>
+    
+  <div class="form-row">
+    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
+      <label for="housingOther">If other, please specify</label>
+      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
+    </div>
+
+      
   </div>
 
 
