@@ -129,22 +129,34 @@
   }
 
 
-/* Individual field widths by ID */
+/* Individual field widths by ID arrainged alphabetically */
+
+textarea#additionalInfo {
+  width: 100%;
+  max-width: 100%;
+}
+    
+input#email {
+  width: 52ch;
+}
+
+input#employmentOther {
+  width: 40ch;
+}
+
 input#firstName {
   width: 30ch;
+}
+
+input#housingOther {
+  width: 50ch;
 }
 
 input#lastName {
   width: 30ch;
 }
 
-input#zip {
-  width: 6ch;
-}
 
-input#email {
-  width: 52ch;
-}
 
 input#phone {
   width: 22ch;
@@ -153,14 +165,6 @@ input#phone {
 input#referralOther {
   width: 40ch;
 }    
-    
-input#housingOther {
-  width: 40ch;
-}
-
-input#employmentOther {
-  width: 40ch;
-}
 
 input#topicsOther {
   width: 50ch;
@@ -174,26 +178,27 @@ input#phoneOther {
   width: 50ch;
 }
 
-textarea#additionalInfo {
-  width: 100%;
-  max-width: 100%;
-}
 
 select#relationshipStatus {
   width: 40ch;
 }
 
-select#taxFilingStatus,
-select#employmentStatus,
-select#dependents,
-select#gender,
-select#ageRange,
-select#housingStatus,
 select#activeMilitary,
+select#ageRange,
+select#dependents,
+select#employmentStatus,
+select#gender,
+select#housingStatus,
+select#taxFilingStatus,
 select#veteran {
   width: 100%;
   max-width: 100%;
 }    
+
+input#zip {
+  width: 10ch;
+}
+
     
   button {
     margin-top: 2rem;
@@ -342,7 +347,7 @@ select#veteran {
   <div class="form-row">
     <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
       <label for="housingOther">If other, please specify</label>
-      <input type="text" name="housingOther" id="housingOther" placeholder="Please specify housing situation" maxlength="100">
+      <input type="text" name="housingOther" id="housingOther" placeholder="Please describe your housing situationation" maxlength="50">
     </div>
 
       
