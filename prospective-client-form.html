@@ -334,7 +334,6 @@ textarea#additionalInfo {
   </div>
 </div>
 
-
 <h3 onclick="toggleAccordion(this)">About You</h3>
 <div class="accordion-content active">
   <div class="form-row">
@@ -411,10 +410,6 @@ textarea#additionalInfo {
     </div>
   </div>
 
-    
-
-
-
   <div class="form-row">
     <div class="form-group">
       <label for="taxFilingStatus" class="required">Federal Tax Filing Status</label>
@@ -468,7 +463,6 @@ textarea#additionalInfo {
   </div>
   </div>
 
-
     <div class="form-group">
       <label for="dependents" class="required"># of Dependents</label>
       <select name="dependents" id="dependents" required>
@@ -481,7 +475,6 @@ textarea#additionalInfo {
         <option>5+</option>
       </select>
     </div>
-
 
   <div class="form-row">
     <div class="form-group">
@@ -640,7 +633,7 @@ textarea#additionalInfo {
       const zipRegex = /^\d{5}(-\d{4})?$/;
 
       if (!zipRegex.test(zipCode)) {
-        zipErrorDiv.textContent = 'Please enter a valid ZIP Code (##### or #####-####).';
+        zipErrorDiv.textContent = '##### or #####-####';
       } else {
         zipErrorDiv.textContent = '';
       }
@@ -658,7 +651,7 @@ textarea#additionalInfo {
         phoneInput.value = formatted;
         phoneError.textContent = '';
       } else {
-        phoneError.textContent = 'Please enter a valid 10-digit US phone number. Area code and prefix cannot start with 0 or 1.';
+        phoneError.textContent = 'Please enter a valid 10-digit US phone number.';
       }
     });
     phoneInput.addEventListener('input', () => {
