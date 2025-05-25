@@ -361,6 +361,30 @@ input#zip {
     </div>
   </div>
 
+  <div class="form-row">
+    <div class="form-group">
+      <label for="zip" class="required">Residential ZIP Code</label>
+      <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 30ch;" required placeholder="12345">
+      <div id="zipError" class="error"></div>
+    </div>
+    
+    <div class="form-group" style="flex: 1">
+      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
+      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
+        <option value="">Select...</option>
+        <option>Rent</option>
+        <option>Own</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
+        <label for="housingOther">Housing situation detail</label>
+        <input type="text" name="housingOther" id="housingOther" placeholder="Please describe your housing situation" maxlength="50">
+      </div>
+    </div>
+  </div>
 
 
 
@@ -393,32 +417,6 @@ input#zip {
   </div>
 
     
-  <div class="form-row">
-    <div class="form-group" style="flex: 1">
-      <label for="housingStatus" class="required">Do you rent or own your primary residence?</label>
-      <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
-        <option value="">Select...</option>
-        <option>Rent</option>
-        <option>Own</option>
-        <option>Other</option>
-      </select>
-    </div>
-
-  <div class="form-row">
-    <div class="form-group" id="housingOtherGroup" style="display:none; flex: 1">
-      <label for="housingOther">Housing situation detail</label>
-      <input type="text" name="housingOther" id="housingOther" placeholder="Please describe your housing situation" maxlength="50">
-    </div>
-  </div>
-
-      
-    <div class="form-group">
-      <label for="zip" class="required">Residential ZIP Code</label>
-      <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 30ch;" required placeholder="12345">
-      <div id="zipError" class="error"></div>
-    </div>
-
-  </div>
 
 
 
