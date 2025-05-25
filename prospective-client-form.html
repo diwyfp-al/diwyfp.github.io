@@ -59,6 +59,10 @@
     padding: 1rem 0;
   }
 
+.error-highlight {
+  border: 2px solid red;
+}
+
   .form-row {
     display: flex;
     gap: 1rem;
@@ -556,6 +560,7 @@ textarea#additionalInfo {
     </form>
 
 <script>
+
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     header.classList.toggle("active");
@@ -627,6 +632,37 @@ textarea#additionalInfo {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+
+document.getElementById('clientForm').addEventListener('submit', (e) => {
+  const allOtherInputs = [
+    'referralOther',
+    'housingOther',
+    'employmentOther',
+    'topicsOther',
+    'tabletOther',
+    'phoneOther'
+  ];
+
+  let hasError = false;
+
+  allOtherInputs.forEach(id => {
+    const input = document.getElementById(id);
+    if (input && input.offsetParent !== null && input.required && !input.value.trim()) {
+      input.classList.add('error-highlight');
+      hasError = true;
+    } else {
+      input?.classList.remove('error-highlight');
+    }
+  });
+
+  if (hasError) {
+    alert('Please complete all visible "Other" fields.');
+    e.preventDefault();
+  }
+});
+
+
+      
     // ZIP Validation
     const zipInput = document.getElementById('zip');
     const zipErrorDiv = document.getElementById('zipError');
