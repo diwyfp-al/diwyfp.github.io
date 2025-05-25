@@ -135,6 +135,15 @@ textarea#additionalInfo {
   width: 100%;
   max-width: 100%;
 }
+
+input#activeMilitary {
+  width: 30ch;
+}
+
+input#ageRange {
+  width: 30ch;
+}
+
     
 input#email {
   width: 52ch;
@@ -150,6 +159,11 @@ input#firstName {
   width: 30ch;
 }
 
+input#gender {
+  width: 30ch;
+}
+
+    
     
 input#housingOther {
   width: 50ch;
@@ -186,12 +200,12 @@ select#relationshipStatus {
   width: 40ch;
 }
 
-select#activeMilitary,
-select#ageRange,
+/* select#activeMilitary, */
+/* select#ageRange, */
 select#dependents,
 select#employmentStatus,
 /* select#firstname, */
-select#gender,
+/* select#gender, */
 select#housingStatus,
 /* select#lastname, */
 select#taxFilingStatus,
@@ -360,18 +374,15 @@ input#zip {
 
   </div>
     
-
-
-
     
   <div class="form-row">
     <div class="form-group">
       <label for="email" class="required">Email Address</label>
-      <input type="email" id="email" name="email" maxlength="50" style="width: 52ch;" required>
+      <input type="email" id="email" name="email" maxlength="50" style="width: 55ch;" required>
     </div>
     <div class="form-group">
       <label for="phone" class="required">Mobile Phone Number</label>
-      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 22ch;" required placeholder="123-456-7890">
+      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 25ch;" required placeholder="123-456-7890">
       <div id="phoneError" class="error"></div>
     </div>
   </div>
