@@ -560,7 +560,6 @@ textarea#additionalInfo {
     </form>
 
 <script>
-
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     header.classList.toggle("active");
@@ -589,16 +588,20 @@ textarea#additionalInfo {
     const shouldShow = select.value === 'No';
 
     group.style.display = shouldShow ? 'block' : 'none';
+
     if (veteranSelect) {
       veteranSelect.required = shouldShow;
       if (!shouldShow) veteranSelect.value = '';
-    }
-    if (veteranSelect && shouldShow) {
-      veteranSelect.required = true;
-      veteranSelect.previousElementSibling?.classList.add('required');
-    } else {
-      veteranSelect.required = false;
-      veteranSelect.previousElementSibling?.classList.remove('required');
+
+      // Toggle red asterisk on label
+      const label = veteranSelect.previousElementSibling;
+      if (label) {
+        if (shouldShow) {
+          label.classList.add('required');
+        } else {
+          label.classList.remove('required');
+        }
+      }
     }
   }
 
@@ -639,38 +642,36 @@ textarea#additionalInfo {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Form-level validation for dynamically required fields
+    document.getElementById('clientForm').addEventListener('submit', (e) => {
+      const allOtherInputs = [
+        'referralOther',
+        'housingOther',
+        'employmentOther',
+        'topicsOther',
+        'tabletOther',
+        'phoneOther',
+        'veteran' // ✅ ensure this is included
+      ];
 
-document.getElementById('clientForm').addEventListener('submit', (e) => {
-  const allOtherInputs = [
-    'referralOther',
-    'housingOther',
-    'employmentOther',
-    'topicsOther',
-    'tabletOther',
-    'phoneOther',
-    'veteran'
-  ];
+      let hasError = false;
 
-  let hasError = false;
+      allOtherInputs.forEach(id => {
+        const input = document.getElementById(id);
+        if (input && input.offsetParent !== null && input.required && !input.value.trim()) {
+          input.classList.add('error-highlight');
+          hasError = true;
+        } else {
+          input?.classList.remove('error-highlight');
+        }
+      });
 
-  allOtherInputs.forEach(id => {
-    const input = document.getElementById(id);
-    if (input && input.offsetParent !== null && input.required && !input.value.trim()) {
-      input.classList.add('error-highlight');
-      hasError = true;
-    } else {
-      input?.classList.remove('error-highlight');
-    }
-  });
+      if (hasError) {
+        alert('Please complete all visible "Other" fields.');
+        e.preventDefault();
+      }
+    });
 
-  if (hasError) {
-    alert('Please complete all visible "Other" fields.');
-    e.preventDefault();
-  }
-});
-
-
-      
     // ZIP Validation
     const zipInput = document.getElementById('zip');
     const zipErrorDiv = document.getElementById('zipError');
