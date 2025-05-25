@@ -712,6 +712,28 @@ function formatPhoneNumber(value) {
   // Format as XXX-XXX-XXXX
   return `${areaCode}-${centralOffice}-${digits.substring(6)}`;
 }
+<script>
+  // ... existing functions ...
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+
+    phoneInput.addEventListener('blur', () => {
+      const formatted = formatPhoneNumber(phoneInput.value);
+      if (formatted) {
+        phoneInput.value = formatted;
+        phoneError.textContent = '';
+      } else {
+        phoneError.textContent = 'Please enter a valid 10-digit US phone number. Area code and prefix cannot start with 0 or 1.';
+      }
+    });
+
+    phoneInput.addEventListener('input', () => {
+      phoneError.textContent = '';
+    });
+  });
+</script>
         
     </script>
 </body>
