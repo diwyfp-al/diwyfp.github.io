@@ -149,6 +149,10 @@ input#email {
   width: 30ch;
 }
 
+input#employmentOther {
+  width: 30ch;
+}
+
 input#housingOther {
   width: 30ch;
 }
@@ -189,10 +193,6 @@ select#ageRange {
 }
 
 select#dependents {
-  width: 30ch;
-}
-
-select#employmentOther {
   width: 30ch;
 }
 
@@ -363,7 +363,7 @@ input#zip {
 
   <div class="form-row">
     <div class="form-group">
-      <label for="zip" class="required">Residential ZIP Code</label>
+      <label for="zip" class="required">ZIP Code</label>
       <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 10ch;" required placeholder="12345">
       <div id="zipError" class="error"></div>
     </div>
@@ -372,8 +372,8 @@ input#zip {
       <label for="housingStatus" class="required">Homeowner or renter?</label>
       <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
         <option value="">Select...</option>
-        <option>Rent</option>
-        <option>Own</option>
+        <option>Homeowner</option>
+        <option>Renter</option>
         <option>Other</option>
       </select>
     </div>
