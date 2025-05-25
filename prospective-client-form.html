@@ -351,6 +351,23 @@ input#zip {
 
   <div class="form-row">
     <div class="form-group">
+      <label for="email" class="required">Email Address</label>
+      <input type="email" id="email" name="email" maxlength="50" style="width: 30ch;" required>
+    </div>
+    <div class="form-group">
+      <label for="phone" class="required">Mobile Phone Number</label>
+      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 30ch;" required placeholder="123-456-7890">
+      <div id="phoneError" class="error"></div>
+    </div>
+  </div>
+
+
+
+
+
+    
+  <div class="form-row">
+    <div class="form-group">
       <label for="ageRange" class="required">Age Range</label>
       <select name="ageRange" id="ageRange" required>
         <option value="">Select...</option>
@@ -402,19 +419,7 @@ input#zip {
     </div>
 
   </div>
-    
-    
-  <div class="form-row">
-    <div class="form-group">
-      <label for="email" class="required">Email Address</label>
-      <input type="email" id="email" name="email" maxlength="50" style="width: 30ch;" required>
-    </div>
-    <div class="form-group">
-      <label for="phone" class="required">Mobile Phone Number</label>
-      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 30ch;" required placeholder="123-456-7890">
-      <div id="phoneError" class="error"></div>
-    </div>
-  </div>
+
 
 
   <div class="form-row">
