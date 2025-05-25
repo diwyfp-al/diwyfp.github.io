@@ -180,6 +180,9 @@ input#tabletOther {
 input#topicsOther {
   width: 30ch;
 }
+input#zip {
+  width: 40ch;
+}
 
     
 /* Select Fields */
@@ -244,9 +247,6 @@ textarea#additionalInfo {
   max-width: 100%;
 }    
 
-input#zip {
-  width: 40ch;
-}
     
   button {
     margin-top: 2rem;
@@ -363,7 +363,7 @@ input#zip {
   <div class="form-row">
     <div class="form-group">
       <label for="zip" class="required">ZIP Code</label>
-      <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="5" style="width: 10ch;" required placeholder="12345">
+      <input type="text" id="zip" name="zip" pattern="\\d{5}" maxlength="10" style="width: 10ch;" required placeholder="12345">
       <div id="zipError" class="error"></div>
     </div>
     
