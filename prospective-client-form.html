@@ -567,20 +567,31 @@ textarea#additionalInfo {
   }
 
   function toggleOther(selectOrCheckbox, inputId) {
-    const isOther = selectOrCheckbox.tagName === 'SELECT'
-      ? selectOrCheckbox.value === 'Other'
-      : selectOrCheckbox.checked;
+  const isOther = selectOrCheckbox.tagName === 'SELECT'
+    ? selectOrCheckbox.value === 'Other'
+    : selectOrCheckbox.checked;
 
-    const input = document.getElementById(inputId);
-    const group = input?.closest('.form-group');
+  const input = document.getElementById(inputId);
+  const group = input?.closest('.form-group');
+  const label = group?.querySelector('label');
 
-    if (group) group.style.display = isOther ? 'block' : 'none';
-    if (input) {
-      input.required = isOther;
-      input.style.display = isOther ? 'block' : 'none';
-      if (!isOther) input.value = '';
+  if (group) group.style.display = isOther ? 'block' : 'none';
+
+  if (input) {
+    input.required = isOther;
+    input.style.display = isOther ? 'block' : 'none';
+    if (!isOther) input.value = '';
+  }
+
+  // Add or remove red asterisk from label
+  if (label) {
+    if (isOther) {
+      label.classList.add('required');
+    } else {
+      label.classList.remove('required');
     }
   }
+}
 
   function toggleVeteranQuestion(select) {
     const group = document.getElementById('veteranGroup');
