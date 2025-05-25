@@ -712,25 +712,6 @@ function formatPhoneNumber(value) {
   // Format as XXX-XXX-XXXX
   return `${areaCode}-${centralOffice}-${digits.substring(6)}`;
 }
-
-  return `${digits.substring(0, 3)}-${digits.substring(3, 6)}-${digits.substring(6)}`;
-}
-  document.addEventListener('DOMContentLoaded', () => {
-    const phoneInput = document.getElementById('phone');
-    
-    phoneInput.addEventListener('blur', () => {
-      const formatted = formatPhoneNumber(phoneInput.value);
-      if (formatted) {
-        phoneInput.value = formatted;
-      } else {
-        document.getElementById('phoneError').textContent = 'Please enter a valid 10-digit phone number';
-      }
-    });
-
-    phoneInput.addEventListener('input', () => {
-      document.getElementById('phoneError').textContent = '';
-    });
-  });
         
     </script>
 </body>
