@@ -593,6 +593,13 @@ textarea#additionalInfo {
       veteranSelect.required = shouldShow;
       if (!shouldShow) veteranSelect.value = '';
     }
+    if (veteranSelect && shouldShow) {
+      veteranSelect.required = true;
+      veteranSelect.previousElementSibling?.classList.add('required');
+    } else {
+      veteranSelect.required = false;
+      veteranSelect.previousElementSibling?.classList.remove('required');
+    }
   }
 
   function toggleRelationship(select) {
@@ -640,7 +647,8 @@ document.getElementById('clientForm').addEventListener('submit', (e) => {
     'employmentOther',
     'topicsOther',
     'tabletOther',
-    'phoneOther'
+    'phoneOther',
+    'veteran'
   ];
 
   let hasError = false;
