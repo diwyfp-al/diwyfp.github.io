@@ -690,20 +690,28 @@ function toggleVeteranQuestion(select) {
 function formatPhoneNumber(value) {
   let digits = value.replace(/\D/g, '');
 
-  // Reject if the number is 11 digits and starts with 1
+  // If the number is 11 digits and starts with "1", strip it
   if (digits.length === 11 && digits.startsWith('1')) {
-    return '';
+    digits = digits.substring(1);
   }
 
-  // Reject if the number is not exactly 10 digits
+  // Now validate the length
   if (digits.length !== 10) {
     return '';
   }
 
-  // Reject if the first digit of the area code is "1"
-  if (digits.charAt(0) === '1') {
+  const areaCode = digits.substring(0, 3);
+  const centralOffice = digits.substring(3, 6);
+
+  // Reject if area code or central office code starts with "0" or "1"
+  if (areaCode.startsWith('0') || areaCode.startsWith('1') ||
+      centralOffice.startsWith('0') || centralOffice.startsWith('1')) {
     return '';
   }
+
+  // Format as XXX-XXX-XXXX
+  return `${areaCode}-${centralOffice}-${digits.substring(6)}`;
+}
 
   return `${digits.substring(0, 3)}-${digits.substring(3, 6)}-${digits.substring(6)}`;
 }
