@@ -145,25 +145,25 @@ input#employmentOther {
 }
 
     
-/*
+
 input#firstName {
   width: 30ch;
 }
-*/
+
     
 input#housingOther {
   width: 50ch;
 }
 
-/*
+
 input#lastName {
   width: 30ch;
 }
-*/
+
 
     
 input#phone {
-  width: 22ch;
+  width: 25ch;
 }
 
 input#referralOther {
@@ -190,10 +190,10 @@ select#activeMilitary,
 select#ageRange,
 select#dependents,
 select#employmentStatus,
-select#firstname,
+/* select#firstname, */
 select#gender,
 select#housingStatus,
-select#lastname,
+/* select#lastname, */
 select#taxFilingStatus,
 select#veteran {
   width: 100%;
@@ -281,15 +281,15 @@ input#zip {
     <option>Google Search</option>
     <option>Referral</option>
     <option>Advertisement</option>
+    <option>Social Media</option>
     <option>Other</option>
   </select>
 </div>
 
 <div class="form-group" id="referralOtherGroup" style="display:none">
-  <label for="referralOther">Please specify</label>
-  <input type="text" id="referralOther" name="referralOther" maxlength="100" placeholder="Please specify how you were referred">
+  <label for="referralOther">Please specify referral source</label>
+  <input type="text" id="referralOther" name="referralOther" maxlength="100" placeholder="Referral Source">
 </div>
-
 
 <h3 onclick="toggleAccordion(this)">About You</h3>
 <div class="accordion-content active">
