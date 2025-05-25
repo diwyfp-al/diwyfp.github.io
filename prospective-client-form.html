@@ -646,46 +646,27 @@ function toggleVeteranQuestion(select) {
 
         
         // ZIP Code to State Lookup Functionality
-        const zipInput = document.getElementById('zip');
-        const stateInput = document.getElementById('state');
-        const zipErrorDiv = document.getElementById('zipError');
+document.addEventListener('DOMContentLoaded', () => {
+    const zipInput = document.getElementById('zip');
+    const zipErrorDiv = document.getElementById('zipError');
 
-        async function fetchStateFromZip(zipCode) {
-            stateInput.value = '';
-            zipErrorDiv.textContent = '';
+    zipInput.addEventListener('blur', () => {
+      const zipCode = zipInput.value.trim();
 
-            if (!/^\d{5}$/.test(zipCode)) {
-                zipErrorDiv.textContent = 'Please enter a valid 5-digit ZIP code.';
-                return;
-            }
+      // Match 5-digit or ZIP+4 format
+      const zipRegex = /^\d{5}(-\d{4})?$/;
 
-            const url = `https://app.zipcodebase.com/api/v1/search?apikey=${ZIPCODEBASE_API_KEY}&codes=${zipCode}&country=US`;
+      if (!zipRegex.test(zipCode)) {
+        zipErrorDiv.textContent = 'Please enter a valid ZIP Code (##### or #####-####).';
+      } else {
+        zipErrorDiv.textContent = '';
+      }
+    });
 
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    console.error('Zipcodebase API Error:', errorData);
-                    zipErrorDiv.textContent = `Error: ${errorData.message || 'Could not fetch state.'}`;
-                    return;
-                }
-                const data = await response.json();
-
-                if (data.results && data.results[zipCode] && data.results[zipCode].length > 0) {
-                    const stateName = data.results[zipCode][0].state;
-                    stateInput.value = stateName;
-                } else {
-                    zipErrorDiv.textContent = 'ZIP code not found or no state data available.';
-                }
-            } catch (error) {
-                console.error('Network or parsing error:', error);
-                zipErrorDiv.textContent = 'Could not connect to ZIP code service.';
-            }
-        }
-
-        zipInput.addEventListener('blur', () => {
-            fetchStateFromZip(zipInput.value);
-        });
+    zipInput.addEventListener('input', () => {
+      zipErrorDiv.textContent = '';
+    });
+  });
 
 function formatPhoneNumber(value) {
   let digits = value.replace(/\D/g, '');
