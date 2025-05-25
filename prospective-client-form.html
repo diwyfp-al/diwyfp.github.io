@@ -308,7 +308,6 @@ input#zip {
     }
   }
 </style>
-
     
 </head>
 <body>
@@ -588,6 +587,9 @@ input#zip {
           }
         }
 
+
+/*
+        
         function toggleVeteranQuestion(select) {
             document.getElementById('veteranGroup').style.display = select.value === 'No' ? 'block' : 'none';
             const veteranSelect = document.getElementById('veteran');
@@ -595,7 +597,30 @@ input#zip {
                 veteranSelect.value = ''; // Reset to default
             }
         }
+*/
 
+
+function toggleVeteranQuestion(select) {
+  const group = document.getElementById('veteranGroup');
+  const veteranSelect = document.getElementById('veteran');
+  const shouldShow = select.value === 'No';
+
+  group.style.display = shouldShow ? 'block' : 'none';
+
+  if (veteranSelect) {
+    veteranSelect.required = shouldShow;
+    if (!shouldShow) veteranSelect.value = '';
+  }
+}
+
+
+
+
+
+
+
+
+/*        
         function toggleRelationship(select) {
             document.getElementById('relationshipStatusGroup').style.display =
                 (select.value === 'Single' || select.value === 'Head of Household' || select.value === 'Qualifying Surviving Spouse') ? 'block' : 'none';
@@ -605,6 +630,21 @@ input#zip {
             }
         }
 
+*/
+
+        function toggleRelationship(select) {
+            document.getElementById('relationshipStatusGroup').style.display =
+                (select.value === 'Single') ? 'block' : 'none';
+            const relationshipSelect = document.getElementById('relationshipStatus');
+            if (!((select.value === 'Single')) && relationshipSelect) {
+                relationshipSelect.value = ''; // Reset to default
+            }
+        }
+
+
+
+
+        
         // ZIP Code to State Lookup Functionality
         const zipInput = document.getElementById('zip');
         const stateInput = document.getElementById('state');
