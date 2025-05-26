@@ -116,12 +116,14 @@
   }
 
   fieldset label span {
-    flex: 1;
-    word-break: break-word;
-    white-space: normal;
-    cursor: pointer;
-  }
-
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  max-width: calc(100% - 1.5rem);
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
   input[type="checkbox"] {
     margin: 0;
     flex-shrink: 0;
@@ -301,10 +303,12 @@ textarea#additionalInfo {
     fieldset label {
       flex-direction: row;
       align-items: flex-start;
+      flex-wrap:wrap;
     }
 
     fieldset label span {
       font-size: 0.95rem;
+      max-width: 100%;
     }
 
     fieldset {
