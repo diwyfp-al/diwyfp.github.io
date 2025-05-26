@@ -80,7 +80,7 @@
     font-weight: bold;
 }
 
-    /* COMPACT & MOBILE-OPTIMIZED CHECKBOX LAYOUT */
+    /* **REVISED** COMPACT & MOBILE-OPTIMIZED CHECKBOX LAYOUT */
     fieldset {
         margin-top: 1rem;
         padding: 1rem;
@@ -88,40 +88,40 @@
         border-radius: 4px;
     }
 
-    /* Added legend styling */
     legend {
         font-weight: bold;
         margin-bottom: 0.5rem;
     }
 
-fieldset label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-    flex-wrap: wrap;
-}
-fieldset label input[type="checkbox"] {
-    flex-shrink: 0;
-    margin-top: 0.2rem; /* Adjusted from 0.3rem to 0.2rem */
-    align-self: flex-start; /* Ensure consistency */
-}
+    fieldset label {
+        display: flex; /* Use flexbox for the label and its content */
+        align-items: flex-start; /* Align items to the top */
+        gap: 0.5rem; /* Space between checkbox and text */
+        margin: 0.5rem 0; /* Vertical spacing between labels */
+        /* Removed flex-wrap here, let the span handle wrapping within itself */
+    }
 
-fieldset label span {
-    flex-grow: 1;
-    flex-basis: 0;
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.4;
-}
+    fieldset label input[type="checkbox"] {
+        flex-shrink: 0; /* Prevent checkbox from shrinking */
+        margin-top: 0.2rem; /* Small margin to visually align with text */
+        /* Removed align-self: flex-start; as it's redundant with parent align-items */
+    }
 
-@media (max-width: 600px) {
     fieldset label span {
-        font-size: 0.95rem;
+        flex-grow: 1; /* Allow the text span to grow */
+        /* flex-basis: 0; can sometimes make elements want to collapse, let's remove it for simplicity */
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
         line-height: 1.4;
     }
-}
+
+    @media (max-width: 600px) {
+        fieldset label span {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    }
 
     input, select, textarea {
         width: 100%;
@@ -281,9 +281,10 @@ select#TempPlaceholder {
     }
 </style>
 
-    
+
+
 </head>
-<body>
+<body> 
 
 
 <form id="clientForm" novalidate>
