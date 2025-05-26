@@ -119,8 +119,20 @@ fieldset label span {
   word-break: break-word;
   overflow-wrap: break-word;
   line-height: 1.4;
+}
 
-}  input[type="checkbox"] {
+@media (max-width: 600px) {
+  fieldset label span {
+    font-size: 0.95rem;
+  }
+}
+
+    fieldset {
+      padding: 0.75rem;
+    }
+    
+    
+    input[type="checkbox"] {
     margin: 0;
     flex-shrink: 0;
     margin-top: 0.25rem;
@@ -295,19 +307,6 @@ textarea#additionalInfo {
   }
 
   /* RESPONSIVE TWEAKS */
-@media (max-width: 600px) {
-  fieldset label span {
-    font-size: 0.95rem;
-  }
-}
-    fieldset label span {
-      font-size: 0.95rem;
-      max-width: 100%;
-    }
-
-    fieldset {
-      padding: 0.75rem;
-    }
   }
 </style>
     
