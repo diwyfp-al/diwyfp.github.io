@@ -80,7 +80,7 @@
     font-weight: bold;
 }
 
-    /* **REVISED** COMPACT & MOBILE-OPTIMIZED CHECKBOX LAYOUT */
+    /* **CORRECTED** COMPACT & MOBILE-OPTIMIZED CHECKBOX LAYOUT */
     fieldset {
         margin-top: 1rem;
         padding: 1rem;
@@ -95,24 +95,23 @@
 
     fieldset label {
         display: flex; /* Use flexbox for the label and its content */
-        align-items: flex-start; /* Align items to the top */
+        align-items: flex-start; /* Align items to the top of the line */
         gap: 0.5rem; /* Space between checkbox and text */
         margin: 0.5rem 0; /* Vertical spacing between labels */
-        /* Removed flex-wrap here, let the span handle wrapping within itself */
+        width: 100%; /* Ensure the label itself takes full width for proper wrapping */
     }
 
     fieldset label input[type="checkbox"] {
         flex-shrink: 0; /* Prevent checkbox from shrinking */
-        margin-top: 0.2rem; /* Small margin to visually align with text */
-        /* Removed align-self: flex-start; as it's redundant with parent align-items */
+        /* margin-top: 0.2rem; - You can adjust this slightly if needed for perfect visual alignment */
     }
 
     fieldset label span {
-        flex-grow: 1; /* Allow the text span to grow */
-        /* flex-basis: 0; can sometimes make elements want to collapse, let's remove it for simplicity */
-        white-space: normal;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        flex-grow: 1; /* Allow the text span to grow and fill available space */
+        flex-basis: 0; /* Important: Allows flex-grow to work correctly and enables wrapping within the flex item */
+        white-space: normal; /* Ensure text wraps */
+        word-break: break-word; /* For long words */
+        overflow-wrap: break-word; /* For long words */
         line-height: 1.4;
     }
 
@@ -280,12 +279,8 @@ select#TempPlaceholder {
         border-radius: 4px;
     }
 </style>
-
-
-
 </head>
-<body> 
-
+<body>
 
 <form id="clientForm" novalidate>
 <h2>Prospective Client Intake Form</h2>
