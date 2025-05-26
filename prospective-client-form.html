@@ -333,8 +333,8 @@ textarea#additionalInfo {
   </div>
 </div>
 
-<h3 onclick="toggleAccordion(this)">About You</h3>
-<div class="accordion-content active">
+<h3 id="section-about" onclick="toggleAccordion(this)" tabindex="0" role="button" aria-controls="content-about" aria-expanded="true">About You</h3>
+<div id="content-about" class="accordion-content active">
   <div class="form-row">
     <div class="form-group">
       <label for="firstName" class="required">First Name</label>
@@ -499,8 +499,8 @@ textarea#additionalInfo {
   </div>
 </div>
 
-        <h3 onclick="toggleAccordion(this)">Planning Topics & Devices</h3>
-        <div class="accordion-content">
+        <h3 id="section-planning" onclick="toggleAccordion(this)" tabindex="0" role="button" aria-controls="content-planning" aria-expanded="false">Planning Topics & Devices</h3>
+        <div id="content-planning" class="accordion-content">
             <fieldset>
                 <legend>What would you like to discuss during our meeting?</legend>
                 <label><input type="checkbox" name="topics" value="Organizing / Simplifying Finances"> <span>Organizing / Simplifying Finances</span></label>
@@ -555,11 +555,24 @@ textarea#additionalInfo {
     </form>
 
 <script>
-  function toggleAccordion(header) {
-    const content = header.nextElementSibling;
-    header.classList.toggle("active");
-    content.classList.toggle("active");
-  }
+
+document.querySelectorAll("h3").forEach(header => {
+  header.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleAccordion(header);
+    }
+  });
+});
+    
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  header.classList.toggle("active");
+  content.classList.toggle("active");
+
+  const expanded = header.classList.contains("active");
+  header.setAttribute("aria-expanded", expanded);
+}
 
   function toggleOther(selectOrCheckbox, inputId) {
   const isOther = selectOrCheckbox.tagName === 'SELECT'
