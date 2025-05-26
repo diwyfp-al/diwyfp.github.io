@@ -80,5 +80,204 @@
     </fieldset>
   </form>
 
+
+
+
+
+<script>
+
+document.querySelectorAll("h3").forEach(header => {
+  header.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleAccordion(header);
+    }
+  });
+});
+    
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  header.classList.toggle("active");
+  content.classList.toggle("active");
+
+  const expanded = header.classList.contains("active");
+  header.setAttribute("aria-expanded", expanded);
+}
+
+  function toggleOther(selectOrCheckbox, inputId) {
+  const isOther = selectOrCheckbox.tagName === 'SELECT'
+    ? selectOrCheckbox.value === 'Other'
+    : selectOrCheckbox.checked;
+
+  const input = document.getElementById(inputId);
+  const group = input?.closest('.form-group');
+  const label = group?.querySelector('label');
+
+  if (group) group.style.display = isOther ? 'block' : 'none';
+
+  if (input) {
+    input.required = isOther;
+    input.style.display = isOther ? 'block' : 'none';
+    if (!isOther) input.value = '';
+  }
+
+  // Add or remove red asterisk from label
+  if (label) {
+    if (isOther) {
+      label.classList.add('required');
+    } else {
+      label.classList.remove('required');
+    }
+  }
+}
+
+  function toggleVeteranQuestion(select) {
+    const group = document.getElementById('veteranGroup');
+    const veteranSelect = document.getElementById('veteran');
+    const shouldShow = select.value === 'No';
+
+    group.style.display = shouldShow ? 'block' : 'none';
+
+    if (veteranSelect) {
+      veteranSelect.required = shouldShow;
+      if (!shouldShow) veteranSelect.value = '';
+
+      // Toggle red asterisk on label
+      const label = veteranSelect.previousElementSibling;
+      if (label) {
+        if (shouldShow) {
+          label.classList.add('required');
+        } else {
+          label.classList.remove('required');
+        }
+      }
+    }
+  }
+
+  function toggleRelationship(select) {
+    const group = document.getElementById('relationshipStatusGroup');
+    const relationshipSelect = document.getElementById('relationshipStatus');
+    const shouldShow = select.value === 'Single';
+
+    group.style.display = shouldShow ? 'block' : 'none';
+    if (relationshipSelect) {
+      relationshipSelect.required = shouldShow;
+      if (!shouldShow) relationshipSelect.value = '';
+    }
+  }
+
+  function formatPhoneNumber(value) {
+    let digits = value.replace(/\D/g, '');
+
+    if (digits.length === 11 && digits.startsWith('1')) {
+      digits = digits.substring(1);
+    }
+
+    if (digits.length !== 10) {
+      return '';
+    }
+
+    const areaCode = digits.substring(0, 3);
+    const centralOffice = digits.substring(3, 6);
+
+    if (
+      areaCode.startsWith('0') || areaCode.startsWith('1') ||
+      centralOffice.startsWith('0') || centralOffice.startsWith('1')
+    ) {
+      return '';
+    }
+
+    return `${areaCode}-${centralOffice}-${digits.substring(6)}`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Form-level validation for dynamically required fields
+    document.getElementById('clientForm').addEventListener('submit', (e) => {
+      const allOtherInputs = [
+        'referralOther',
+        'housingOther',
+        'employmentOther',
+        'topicsOther',
+        'tabletOther',
+        'phoneOther',
+        'veteran' // ✅ ensure this is included
+      ];
+
+      let hasError = false;
+
+      allOtherInputs.forEach(id => {
+        const input = document.getElementById(id);
+        if (input && input.offsetParent !== null && input.required && !input.value.trim()) {
+          input.classList.add('error-highlight');
+          hasError = true;
+        } else {
+          input?.classList.remove('error-highlight');
+        }
+      });
+
+      if (hasError) {
+        alert('Please complete all visible "Other" fields.');
+        e.preventDefault();
+      }
+    });
+
+    // ZIP Validation
+    const zipInput = document.getElementById('zip');
+    const zipErrorDiv = document.getElementById('zipError');
+    zipInput.addEventListener('blur', () => {
+      const zipCode = zipInput.value.trim();
+      const zipRegex = /^\d{5}(-\d{4})?$/;
+
+      if (!zipRegex.test(zipCode)) {
+        zipErrorDiv.textContent = '##### or #####-####';
+      } else {
+        zipErrorDiv.textContent = '';
+      }
+    });
+    zipInput.addEventListener('input', () => {
+      zipErrorDiv.textContent = '';
+    });
+
+    // Phone Validation
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+    phoneInput.addEventListener('blur', () => {
+      const formatted = formatPhoneNumber(phoneInput.value);
+      if (formatted) {
+        phoneInput.value = formatted;
+        phoneError.textContent = '';
+      } else {
+        phoneError.textContent = 'Please enter a valid 10-digit US phone number.';
+      }
+    });
+    phoneInput.addEventListener('input', () => {
+      phoneError.textContent = '';
+    });
+
+    // Email Validation
+    const emailInput = document.getElementById('email');
+    const emailError = document.createElement('div');
+    emailError.className = 'error';
+    emailInput.insertAdjacentElement('afterend', emailError);
+
+    emailInput.addEventListener('blur', () => {
+      const email = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        emailError.textContent = 'Please enter a valid email address.';
+      } else {
+        emailError.textContent = '';
+      }
+    });
+
+    emailInput.addEventListener('input', () => {
+      emailError.textContent = '';
+    });
+  });
+</script>
+
+
+  
 </body>
 </html>
