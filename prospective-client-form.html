@@ -359,7 +359,7 @@ textarea#additionalInfo {
     </div>
     <div class="form-group">
       <label for="phone" class="required">Mobile Phone Number</label>
-      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 30ch;" required placeholder="123-456-7890">
+      <input type="tel" id="phone" name="phone" maxlength="20" style="width: 30ch;" required placeholder="###-###-####">
       <div id="phoneError" class="error"></div>
     </div>
   </div>
@@ -367,12 +367,12 @@ textarea#additionalInfo {
   <div class="form-row">
     <div class="form-group">
       <label for="zip" class="required">ZIP Code</label>
-      <input type="text" id="zip" name="zip" pattern="\d{5}" maxlength="10" style="width: 30ch;" required placeholder="12345" aria-describedby="zipError">
+      <input type="text" id="zip" name="zip" pattern="\d{5}" maxlength="10" style="width: 30ch;" required placeholder="#####" aria-describedby="zipError">
       <div id="zipError" class="error"></div>
     </div>
     
     <div class="form-group" style="flex: 1">
-      <label for="housingStatus" class="required">Homeowner or renter?</label>
+      <label for="housingStatus" class="required">Homeowner or Renter?</label>
       <select name="housingStatus" id="housingStatus" required onchange="toggleOther(this, 'housingOtherGroup')">
         <option value="">Select...</option>
         <option>Homeowner</option>
@@ -505,7 +505,7 @@ textarea#additionalInfo {
   </div>
 </div>
 
-        <h3 onclick="toggleAccordion(this)">Section 3: Planning Topics & Devices</h3>
+        <h3 onclick="toggleAccordion(this)">Planning Topics & Devices</h3>
         <div class="accordion-content">
             <fieldset>
                 <legend>What would you like to discuss during our meeting?</legend>
