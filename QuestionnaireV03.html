@@ -351,16 +351,17 @@
         <label><input type="checkbox" name="devices" value="iPhone">iPhone</label>
         <label><input type="checkbox" name="devices" value="Apple Computer">Apple Computer</label>
         <label><input type="checkbox" name="devices" value="Windows Computer">Windows Computer</label>
+        <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
         <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOtherGroup')">Other</label>
         <div class="form-field-group" id="tabletOtherGroup" style="display:none">
-            <label for="tabletOther">If other, please specify</label>
-            <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify">
+          <label for="tabletOther">If other, please specify</label>
+          <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify">
         </div>
-        <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
     </fieldset>
     
     <button type="submit">Submit</button>
     <div id="formMessage" class="success"></div>
+
 </form>
 
 <script>
