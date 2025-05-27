@@ -349,12 +349,6 @@
         <legend>Which of the following devices do you use?</legend>
         <label><input type="checkbox" name="devices" value="Android Phone">Android Phone</label>
         <label><input type="checkbox" name="devices" value="iPhone">iPhone</label>
-        <label><input type="checkbox" name="devices" value="Other Phone" onchange="toggleOther(this, 'phoneOtherGroup')">Other Phone</label>
-        <div class="form-field-group" id="phoneOtherGroup" style="display:none">
-            <label for="phoneOther">Please specify what device(s) you use</label>
-            <input type="text" name="phoneOther" id="phoneOther" maxlength="50" placeholder="Please specify what device(s) you use">
-        </div>
-
         <label><input type="checkbox" name="devices" value="Apple Computer">Apple Computer</label>
         <label><input type="checkbox" name="devices" value="Windows Computer">Windows Computer</label>
         <label><input type="checkbox" name="devices" value="Tablet - Other" onchange="toggleOther(this, 'tabletOtherGroup')">Other</label>
@@ -362,7 +356,6 @@
             <label for="tabletOther">If other, please specify</label>
             <input type="text" name="tabletOther" id="tabletOther" maxlength="50" placeholder="If other, please specify">
         </div>
-
         <label><input type="checkbox" name="devices" value="Don’t have a computer">Don’t have a computer</label>
     </fieldset>
     
