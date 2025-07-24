@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "You can let someone do-it-for-you (DIFY)",
         "You can let someone do-it-for-you (DIFY)",
         "or ...",
-        "You can let us do-it-with-you (DIWY)",
+        "You can let someone do-it-with-you (DIWY)",
         "Collaborative, Holistic, Modular and On-Demand"
     ];
 
