@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DIWY™ Engagement Levels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
+    }
+    .bg-diwy {
+      background-color: var(--diwy-blue);
+    }
+    .hover\:bg-diwy-dark:hover {
+      background-color: var(--diwy-dark);
+    }
+    .text-diwy {
+      color: var(--diwy-blue);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+
+<header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <a href="index.html" aria-label="Return to homepage">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="px-6 md:px-12">
+  <section class="max-w-7xl mx-auto pt-16 pb-8">
+    <h1 class="text-3xl font-bold text-diwy text-center mb-10">DIWY™ Engagement Levels</h1>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Self-Directed Support -->
+      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+        <h2 class="text-xl font-bold text-diwy mb-4 text-center">Self-Directed Support</h2>
+        <p class="text-gray-700 mb-4 text-center">Assessment, tools and on-demand content</p>
+        <ul class="list-disc list-inside text-gray-600 mb-4">
+          <li>Holistic financial assessment</li>
+          <li>Access to robust financial planning tools</li>
+          <li>Limited access to webinars with Q&amp;A</li>
+        </ul>
+        <p class="text-gray-800 font-semibold text-center mb-4">$50/month — cancel anytime</p>
+        <div class="text-center">
+          <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Self-Directed</a>
+        </div>
+      </div>
+
+      <!-- Group Support -->
+      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+        <h2 class="text-xl font-bold text-diwy mb-4 text-center">Group Support</h2>
+        <p class="text-gray-700 mb-4 text-center">Everything in Self-Directed + Live Webinars</p>
+        <ul class="list-disc list-inside text-gray-600 mb-4">
+          <li>Unlimited access to live webinars with Q&amp;A</li>
+          <li>Topics and timing shaped by client feedback</li>
+          <li>Actionable advice</li>
+        </ul>
+        <p class="text-gray-800 font-semibold text-center mb-4">$100/month — cancel anytime</p>
+        <div class="text-center">
+          <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Group Support</a>
+        </div>
+      </div>
+
+      <!-- One-on-one Support -->
+      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+        <h2 class="text-xl font-bold text-diwy mb-4 text-center">One-on-one Support</h2>
+        <p class="text-gray-700 mb-4 text-center">Collaborative screen sharing sessions</p>
+        <ul class="list-disc list-inside text-gray-600 mb-4">
+          <li>Personalized financial advice</li>
+          <li>Implementation support</li>
+          <li>No “shadow billing” or hidden fees</li>
+        </ul>
+        <p class="text-gray-800 font-semibold text-center mb-4">$400 for the first hour — then discounted</p>
+        <div class="text-center">
+          <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore One-on-one</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+  <p>© <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
