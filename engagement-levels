@@ -38,8 +38,9 @@
   <section class="max-w-7xl mx-auto pt-16 pb-8">
     <h1 class="text-3xl font-bold text-diwy text-center mb-10">DIWY™ Engagement Levels</h1>
     <div class="grid md:grid-cols-3 gap-8">
+
       <!-- Self-Directed Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+      <div id="self-directed" class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
         <h2 class="text-xl font-bold text-diwy mb-4 text-center">Self-Directed Support</h2>
         <p class="text-gray-700 mb-4 text-center">Assessment, tools and on-demand content</p>
         <ul class="list-disc list-inside text-gray-600 mb-4">
@@ -54,7 +55,7 @@
       </div>
 
       <!-- Group Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+      <div id="group-support" class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
         <h2 class="text-xl font-bold text-diwy mb-4 text-center">Group Support</h2>
         <p class="text-gray-700 mb-4 text-center">Everything in Self-Directed + Live Webinars</p>
         <ul class="list-disc list-inside text-gray-600 mb-4">
@@ -69,7 +70,7 @@
       </div>
 
       <!-- One-on-one Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
+      <div id="one-on-one" class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
         <h2 class="text-xl font-bold text-diwy mb-4 text-center">One-on-one Support</h2>
         <p class="text-gray-700 mb-4 text-center">Collaborative screen sharing sessions</p>
         <ul class="list-disc list-inside text-gray-600 mb-4">
