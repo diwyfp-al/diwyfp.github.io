@@ -1,92 +1,113 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DIWY Services</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8">
+  <title>Services & Engagement Levels | DIWY Financial Planning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collaborative, fiduciary advice-only financial planning with flexible engagement levels.">
+  <meta name="keywords" content="financial planning, fee-only, fiduciary, DIWY, engagement levels">
+  <meta name="author" content="DIWY Financial Planning">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
     :root {
       --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
     }
-    .text-diwy { color: var(--diwy-blue); }
     .bg-diwy { background-color: var(--diwy-blue); }
-    .hover\:bg-diwy-dark:hover { background-color: #0f143c; }
-</style>
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
+    html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 pt-20">
-<header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
-<div class="max-w-7xl mx-auto flex items-center justify-between">
-<div class="flex items-center space-x-4">
-<img alt="DIWY Financial Planning Logo" class="h-10" src="LogoDIWY20250324MO.png"/>
-<span class="text-xl font-bold text-diwy"></span>
-</div>
-<div class="hidden md:flex items-center space-x-6 text-sm">
-<a class="text-gray-700 hover:text-diwy" href="index.html">Home</a>
-<a class="text-gray-700 hover:text-diwy" href="#">About</a>
-<a class="text-gray-700 hover:text-diwy" href="services.html">Services</a>
-<a class="text-gray-700 hover:text-diwy" href="are_we_a_fit.html">Are We a Fit</a>
-<a class="text-gray-700 hover:text-diwy" href="#">Resources</a>
-<a class="text-gray-700 hover:text-diwy" href="#">FAQs</a>
-<a class="text-gray-700 hover:text-diwy" href="#">Client Portal</a>
-<a class="text-gray-700 hover:text-diwy" href="#">Contact</a>
-<a class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" href="#">Schedule a Free Intro Call</a>
-</div>
-</div>
-</header>
-<div class="max-w-5xl mx-auto px-4 py-10 space-y-10">
-<section>
-<h1 class="text-3xl font-bold mb-4">Our Services</h1>
-<p class="text-lg">
-At DIWY Planning, we walk alongside you on your financial journey. Whether you're building wealth for the first time, transitioning from a DIY approach, or seeking a trusted co-pilot, our flat-fee, advice-only model is designed to meet you where you are. No commissions, no assets under management, just clear, personalized guidance.
-</p>
-</section>
-<section>
-<h2 class="text-2xl font-semibold mb-2">Our Process – How We Work Together</h2>
-<p class="text-lg mb-4">We make financial planning approachable, flexible, and collaborative. Here’s what working with us looks like:</p>
-<ol class="list-decimal list-inside space-y-2 text-lg text-gray-700">
-<li><strong>Start With a Conversation:</strong> A no-pressure intro call to hear your story and understand your goals.</li>
-<li><strong>Collaborative Planning:</strong> Work in 30-day windows. Each includes up to 3 virtual sessions, access to our planning portal, and unlimited support during the engagement.</li>
-<li><strong>A Clear Financial Picture:</strong> We use RightCapital to visualize your full financial life, explore "what-if" scenarios, track cash flow, and more. You're always in control.</li>
-<li><strong>Plan at Your Pace:</strong> Most clients schedule sessions about a week apart. You decide when to check in again—no subscriptions or pressure.</li>
-<li><strong>Optional Document Upload:</strong> Securely share tax returns, paystubs, statements, and anything relevant via your personal RightCapital Vault.</li>
-</ol>
-<p class="text-lg mt-4">Whether you're planning for a home, reducing debt, or setting up your future, we're here to help you move forward with confidence.</p>
-</section>
-<section>
-<h2 class="text-2xl font-semibold mb-2">Ready to Plan with a Pro?</h2>
-<p class="text-lg mb-4">
-Book your first meeting or contact us to learn more. We're here to help you turn uncertainty into action, and action into confidence.
-</p>
-<a class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow" href="/contact">Get Started</a>
-</section>
-</div>
-<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600">
-<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-<div class="flex flex-col items-center md:items-start space-y-2">
-<p class="font-semibold text-diwy">DIWY Financial Planning</p>
-<p class="text-xs">Plan for yourself—not by yourself™</p>
-</div>
-<div class="flex flex-col space-y-1">
-<a class="hover:text-diwy" href="#">Home</a>
-<a class="hover:text-diwy" href="services.html">Services</a>
-<a class="hover:text-diwy" href="#">About</a>
-<a class="hover:text-diwy" href="#">Contact</a>
-<a class="hover:text-diwy" href="#">FAQs</a>
-<a class="hover:text-diwy" href="#">Client Portal</a>
-</div>
-<div class="flex flex-col space-y-2 text-xs">
-<p>Copyright © 2025 TRULY UNBIASED LLC - All Rights Reserved.</p>
-<p>ADV Part 2 Truly Unbiased LLC is a registered investment adviser registered and offering advisory services in the State of California and in other jurisdictions where exempted.</p>
-<p>This website is solely for informational purposes. No advice may be rendered by Truly Unbiased LLC unless a financial planning agreement is in place.</p>
-<p>Truly Unbiased LLC provides links for your convenience to websites produced by other providers or industry-related material. Truly Unbiased LLC is not responsible for errors or omissions in the material on third-party websites.</p>
-<p>This website is provided “as is” without any representations or warranties, express or implied. Truly Unbiased LLC makes no representations or warranties in relation to this website or the information and materials provided on this website.</p>
-<p>Nothing on this website constitutes, or is meant to constitute, advice of any kind.</p>
-<p>By using this website, you agree that the exclusions and limitations of liability set out in this website disclaimer are reasonable.</p>
-</div>
-</div>
-</footer>
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+  <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-4">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-base">
+        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
+        <a href="services.html" class="text-diwy font-bold">Services</a>
+        <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy">Client Portal</a>
+        <a href="https://app.precisefp.com/w/raabzv" target="_blank" rel="noopener noreferrer" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">Schedule a Free Intro Call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-6 md:px-12 max-w-7xl mx-auto">
+    <section class="pt-16 pb-10 text-center">
+      <h1 class="text-4xl font-bold text-diwy mb-6">Our Services & Engagement Levels</h1>
+      <p class="text-lg mb-4 max-w-3xl mx-auto">
+        DIWY Financial Planning offers flexible support options to meet your needs—whether you prefer to go it alone with professional tools, collaborate in a group, or work directly with a dedicated advisor. Our advice-only model is always fee-transparent and product-free.
+      </p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold text-diwy mb-4 text-center">How We Work Together</h2>
+      <ol class="list-decimal list-inside space-y-2 text-lg text-gray-700 max-w-3xl mx-auto">
+        <li><strong>Start With a Conversation:</strong> A no-pressure intro call to hear your story and understand your goals.</li>
+        <li><strong>Collaborative Planning:</strong> Work in 30-day windows with up to 3 virtual sessions, access to our planning portal, and unlimited email support.</li>
+        <li><strong>Clear Financial Picture:</strong> We use RightCapital to model your full financial life, explore scenarios, and track your plan.</li>
+        <li><strong>Plan at Your Pace:</strong> Schedule check-ins as needed—no subscription required.</li>
+        <li><strong>Secure Document Vault:</strong> Share your relevant info easily through our secure platform.</li>
+      </ol>
+    </section>
+
+    <section class="py-16 bg-white">
+      <h2 class="text-3xl font-bold text-center text-diwy mb-12">DIWY™ Engagement Levels</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Self-Directed -->
+        <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-md p-8">
+          <h3 class="text-xl font-bold text-diwy mb-4 text-center">Self-Directed Support</h3>
+          <p class="text-gray-700 mb-4 text-center">Assessment, tools, and on-demand content</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li>Holistic financial assessment</li>
+            <li>Access to robust financial planning tools</li>
+            <li>Limited access to webinars with Q&A</li>
+          </ul>
+          <p class="text-gray-800 font-semibold text-center mb-4">$50/month — cancel anytime</p>
+          <div class="text-center">
+            <a href="#self-directed" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Self-Directed</a>
+          </div>
+        </div>
+
+        <!-- Group Support -->
+        <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-md p-8">
+          <h3 class="text-xl font-bold text-diwy mb-4 text-center">Group Support</h3>
+          <p class="text-gray-700 mb-4 text-center">Everything in Self-Directed + Live Webinars</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li>Unlimited access to live webinars with Q&A</li>
+            <li>Topics and timing shaped by client feedback</li>
+            <li>Actionable advice in a group format</li>
+          </ul>
+          <p class="text-gray-800 font-semibold text-center mb-4">$100/month — cancel anytime</p>
+          <div class="text-center">
+            <a href="#group-support" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Group Support</a>
+          </div>
+        </div>
+
+        <!-- One-on-One Support -->
+        <div class="bg-gray-50 border border-gray-200 rounded-xl shadow-md p-8">
+          <h3 class="text-xl font-bold text-diwy mb-4 text-center">One-on-One Support</h3>
+          <p class="text-gray-700 mb-4 text-center">Collaborative screen sharing sessions</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li>Personalized financial advice</li>
+            <li>Implementation support</li>
+            <li>No "shadow billing" or hidden fees</li>
+          </ul>
+          <p class="text-gray-800 font-semibold text-center mb-4">$400 for the first hour — discounted thereafter</p>
+          <div class="text-center">
+            <a href="#one-on-one" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition">Explore One-on-One</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+    <p>© <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  </footer>
 </body>
 </html>
