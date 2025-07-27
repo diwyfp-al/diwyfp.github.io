@@ -36,36 +36,34 @@
       <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
-      
+
       <nav class="hidden md:flex items-center space-x-6 text-base">
         <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})">Home</a>
         <a href="services.html" class="text-diwy font-bold" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
         <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})">Resources</a>
         <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Client Portal</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})">Client Portal</a>
         <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
       </nav>
 
-    <div class="md:hidden">
-      <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
 
-<nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-	<a href="services.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Services' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services</a>
-	<a href="resources.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Resources' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
-	<a href="faqs.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
-	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Client Portal</a>
-	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Schedule Intro Call' })" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
-</nav>
-
-      
-    </div>
+    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
+      <a href="index.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})" class="text-gray-700 hover:text-diwy">Home</a>
+      <a href="services.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})" class="text-diwy font-bold">Services</a>
+      <a href="resources.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})" class="text-gray-700 hover:text-diwy">Resources</a>
+      <a href="faqs.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})" class="text-gray-700 hover:text-diwy">FAQs</a>
+      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
+      <a href="https://app.precisefp.com/w/raabzv" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+    </nav>
   </header>
 
   <main class="px-6 md:px-12 max-w-7xl mx-auto">
