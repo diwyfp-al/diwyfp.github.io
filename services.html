@@ -9,6 +9,16 @@
   <meta name="author" content="DIWY Financial Planning">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-S34LTCGWNF');
+  </script>
+
   <style>
     :root {
       --diwy-blue: #19215A;
@@ -23,15 +33,17 @@
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-4">
+      <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
       <nav class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
-        <a href="services.html" class="text-diwy font-bold">Services</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy">Client Portal</a>
-        <a href="https://app.precisefp.com/w/raabzv" target="_blank" rel="noopener noreferrer" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium">Schedule a Free Intro Call</a>
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'About'})">About</a>
+        <a href="services.html" class="text-diwy font-bold" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
+        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Are We a Fit'})">Are We a Fit</a>
+        <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})">Resources</a>
+        <a href="faq.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQ'})">FAQ</a>
+        <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
       </nav>
     </div>
   </header>
@@ -88,7 +100,7 @@
           <li>Limited access to educational webinars</li>
         </ul>
         <p class="text-gray-800 font-semibold mb-4">$50/month — cancel anytime</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block">Explore Self-Directed</a>
+        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore Self-Directed'})">Explore Self-Directed</a>
       </div>
 
       <div id="group-support" class="mb-16">
@@ -100,7 +112,7 @@
           <li>Community engagement and shared learning</li>
         </ul>
         <p class="text-gray-800 font-semibold mb-4">$100/month — cancel anytime</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block">Explore Group Support</a>
+        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore Group Support'})">Explore Group Support</a>
       </div>
 
       <div id="one-on-one" class="mb-16">
@@ -112,7 +124,7 @@
           <li>No ongoing commitment or hidden fees</li>
         </ul>
         <p class="text-gray-800 font-semibold mb-4">$400 for the first hour — discounted rate for follow-ups withing 30-day window</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block">Explore One-on-One</a>
+        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore One-on-One'})">Explore One-on-One</a>
       </div>
     </section>
   </main>
@@ -122,3 +134,4 @@
   </footer>
 </body>
 </html>
+
