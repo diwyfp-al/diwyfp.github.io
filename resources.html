@@ -19,6 +19,14 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
+  <script>
+    function trackDIWYEvent(eventName, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
+    }
+  </script>
+
   <style>
     :root {
       --diwy-blue: #19215A;
@@ -38,13 +46,13 @@
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-16">
       </a>
       <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
-        <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
-        <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
-        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
-        <a href="resources.html" class="text-diwy font-semibold">Resources</a>
-        <a href="faq.html" class="text-gray-700 hover:text-diwy">FAQ</a>
-        <a href="contact.html" class="bg-diwy text-white px-4 py-2 rounded hover:bg-blue-900">Schedule a Free Intro Call</a>
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="trackDIWYEvent('nav_click', { label: 'Home' })">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="trackDIWYEvent('nav_click', { label: 'About' })">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="trackDIWYEvent('nav_click', { label: 'Services' })">Services</a>
+        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy" onclick="trackDIWYEvent('nav_click', { label: 'Are We a Fit' })">Are We a Fit</a>
+        <a href="resources.html" class="text-diwy font-semibold" onclick="trackDIWYEvent('nav_click', { label: 'Resources' })">Resources</a>
+        <a href="faq.html" class="text-gray-700 hover:text-diwy" onclick="trackDIWYEvent('nav_click', { label: 'FAQ' })">FAQ</a>
+        <a href="contact.html" class="bg-diwy text-white px-4 py-2 rounded hover:bg-blue-900" onclick="trackDIWYEvent('nav_click', { label: 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
       </nav>
     </div>
   </header>
@@ -125,11 +133,7 @@
               const highlightedDesc = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
               return `<li>
                 <a href="${url}" target="_blank" class="text-blue-700 hover:underline"
-                   onclick="gtag('event', 'resource_click', {
-                     event_category: 'Resource Link',
-                     event_label: '${name}',
-                     value: 1
-                   })">
+                   onclick="trackDIWYEvent('resource_click', { label: '${name}' })">
                    ${highlightedName}</a> – ${highlightedDesc}
               </li>`;
             }).join('')}
@@ -193,3 +197,4 @@
   </script>
 </body>
 </html>
+
