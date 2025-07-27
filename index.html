@@ -33,6 +33,14 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
+<script>
+  function trackDIWYEvent(eventName, params = {}) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, params);
+    }
+  }
+</script>	
+
   <!-- Other tags (favicon, styles, scripts) follow -->
 
   <!-- Favicons for All Browsers -->
@@ -81,12 +89,12 @@
 
 <!-- Header Navigation -->
 <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-  <a href="index.html" class="text-gray-700 hover:text-diwy font-bold">Home</a>
-  <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
-  <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
-  <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-  <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-  <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+	<a href="index.html" onclick="trackDIWYEvent('nav_click', { label: 'Home' })" class="text-gray-700 hover:text-diwy font-bold">Home</a>
+	<a href="services.html" onclick="trackDIWYEvent('nav_click', { label: 'Services' })" class="text-gray-700 hover:text-diwy">Services</a>
+	<a href="resources.html" onclick="trackDIWYEvent('nav_click', { label: 'Resources' })" class="text-gray-700 hover:text-diwy">Resources</a>
+	<a href="faqs.html" onclick="trackDIWYEvent('nav_click', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy">FAQs</a>
+	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
+	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click', { label: 'Schedule Intro Call' })" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
 </nav>
 
     <div class="md:hidden">
@@ -100,13 +108,13 @@
   </div>
 
 <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-    <a href="about.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>About</a>
-    <a href="services.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services</a>
-    <a href="resources.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
-    <a href="faqs.html" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
-    <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Client Portal</a>
-    <a href="https://app.precisefp.com/w/raabzv" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Schedule a Free Intro Call</a>
+	<a href="services.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Services' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services</a>
+	<a href="resources.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Resources' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
+	<a href="faqs.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
+	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Client Portal</a>
+	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Schedule Intro Call' })" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
 </nav>
+
 </header>
 
 	
@@ -136,9 +144,12 @@
 	</div>
 
 <!-- Call to Action -->
-    <a href="#whyDIWY" class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
-      Learn More
-    </a>
+<a href="#whyDIWY"
+   onclick="trackDIWYEvent('click_hero_learn_more')"
+   class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
+  Learn More
+</a>
+
 
 <!-- Rotating Message -->
 <div id="message-container"
@@ -386,7 +397,7 @@
         </ul>
         <p class="text-gray-800 font-semibold text-center mb-4">$50/month — cancel anytime</p>
         <div class="text-center">
-          <a href="services.html#self-directed" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition" aria-label="Explore Self-Directed Support Plan">Explore Self-Directed Support</a>
+          <a href="services.html#self-directed" onclick="trackDIWYEvent('click_explore_support', { level: 'Self-Directed' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Self-Directed Support</a>
         </div>
       </div>
 
@@ -401,7 +412,7 @@
         </ul>
         <p class="text-gray-800 font-semibold text-center mb-4">$100/month — cancel anytime</p>
         <div class="text-center">
-          <a href="services.html#group-support" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition" aria-label="Explore Group Support Plan">Explore Group Support</a>
+          <a href="services.html#group" onclick="trackDIWYEvent('click_explore_support', { level: 'Group' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Group Support</a>
         </div>
       </div>
 
@@ -416,7 +427,7 @@
         </ul>
         <p class="text-gray-800 font-semibold text-center mb-4">$400 for the first hour — then discounted</p>
         <div class="text-center">
-          <a href="services.html#one-on-one" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition" aria-label="Explore One-on-one Support Plan">Explore One-on-one Support</a>
+          <a href="services.html#one-on-one" onclick="trackDIWYEvent('click_explore_support', { level: 'One-on-One' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore One-on-One Support</a>
         </div>
       </div>
 
