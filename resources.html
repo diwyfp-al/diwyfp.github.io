@@ -1,38 +1,195 @@
-<!-- RESOURCES PAGE -->
-<section class="bg-white py-16 px-6 md:px-12">
-  <div class="max-w-5xl mx-auto text-center">
-    <h1 class="text-4xl font-bold text-diwy mb-6">Resources</h1>
-    <p class="text-lg mb-12">Explore different areas of financial planning. Each topic below links to more detailed guidance, tools, and educational content to help you take action with confidence.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resources | DIWY Financial Planning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curated financial planning resources from DIWY Financial Planning.">
+  <meta name="keywords" content="financial planning resources, investing, insurance, budgeting, college savings, DIWY">
+  <meta name="author" content="DIWY Financial Planning">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <div class="grid md:grid-cols-2 gap-8 text-left">
-      <a href="organization.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Organization</h2>
-        <p>Get your financial documents and digital life in order for clarity and peace of mind.</p>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-S34LTCGWNF');
+  </script>
+
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+      --highlight-yellow: #fff59d;
+    }
+    .text-diwy { color: var(--diwy-blue); }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .accordion-content { transition: max-height 0.3s ease; }
+    mark { background-color: var(--highlight-yellow); padding: 0 2px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- Header -->
+  <header role="banner" class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-4">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-16">
       </a>
-      <a href="cash_flow.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Cash Flow & Budgeting</h2>
-        <p>Track income and expenses, set spending guidelines, and plan with purpose.</p>
-      </a>
-      <a href="credit_debt.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Credit & Debt Management</h2>
-        <p>Understand your credit, manage debt, and create a plan for repayment or leverage.</p>
-      </a>
-      <a href="investment_management.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Asset Allocation & Investment Management</h2>
-        <p>Learn how to invest wisely, allocate your assets, and stay aligned with your goals.</p>
-      </a>
-      <a href="insurance.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Insurance & Risk Management</h2>
-        <p>Protect what matters most and assess the gaps in your financial safety net.</p>
-      </a>
-      <a href="tax_planning.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Tax Planning</h2>
-        <p>Make informed tax decisions, optimize deductions, and reduce surprises at filing time.</p>
-      </a>
-      <a href="estate_planning.html" class="block p-6 bg-gray-100 rounded-lg shadow hover:shadow-md">
-        <h2 class="text-xl font-semibold text-diwy mb-2">Estate Planning</h2>
-        <p>Document your wishes, protect your legacy, and prepare for life’s transitions.</p>
-      </a>
+      <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
+        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
+        <a href="are_we_a_fit.html" class="text-gray-700 hover:text-diwy">Are We a Fit</a>
+        <a href="resources.html" class="text-diwy font-semibold">Resources</a>
+        <a href="faq.html" class="text-gray-700 hover:text-diwy">FAQ</a>
+        <a href="contact.html" class="bg-diwy text-white px-4 py-2 rounded hover:bg-blue-900">Schedule a Free Intro Call</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-diwy mb-6">Curated Resources</h1>
+
+    <!-- Disclaimer -->
+    <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded">
+      <p class="text-sm text-gray-800">
+        <strong>Disclaimer:</strong> The links on this page are provided for educational and informational purposes only. Information is believed to be accurate at the time of posting but is not regularly monitored for changes. DIWY Financial Planning does not control or guarantee the accuracy, relevance, timeliness, or completeness of content on external websites. By clicking a link, users acknowledge they are leaving the DIWY Financial Planning website and accept responsibility for interacting with third-party content.
+      </p>
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="mb-6 text-sm text-gray-700">
+      <p>
+        <strong>Have a suggestion?</strong> If a link appears to be broken, a resource seems outdated, or there is a recommendation for an addition or removal, please email 
+        <a id="emailLink" href="#" class="text-blue-700 underline hover:text-diwy">[email protected]</a>.
+      </p>
+    </div>
+
+    <!-- Search Input -->
+    <div class="mb-6">
+      <label for="resourceSearch" class="block text-diwy font-semibold mb-2">Search Resources</label>
+      <input type="text" id="resourceSearch" placeholder="Type a keyword (e.g. insurance, investing, 529)..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
+    </div>
+
+    <!-- Collapse Button -->
+    <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-blue-900">
+      Collapse All
+    </button>
+
+    <!-- Accordion Container -->
+    <div id="accordionContainer">
+      <!-- Sections will be dynamically inserted here -->
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    const fallbackResources = [
+      {
+        category: "Consumer & Family Information",
+        items: [
+          ["annualcreditreport.com", "https://www.annualcreditreport.com", "free credit reports"],
+          ["bankrate.com", "https://www.bankrate.com", "financial data and rates"],
+          ["fiparent.com", "https://www.fiparent.com", "raise financially savvy kids"],
+          ["moneytracker.com", "https://www.moneytracker.com", "budgeting help"]
+        ]
+      }
+    ];
+
+    function renderResources(data, keyword = '') {
+      const accordionContainer = document.getElementById('accordionContainer');
+      accordionContainer.innerHTML = '';
+      const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
+
+      data.forEach(section => {
+        const filteredItems = section.items.filter(item =>
+          !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase())
+        );
+
+        if (filteredItems.length === 0) return;
+
+        const sec = document.createElement('section');
+        sec.classList.add('mb-6');
+        sec.innerHTML = `
+          <h2 class="text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer" onclick="toggleSection(this)">
+            ${section.category}
+            <span class="text-lg">−</span>
+          </h2>
+          <ul class="accordion-content list-disc list-inside space-y-1 mt-2">
+            ${filteredItems.map(item => {
+              const [name, url, desc] = item;
+              const highlightedName = regex ? name.replace(regex, '<mark>$1</mark>') : name;
+              const highlightedDesc = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
+              return `<li>
+                <a href="${url}" target="_blank" class="text-blue-700 hover:underline"
+                   onclick="gtag('event', 'resource_click', {
+                     event_category: 'Resource Link',
+                     event_label: '${name}',
+                     value: 1
+                   })">
+                   ${highlightedName}</a> – ${highlightedDesc}
+              </li>`;
+            }).join('')}
+          </ul>
+        `;
+        accordionContainer.appendChild(sec);
+      });
+    }
+
+    function toggleSection(header) {
+      const ul = header.nextElementSibling;
+      const symbol = header.querySelector('span');
+      const expanded = ul.classList.toggle('hidden');
+      symbol.textContent = expanded ? '+' : '−';
+    }
+
+    document.getElementById('toggleAll').addEventListener('click', () => {
+      const sections = document.querySelectorAll('#accordionContainer section');
+      const isCollapsing = toggleAll.textContent.includes('Collapse');
+      sections.forEach(section => {
+        const ul = section.querySelector('.accordion-content');
+        const symbol = section.querySelector('span');
+        if (isCollapsing) {
+          ul.classList.add('hidden');
+          symbol.textContent = '+';
+        } else {
+          ul.classList.remove('hidden');
+          symbol.textContent = '−';
+        }
+      });
+      toggleAll.textContent = isCollapsing ? 'Expand All' : 'Collapse All';
+    });
+
+    document.getElementById('resourceSearch').addEventListener('input', function () {
+      const keyword = this.value.trim();
+      renderResources(window._resourceData || fallbackResources, keyword);
+    });
+
+    fetch("https://script.google.com/macros/s/AKfycbwTTAuxRfchBrjPU-QGkOA-ichOtfxYriB0H4QVwVb3xgRfk_bjl8a6rZDT-8ysZJQ6Jw/exec?sheet=resources")
+      .then(response => response.json())
+      .then(data => {
+        window._resourceData = data;
+        renderResources(data);
+      })
+      .catch(error => {
+        console.error("Failed to fetch resources, using fallback.", error);
+        renderResources(fallbackResources);
+      });
+
+    // Obfuscate feedback email to reduce spam harvesting
+    document.addEventListener("DOMContentLoaded", function () {
+      const user = "feedback";
+      const domain = "diwyfp.com";
+      const email = `${user}@${domain}`;
+      const link = document.getElementById("emailLink");
+      if (link) {
+        link.textContent = email;
+        link.href = `mailto:${email}`;
+      }
+    });
+  </script>
+</body>
+</html>
