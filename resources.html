@@ -30,14 +30,12 @@
     html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
   </style>
 </head>
-  
-<body class="bg-gray-50 text-gray-800 pt-20 md:pt-20">
+<body class="bg-gray-50 text-gray-800 pt-16 md:pt-24">
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
-      
       <nav class="hidden md:flex items-center space-x-6 text-base">
         <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})">Home</a>
         <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
@@ -46,39 +44,17 @@
         <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
         <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
       </nav>
-
-      <div class="md:hidden">
-        <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
     </div>
-
-    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-      <a href="index.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})" class="text-gray-700 hover:text-diwy">Home</a>
-      <a href="services.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})" class="text-gray-700 hover:text-diwy">Services</a>
-      <a href="resources.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})" class="text-diwy font-bold">Resources</a>
-      <a href="faqs.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})" class="text-gray-700 hover:text-diwy">FAQs</a>
-      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-      <a href="contact.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium">Schedule a Free Intro Call</a>
-    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="pt-32 px-6 max-w-5xl mx-auto">
-    <h1 class="text-3xl font-bold text-diwy mb-6">Curated Resources</h1>
-
-    <!-- Disclaimer -->
+  <main class="pt-24 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-diwy text-center mb-6">Curated Resources</h1>
     <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded">
       <p class="text-sm text-gray-800">
         <strong>Disclaimer:</strong> The links on this page are provided for educational and informational purposes only. Information is believed to be accurate at the time of posting but is not regularly monitored for changes. DIWY Financial Planning does not control or guarantee the accuracy, relevance, timeliness, or completeness of content on external websites. By clicking a link, users acknowledge they are leaving the DIWY Financial Planning website and accept responsibility for interacting with third-party content.
       </p>
     </div>
 
-    <!-- Feedback Section -->
     <div class="mb-6 text-sm text-gray-700">
       <p>
         <strong>Have a suggestion?</strong> If a link appears to be broken, a resource seems outdated, or there is a recommendation for an addition or removal, please email 
@@ -86,24 +62,18 @@
       </p>
     </div>
 
-    <!-- Search Input -->
     <div class="mb-6">
       <label for="resourceSearch" class="block text-diwy font-semibold mb-2">Search Resources</label>
       <input type="text" id="resourceSearch" placeholder="Type a keyword (e.g. insurance, investing, 529)..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
     </div>
 
-    <!-- Collapse Button -->
     <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-blue-900">
-      Collapse All
+      Expand All
     </button>
 
-    <!-- Accordion Container -->
-    <div id="accordionContainer">
-      <!-- Sections will be dynamically inserted here -->
-    </div>
+    <div id="accordionContainer"></div>
   </main>
 
-  <!-- Scripts -->
   <script>
     const fallbackResources = [
       {
@@ -118,38 +88,31 @@
     ];
 
     function renderResources(data, keyword = '') {
-      const accordionContainer = document.getElementById('accordionContainer');
-      accordionContainer.innerHTML = '';
+      const container = document.getElementById('accordionContainer');
+      container.innerHTML = '';
       const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
 
       data.forEach(section => {
-        const filteredItems = section.items.filter(item =>
+        const items = section.items.filter(item =>
           !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase())
         );
-
-        if (filteredItems.length === 0) return;
+        if (!items.length) return;
 
         const sec = document.createElement('section');
         sec.classList.add('mb-6');
         sec.innerHTML = `
           <h2 class="text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer" onclick="toggleSection(this)">
             ${section.category}
-            <span class="text-lg">−</span>
+            <span class="text-lg">+</span>
           </h2>
-          <ul class="accordion-content list-disc list-inside space-y-1 mt-2">
-            ${filteredItems.map(item => {
-              const [name, url, desc] = item;
-              const highlightedName = regex ? name.replace(regex, '<mark>$1</mark>') : name;
-              const highlightedDesc = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
-              return `<li>
-                <a href="${url}" target="_blank" class="text-blue-700 hover:underline"
-                   onclick="trackDIWYEvent('resource_click', { label: '${name}' })">
-                   ${highlightedName}</a> – ${highlightedDesc}
-              </li>`;
+          <ul class="accordion-content list-disc list-inside space-y-1 mt-2 hidden">
+            ${items.map(([name, url, desc]) => {
+              const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
+              const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
+              return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'click', {event_category: 'Resources', event_label: '${name}'})">${n}</a> – ${d}</li>`;
             }).join('')}
-          </ul>
-        `;
-        accordionContainer.appendChild(sec);
+          </ul>`;
+        container.appendChild(sec);
       });
     }
 
@@ -162,19 +125,19 @@
 
     document.getElementById('toggleAll').addEventListener('click', () => {
       const sections = document.querySelectorAll('#accordionContainer section');
-      const isCollapsing = toggleAll.textContent.includes('Collapse');
+      const expanding = toggleAll.textContent.includes('Expand');
       sections.forEach(section => {
         const ul = section.querySelector('.accordion-content');
         const symbol = section.querySelector('span');
-        if (isCollapsing) {
-          ul.classList.add('hidden');
-          symbol.textContent = '+';
-        } else {
+        if (expanding) {
           ul.classList.remove('hidden');
           symbol.textContent = '−';
+        } else {
+          ul.classList.add('hidden');
+          symbol.textContent = '+';
         }
       });
-      toggleAll.textContent = isCollapsing ? 'Expand All' : 'Collapse All';
+      toggleAll.textContent = expanding ? 'Collapse All' : 'Expand All';
     });
 
     document.getElementById('resourceSearch').addEventListener('input', function () {
@@ -183,18 +146,14 @@
     });
 
     fetch("https://script.google.com/macros/s/AKfycbwTTAuxRfchBrjPU-QGkOA-ichOtfxYriB0H4QVwVb3xgRfk_bjl8a6rZDT-8ysZJQ6Jw/exec?sheet=resources")
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
         window._resourceData = data;
         renderResources(data);
       })
-      .catch(error => {
-        console.error("Failed to fetch resources, using fallback.", error);
-        renderResources(fallbackResources);
-      });
+      .catch(() => renderResources(fallbackResources));
 
-    // Obfuscate feedback email to reduce spam harvesting
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
       const user = "feedback";
       const domain = "diwyfp.com";
       const email = `${user}@${domain}`;
