@@ -22,15 +22,23 @@
       color: var(--diwy-blue);
     }
   </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-S34LTCGWNF');
+  </script>
 </head>
-  
+
 <body class="bg-white text-gray-800">
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center space-x-4">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
-
       <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
         <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
         <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
@@ -44,55 +52,65 @@
   <main class="pt-32 pb-16 px-6 max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold text-diwy mb-8">Frequently Asked Questions</h1>
     <div class="space-y-4">
-
-      <!-- FAQ Item Template -->
-      <details class="group border rounded-lg p-4">
+      <!-- FAQ Items with Analytics Tracking -->
+      <details class="group border rounded-lg p-4" data-question="Pronunciation" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">How do you pronounce DIWY? What does it mean?</summary>
-        <p class="mt-2">DIWY is pronounced <strong>"dee-wee"</strong>, like the word <strong>“kiwi.”</strong><br>
-        It stands for <strong>Do It With You</strong>, because we believe financial planning should be a collaborative experience. You don’t have to do it all yourself, and you don’t have to hand everything over — we work <em>with</em> you, side by side.</p>
+        <p class="mt-2">DIWY is pronounced <strong>"dee-wee"</strong>, like the word <strong>“kiwi.”</strong><br>It stands for <strong>Do It With You</strong>, because financial planning should be a collaborative experience.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Moving Money" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Do I have to move my money or open new accounts?</summary>
-        <p class="mt-2"><strong>No.</strong> DIWY is an <strong>advice-only</strong> financial planning firm. That means we don’t manage your assets or require you to move accounts. You keep control of your money, and we provide clear, objective guidance to help you make better decisions.</p>
+        <p class="mt-2"><strong>No.</strong> DIWY is an <strong>advice-only</strong> firm. You keep control of your money; we offer objective guidance.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Commissions" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Do you sell products or earn commissions?</summary>
-        <p class="mt-2"><strong>No.</strong> We don’t sell insurance, investments, or any financial products. We are <strong>fee-only fiduciaries</strong> — the only thing you pay for is <em>our time and advice</em>. No sales, no hidden agendas.</p>
+        <p class="mt-2"><strong>No.</strong> We are <strong>fee-only fiduciaries</strong> — no sales, no hidden agendas.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Fees" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What do you charge?</summary>
-        <p class="mt-2">We offer a <strong>flat-fee, pay-as-you-go model</strong> starting at $400/hr. You only pay for the time we spend together in meetings — not for work done behind the scenes. That means you’re in control of the pace, scope, and budget.</p>
+        <p class="mt-2">Flat-fee model starting at $400/hr. You only pay for time spent in meetings, not behind-the-scenes work.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Client Types" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Who do you work with?</summary>
-        <p class="mt-2">We work with people from all walks of life — whether you’re just starting out, in a career transition, juggling family finances, or planning for retirement. We specialize in working with <strong>self-directed clients</strong> who want an expert partner to <strong>plan collaboratively</strong> — not take over.</p>
+        <p class="mt-2">We serve people from all walks of life, especially <strong>self-directed clients</strong> who want a collaborative partner.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Quick Questions" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What if I just have a few quick questions?</summary>
-        <p class="mt-2">That’s exactly what we’re here for. You can book a one-time session or schedule multiple meetings — it’s up to you. There’s no long-term contract or ongoing retainer unless you want one.</p>
+        <p class="mt-2">You can book one-time sessions or schedule multiple meetings — your choice.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Virtual Meetings" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Do you meet virtually?</summary>
-        <p class="mt-2">Yes! We meet with clients <strong>virtually by phone or video</strong>, so you can get advice from anywhere. Meetings are available 7-days a week.</p>
+        <p class="mt-2">Yes! Phone and video meetings are available 7-days a week.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Getting Started" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">How do I get started?</summary>
-        <p class="mt-2">Schedule a no-cost, no-obligation 30 minute introductory call to make sure we're mutually a good fit. Use the following link to complete a brief questionnaire and schedule a time to talk <a href="https://app.precisefp.com/w/raabzv" class="text-blue-600 underline hover:text-blue-800">https://app.precisefp.com/w/raabzv</a>.</p>
+        <p class="mt-2">Schedule a no-cost, no-obligation 30-minute call at <a href="https://app.precisefp.com/w/raabzv" class="text-blue-600 underline hover:text-blue-800">this link</a>.</p>
       </details>
 
-      <details class="group border rounded-lg p-4">
+      <details class="group border rounded-lg p-4" data-question="Tools Used" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What tools do you use?</summary>
-        <p class="mt-2">Secure, intuitive planning tools that allow us to collaborate so you can organize your financial life, track progress toward your goals, and store important documents. We'll also use screen sharing, interactive visuals, and other tools to keep our sessions clear, collaborative, and actionable.</p>
+        <p class="mt-2">Secure collaborative software for organizing, tracking, and planning. Includes screen sharing and visual tools.</p>
       </details>
-
     </div>
   </main>
+
+  <script>
+    function trackFAQToggle(el) {
+      if (el.open) {
+        const label = el.getAttribute('data-question') || 'Unknown';
+        gtag('event', 'faq_expand', {
+          event_category: 'FAQ',
+          event_label: label,
+          value: 1
+        });
+      }
+    }
+  </script>
 </body>
 </html>
