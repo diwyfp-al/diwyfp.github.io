@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Resources | DIWY Financial Planning</title>
+  <title>Process, Services & Engagement | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curated financial planning resources from DIWY Financial Planning.">
-  <meta name="keywords" content="financial planning resources, investing, insurance, budgeting, college savings, DIWY">
+  <meta name="description" content="DIWY Financial Planning offers a modern, collaborative process with flexible services and engagement models to meet your goals.">
+  <meta name="keywords" content="financial planning, advice-only, fiduciary, flat fee, DIWY, CFP, engagement levels">
   <meta name="author" content="DIWY Financial Planning">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -19,28 +19,18 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
-  <script>
-    function trackDIWYEvent(eventName, params = {}) {
-      if (typeof gtag === 'function') {
-        gtag('event', eventName, params);
-      }
-    }
-  </script>
-
   <style>
     :root {
       --diwy-blue: #19215A;
-      --highlight-yellow: #fff59d;
+      --diwy-dark: #0f143c;
     }
-    .text-diwy { color: var(--diwy-blue); }
     .bg-diwy { background-color: var(--diwy-blue); }
-    .accordion-content { transition: max-height 0.3s ease; }
-    mark { background-color: var(--highlight-yellow); padding: 0 2px; }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
+    html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 leading-relaxed">
-	
-<!-- Header -->
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
@@ -52,33 +42,29 @@
         <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
         <a href="resources.html" class="text-diwy font-bold" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})">Resources</a>
         <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" data-mobile-menu-link>Client Portal</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
         <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
       </nav>
 
-    <div class="md:hidden">
-      <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
 
-<nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-	
-	<a href="services.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Services' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services</a>
-	<a href="resources.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Resources' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
-	<a href="faqs.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
-	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Client Portal</a>
-	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Schedule Intro Call' })" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
-</nav>
-
-      
-    </div>
+    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
+      <a href="index.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})" class="text-gray-700 hover:text-diwy">Home</a>
+      <a href="services.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})" class="text-gray-700 hover:text-diwy">Services</a>
+      <a href="resources.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})" class="text-diwy font-bold">Resources</a>
+      <a href="faqs.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})" class="text-gray-700 hover:text-diwy">FAQs</a>
+      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
+      <a href="contact.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium">Schedule a Free Intro Call</a>
+    </nav>
   </header>
-
 
   <!-- Main Content -->
   <main class="pt-32 px-6 max-w-5xl mx-auto">
