@@ -13,16 +13,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
-  <title>DIWY Financial Planning | Collaborative, Fiduciary, Advice-Only, Holistic Financial Planning</title>
-
-  <!-- Meta tags go here -->
-  
+  <title>DIWY Financial Planning | Collaborative, Fiduciary Advice-Only</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Collaborative, fiduciary advice-only financial planning suitable for DIYers and accessible to everyone through DIWY™.">
-  <meta name="keywords" content="fee-only, fiduciary, flat fee, hourly planning, advice-only financial planning, financial advisor near me, DIY financial planning, DIWY, collaborative planning, no commission, no AUM">
-  <meta name="author" content="DIWY Financial Planning™">
+  <meta name="description" content="Collaborate with a CFP® professional and make smarter financial decisions.">
+  <meta name="keywords" content="financial planning, advice-only, fiduciary, CFP, DIWY">
+  <meta name="author" content="DIWY Financial Planning">
 
   <!-- GA4 tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
@@ -33,70 +29,28 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
-<script>
-  function trackDIWYEvent(eventName, params = {}) {
-    if (typeof gtag === 'function') {
-      gtag('event', eventName, params);
-    }
-  }
-</script>	
-
-  <!-- Other tags (favicon, styles, scripts) follow -->
-
-  <!-- Favicons for All Browsers -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Legacy support -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-<style>
-  :root {
-    --diwy-blue: #19215A;
-    --diwy-dark: #0f143c;
-  }
-  .bg-diwy {
-    background-color: var(--diwy-blue);
-  }
-  .hover\:bg-diwy-dark:hover {
-    background-color: var(--diwy-dark);
-  }
-  .text-diwy {
-    color: var(--diwy-blue);
-  }
-  .crossed {
-    text-decoration: line-through;
-    color: #aaa;
-  }
-  .message-cycle {
-    min-height: 2em;
-  }
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 8rem; /* for fixed header offset */
-  }
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.delay-200 { animation-delay: 0.2s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-600 { animation-delay: 0.6s; }	
-</style>
-
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
+    }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-600 { animation-delay: 0.6s; }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
@@ -104,408 +58,47 @@
 <header role="banner" class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <div class="flex items-center space-x-4">
-      <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      <a href="index.html">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      </a>
     </div>
-
-<!-- Header Navigation -->
-<nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-	<a href="index.html" onclick="trackDIWYEvent('nav_click', { label: 'Home' })" class="text-gray-700 hover:text-diwy font-bold">Home</a>
-	<a href="services.html" onclick="trackDIWYEvent('nav_click', { label: 'Services' })" class="text-gray-700 hover:text-diwy">Services</a>
-	<a href="resources.html" onclick="trackDIWYEvent('nav_click', { label: 'Resources' })" class="text-gray-700 hover:text-diwy">Resources</a>
-	<a href="faqs.html" onclick="trackDIWYEvent('nav_click', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy">FAQs</a>
-	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click', { label: 'Schedule Intro Call' })" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
-</nav>
-
-    <div class="md:hidden">
-      <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
+    <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
+      <a href="index.html" class="text-gray-700 hover:text-diwy font-bold">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
+      <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
+      <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
+      <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
+      <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+    </nav>
   </div>
-
-<nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-	<a href="services.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Services' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Services</a>
-	<a href="resources.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Resources' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>Resources</a>
-	<a href="faqs.html" onclick="trackDIWYEvent('nav_click_mobile', { label: 'FAQs' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link>FAQs</a>
-	<a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Client Portal' })" class="text-gray-700 hover:text-diwy" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Client Portal</a>
-	<a href="https://app.precisefp.com/w/raabzv" onclick="trackDIWYEvent('nav_click_mobile', { label: 'Schedule Intro Call' })" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" data-mobile-menu-link target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
-</nav>
-
 </header>
 
-	
-<!-- Hero Image with Animation Overlay -->
-	
-<section id="main" class="relative h-screen bg-center bg-cover"
-  style="background-image: url('HeroImage.jpg'); background-attachment: fixed;">
-	
-  <!-- Overlay Content -->
-	<!--
-  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center text-white px-4 pt-28 md:pt-44">
-	-->
-  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center text-white px-4 pt-16 md:pt-24">
-    
-    <!-- Static Headline -->
-	  
-	<div class="mb-12 text-white text-center px-4 md:px-8 lg:px-16">
-	  <h1 class="text-3xl md:text-5xl font-normal leading-relaxed animate-fade-in-up">
-	    Collaborate with a CFP® professional<br>
-	    and make smarter financial decisions.<br>
-	  </h1>
-	  <h2 class="text-2xl md:text-3xl mt-6 font-normal animate-fade-in-up delay-200">
-	    Advice-only, fiduciary guidance tailored to your goals.<br>
-	    No product sales. No asset minimums.
-	  </h2>
-	  <p class="text-lg md:text-2xl mt-8 italic animate-fade-in-up delay-400">
-	    Plan for yourself—not by yourself<sup>™</sup>
-	  </p>
-</div>
-
-<!-- Call to Action -->
-<a href="#whyDIWY"
-   onclick="trackDIWYEvent('click_hero_learn_more')"
-   class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
-  Learn More
-</a>
-
-
-<!-- Rotating Message -->
-<div id="message-container"
-  class="message-cycle text-white drop-shadow-lg text-xl md:text-2xl lg:text-3xl mt-6" aria-live="polite" role="status">
-    <!-- fallback message -->
-    Collaborative, Holistic, Modular and On-Demand™
-</div>
-
-<!-- Scroll Cue (moved inside overlay, below rotating text) -->
-<div class="mt-8 animate-bounce">
-  <a href="#whyDIWY" aria-label="Scroll to Why Choose DIWY Financial Planning section">
-    <svg class="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-</div>
-</section>
-
-<main role="main">
-	
-<!-- Why DIWY -->
-  <section id="whyDIWY" class="bg-white py-12 px-6 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4 text-diwy">Why Choose DIWY Financial Planning</h2>
-      <div class="grid md:grid-cols-2 gap-6 text-left">
-        <div>
-	  <strong>Experience and Expertise</strong><br>
-	  Knowledge with no product sales.
-	</div>
-        <div>
-	  <strong>Independent Fiduciary Advice</strong><br>
-	  No corporate restrictions, directives or sales quotas.
-	</div>
-        <div>
-	  <strong>Accessible and Judgment-Free</strong><br>
-	  Meet you where you are. Give you what you need.
-	</div>
-        <div>
-	  <strong>A Planning Model That Aligns With Life</strong><br>
-	  Adjust your plan and level of support anytime.
-	</div>
-      </div>
+<!-- Hero Section -->
+<section class="relative h-screen bg-center bg-cover" style="background-image: url('HeroImage.jpg'); background-attachment: fixed;">
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center text-white px-4 pt-20 md:pt-32">
+    <div class="mb-12 text-white text-center px-4 md:px-8 lg:px-16">
+      <h1 class="text-3xl md:text-5xl font-normal leading-relaxed animate-fade-in-up">
+        Collaborate with a CFP® professional<br>
+        and make smarter financial decisions.
+      </h1>
+      <h2 class="text-2xl md:text-3xl mt-6 font-normal animate-fade-in-up delay-200">
+        Advice-only, fiduciary guidance tailored to your goals.<br>
+        No product sales. No asset minimums.
+      </h2>
+      <p class="text-lg md:text-2xl mt-8 italic animate-fade-in-up delay-400">
+        Plan for yourself—not by yourself<sup>™</sup>
+      </p>
     </div>
-  <div class="max-w-4xl mx-auto text-center mt-12">
-<!--    <ul class="text-lg space-y-6 list-disc list-inside text-left inline-block"> -->
-    <ul class="text-lg space-y-6 list-disc list-outside pl-6 text-left">
-      <li>
-        A modern approach to financial planning that combines the personalized attention of a human advisor with the power of technology.
-      </li>
-      <li>
-        You work directly with a CFP® professional to ensure each recommendation fits your unique circumstances and goals, while notetaking and administrative tasks are handled automatically.
-      </li>
-      <li>
-        The result is high-quality advice that helps you navigate ever-changing conditions and complexity, so you can achieve your goals with confidence and without paying for unnecessary overhead.
-      </li>
-    </ul>
+    <a href="about.html" class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300 animate-fade-in-up delay-600">
+      Learn More
+    </a>
   </div>
 </section>
 
-
-<!-- DIWY: The Best of Both Worlds -->
-<section class="py-6 px-6 md:px-12">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-6">
-      <h2 class="text-2xl font-semibold text-diwy text-center mb-1">DIWY™: The Best of Both Worlds</h2>
-      <div class="relative inline-block group">
-        <p class="text-sm text-gray-700 inline-flex items-center justify-center gap-2">
-          Access expertise, maintain control, and lower costs.</p>
-	<p class="text-sm text-gray-700 inline-flex items-center justify-center gap-2">
-          "Do-it-with-you" Financial Planning</p>
-	      
-      </div>
-    </div>
-
-<!-- Responsive Comparison Table (Desktop and Mobile Views) -->
-
-<!-- Desktop Table (visible on md and up) -->
-<div class="hidden md:block">
-  <table class="min-w-full table-fixed border border-gray-200 text-left whitespace-normal leading-tight">
-    <thead>
-      <tr class="bg-gray-100">
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Approach</th>
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Expertise*</th>
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Guidance</th>
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Control</th>
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Custody</th>
-        <th class="border px-1 py-0.5 text-diwy font-semibold text-base md:text-lg w-20">Fees</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border px-1 py-0.5 font-semibold relative group">
-          DIY
-          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            Do-it-yourself
-          </span>
-        </td>
-        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Client</td>
-        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Self-guided</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Minimal</td>
-      </tr>
-      <tr>
-        <td class="border px-1 py-0.5 font-semibold relative group">
-          DIWY
-          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            Do-it-with-you
-          </span>
-        </td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Collaborative</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-assisted</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Client</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">As-needed</td>
-      </tr>
-      <tr>
-        <td class="border px-1 py-0.5 font-semibold relative group">
-          DIFY
-          <span class="absolute left-1/2 -translate-x-1/2 mt-1 w-max bg-white border border-gray-300 text-xs text-gray-700 rounded px-2 py-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10">
-            Do-it-for-you
-          </span>
-        </td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor</td>
-        <td class="border px-1 py-0.5 bg-green-50 text-green-800">Advisor-managed</td>
-        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
-        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Advisor</td>
-        <td class="border px-1 py-0.5 bg-red-50 text-red-800">Ongoing</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- Mobile Stacked Cards (visible below md) -->
-<div class="md:hidden space-y-4">
-  <!-- DIY -->
-  <div class="border rounded shadow-sm p-4 bg-white">
-    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
-      <i data-lucide="user" class="w-4 h-4 text-gray-600"></i> DIY <span class="text-xs text-gray-500">(Do-it-yourself)</span>
-    </div>
-    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Expertise:</strong> Client</div>
-    <div><i data-lucide="map" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Guidance:</strong> Self-guided</div>
-    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Control:</strong> Client</div>
-    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Custody:</strong> Client</div>
-    <div><i data-lucide="dollar-sign" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Fees:</strong> Minimal</div>
-  </div>
-
-  <!-- DIWY -->
-  <div class="border rounded shadow-sm p-4 bg-white">
-    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
-      <i data-lucide="users" class="w-4 h-4 text-gray-600"></i> DIWY <span class="text-xs text-gray-500">(Do-it-with-you)</span>
-    </div>
-    <div><i data-lucide="users" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Expertise:</strong> Collaborative</div>
-    <div><i data-lucide="users" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Guidance:</strong> Advisor-assisted</div>
-    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Control:</strong> Client</div>
-    <div><i data-lucide="user" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Custody:</strong> Client</div>
-    <div><i data-lucide="dollar-sign" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Fees:</strong> As-needed</div>
-  </div>
-
-  <!-- DIFY -->
-  <div class="border rounded shadow-sm p-4 bg-white">
-    <div class="text-diwy font-semibold text-base mb-1 flex items-center gap-1">
-      <i data-lucide="users" class="w-4 h-4 text-gray-600"></i> DIFY <span class="text-xs text-gray-500">(Do-it-for-you)</span>
-    </div>
-    <div><i data-lucide="building" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Expertise:</strong> Advisor</div>
-    <div><i data-lucide="building" class="inline w-4 h-4 mr-1 text-green-700"></i><strong>Guidance:</strong> Advisor-managed</div>
-    <div><i data-lucide="building" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Control:</strong> Advisor</div>
-    <div><i data-lucide="building" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Custody:</strong> Advisor</div>
-    <div><i data-lucide="dollar-sign" class="inline w-4 h-4 mr-1 text-red-600"></i><strong>Fees:</strong> Ongoing</div>
-  </div>
-</div>
-
-    <!-- Footnote -->
-    <p class="text-xs text-gray-600 mt-2">
-      *Refers to having the training, time, tools, and temperament to manage a financial plan (taxes, investments, insurance, estate planning, etc.)
-    </p>
-  </div>
-
-	<!-- begin delete 20250521 -->
-  <script>
-    const tooltip = document.getElementById('tooltip');
-    const button = document.getElementById('tooltip-button');
-    document.addEventListener('click', (e) => {
-      if (tooltip && !tooltip.contains(e.target) && !button.contains(e.target)) {
-        tooltip.classList.add('hidden');
-      }
-    });
-    button.addEventListener('click', () => {
-      tooltip.classList.toggle('hidden');
-    });
-  </script>
-</section>
-	<!-- end delete 20250521 -->
-
-	
-<!-- Financial Planning Is a Process—Not an Event -->
-	
-<section id="planning-process" class="bg-blue-100 py-12 px-6 md:px-12">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-2xl font-semibold text-center mb-4 text-diwy">Financial Planning Is a Process—Not an Event</h2>
-    <p class="text-lg mb-6">Access support as needed with no ongoing fees.</p>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2 text-center">Holistic</h3>
-        <p>Comprehensive planning without overloading you</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2 text-center">Modular</h3>
-        <p>Focus on your urgent and impactful planning needs</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2 text-center">On-Demand</h3>
-        <p>Support when you need it and no fees when you don’t</p>
-      </div>
-    </div>
-
-<!-- 20250725FR Take out redirect box	  
-    <div class="text-center mt-10">
-      <a href="planning-process.html" class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300 inline-block">
-        Explore the DIWY™ Planning Process
-      </a>
-    </div>    
--->
-	  
-  </div>
-</section>
-
-
-
-	
-<!-- DIWY Engagement Levels -->
-<section id="services" class="py-16 px-6 md:px-12 bg-gray-50">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-center text-diwy mb-12">DIWY™ Engagement Levels</h2>                    
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Self-Directed Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8 transition hover:shadow-lg">
-        <h3 class="text-xl font-bold text-diwy mb-4 text-center">Self-Directed Support</h3>
-        <p class="text-gray-700 mb-4 text-center">Assessment, tools and on-demand content</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Holistic financial assessment</li>
-  	  <li>Access to robust financial planning tools</li>
-	  <li>Limited access to webinars with Q&A</li>		
-        </ul>
-        <p class="text-gray-800 font-semibold text-center mb-4">$50/month — cancel anytime</p>
-        <div class="text-center">
-          <a href="services.html#self-directed" onclick="trackDIWYEvent('click_explore_support', { level: 'Self-Directed' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Self-Directed Support</a>
-        </div>
-      </div>
-
-      <!-- Group Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8 transition hover:shadow-lg">
-        <h3 class="text-xl font-bold text-diwy mb-4 text-center">Group Support</h3>
-        <p class="text-gray-700 mb-4 text-center">Everything in Self-Directed + Live Webinars</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Unlimited access to live webinars with Q&A</li>
-          <li>Topics and timing shaped by client feedback</li>
-          <li>Actionable advice</li>
-        </ul>
-        <p class="text-gray-800 font-semibold text-center mb-4">$100/month — cancel anytime</p>
-        <div class="text-center">
-          <a href="services.html#group" onclick="trackDIWYEvent('click_explore_support', { level: 'Group' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore Group Support</a>
-        </div>
-      </div>
-
-      <!-- One-on-one Support -->
-      <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8 transition hover:shadow-lg">
-        <h3 class="text-xl font-bold text-diwy mb-4 text-center">One-on-one Support</h3>
-        <p class="text-gray-700 mb-4 text-center">Collaborative screen sharing sessions</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Personalized financial advice</li>
-          <li>Implementation support</li>
-          <li>No “shadow billing” or hidden fees</li>
-        </ul>
-        <p class="text-gray-800 font-semibold text-center mb-4">$400 for the first hour — then discounted</p>
-        <div class="text-center">
-          <a href="services.html#one-on-one" onclick="trackDIWYEvent('click_explore_support', { level: 'One-on-One' })" class="bg-diwy text-white text-center px-4 py-2 rounded hover:bg-diwy-dark transition">Explore One-on-One Support</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-</main>
-
-<!-- This is a comment 
-	
-<section id="affiliations" class="bg-white py-10 px-6 md:px-12 border-t border-gray-200">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-2xl font-semibold text-diwy text-center mb-6">Affiliations</h2>
-    <div class="flex flex-wrap justify-center gap-6 text-center text-sm text-gray-700">
-      <a href="https://www.aaafainc.org/" target="_blank" rel="noopener noreferrer" class="hover:underline">AAAA</a>
-      <a href="https://chipprofessionals.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">CHIP Professionals</a>
-      <a href="https://www.letsmakeaplan.org/find-a-cfp-professional/certified-professional-profile/1b205ebb-023e-4e8d-85c6-42a5d7b4270b" target="_blank" rel="noopener noreferrer" class="hover:underline">CFP Board</a>
-      <a href="https://garrettplanningnetwork.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Garrett Planning Network</a>
-      <a href="https://www.trustwillow.com/" target="_blank" rel="noopener noreferrer" class="hover:underline">Willow</a>
-    </div>
-  </div>
-</section>
-
--->
-
-	
-<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600">
-  	  
-<!-- Legal / Disclosure -->
-	
-<div class="flex flex-col text-center space-y-2 text-xs">
-  <p>DIWY Financial Planning (CRD #335615) is a Registered Investment Adviser (RIA) offering advisory services in the state of California and in other jurisdictions where exempted. Nothing on this website is intended as an offer or solicitation to buy, hold, or sell any financial instrument or investment advisory services. </p>
-  <p>Information provided is for educational purposes and is not intended as investment advice.</p>
-  <p><a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=978302" target="_blank" rel="noopener noreferrer" class="hover:underline">Form ADV Part 2A & 2B</a></p>
-  <p></p>
-</div>
-
-<!-- Copyright -->
-<div class="mt-6 border-t border-gray-100 pt-4 text-center text-xs text-gray-500">
-  © <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.
-</div>
-	
+<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+  <p>DIWY Financial Planning (CRD #335615) is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.</p>
+  <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
 </footer>
 
-<!-- External icon library -->
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<!-- Main JS file -->
-<script src="main.js"></script>
-
-<script>
-  lucide.createIcons();
-</script>
-	
 </body>
 </html>
