@@ -61,13 +61,13 @@
       </a>
     </div>
     <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-      <a href="index.html" class="text-gray-700 hover:text-diwy font-bold">Home</a>
-      <a href="about.html" class="text-gray-700 hover:text-diwy">About</a>
-      <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
-      <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
-      <a href="faqs.html" class="text-gray-700 hover:text-diwy">FAQs</a>
-      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-      <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+      <a href="index.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
+      <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
+      <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
+      <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
+      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
+      <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
     </nav>
   </div>
 </header>
@@ -88,7 +88,7 @@
         Plan for yourself—not by yourself<sup>™</sup>
       </p>
     </div>
-    <a href="about.html" class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300 animate-fade-in-up delay-600">
+    <a href="about.html" onclick="gtag('event', 'hero_click', { 'label': 'Learn More' })" class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300 animate-fade-in-up delay-600">
       Learn More
     </a>
   </div>
@@ -99,5 +99,45 @@
   <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
 </footer>
 
+<script>
+  // Track time on page event at 30s, 60s, and 120s
+  [30, 60, 120].forEach((seconds) => {
+    setTimeout(() => {
+      gtag('event', 'time_on_page', {
+        label: `${seconds}_seconds`,
+        value: seconds
+      });
+    }, seconds * 1000);
+  });
+</script>
+<script>
+  // Track outbound link clicks
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.addEventListener('click', function () {
+      gtag('event', 'outbound_click', {
+        event_category: 'Outbound Link',
+        event_label: link.href
+      });
+    });
+  });
+
+  // Track scroll depth milestones
+  const scrollThresholds = [25, 50, 75, 100];
+  let scrollReached = {};
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollThresholds.forEach(threshold => {
+      if (scrollPercent >= threshold && !scrollReached[threshold]) {
+        scrollReached[threshold] = true;
+        gtag('event', 'scroll_depth', {
+          event_category: 'Scroll',
+          event_label: `${threshold}%`
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
