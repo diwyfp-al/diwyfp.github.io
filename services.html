@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Process, Services & Engagement | DIWY Financial Planning</title>
+  <title>Services | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DIWY Financial Planning offers a modern, collaborative process with flexible services and engagement models to meet your goals.">
-  <meta name="keywords" content="financial planning, advice-only, fiduciary, flat fee, DIWY, CFP, engagement levels">
+  <meta name="description" content="Explore DIWY Financial Planning's process, services, and flexible engagement models.">
+  <meta name="keywords" content="financial planning, advice-only, flat fee, fiduciary, CFP, DIWY">
   <meta name="author" content="DIWY Financial Planning">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
@@ -18,6 +16,9 @@
     gtag('js', new Date());
     gtag('config', 'G-S34LTCGWNF');
   </script>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <style>
     :root {
@@ -31,39 +32,23 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
+      <a href="index.html">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
 
       <nav class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})">Home</a>
-        <a href="services.html" class="text-diwy font-bold" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
-        <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})">Resources</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})">Client Portal</a>
-        <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
+        <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
+        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
+        <a href="https://app.precisefp.com/w/raabzv" target="_blank" rel="noopener noreferrer" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
       </nav>
-
-      <div class="md:hidden">
-        <button id="mobile-menu-button" aria-label="Open mobile menu" class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-diwy p-2 rounded">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
     </div>
-
-    <nav id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-40 overflow-y-auto flex flex-col items-center justify-center space-y-8 text-xl">
-      <a href="index.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})" class="text-gray-700 hover:text-diwy">Home</a>
-      <a href="services.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})" class="text-diwy font-bold">Services</a>
-      <a href="resources.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})" class="text-gray-700 hover:text-diwy">Resources</a>
-      <a href="faqs.html" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})" class="text-gray-700 hover:text-diwy">FAQs</a>
-      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Client Portal'})" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-      <a href="https://app.precisefp.com/w/raabzv" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})" class="bg-diwy text-white px-6 py-3 rounded-md shadow hover:bg-diwy-dark text-lg font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
-    </nav>
   </header>
 
   <main class="px-6 md:px-12 max-w-7xl mx-auto">
@@ -74,84 +59,122 @@
       </p>
     </section>
 
-<!-- Process -->
+    <!-- Process -->
     <section class="mb-16">
       <h2 class="text-3xl font-bold text-diwy text-center mb-10">Process</h2>
       <ol class="list-decimal list-inside space-y-4 text-lg text-gray-700 max-w-3xl mx-auto">
-        <li><strong>Introductory Meeting:</strong> A no-obligation 30-minute call to see if there is a mutual fit. You'll also receive access to a planning tool to help guide our conversation.</li>
-        <li><strong>Orientation & Calibration:</strong> Based on your preferred level of support, we structure the engagement accordingly—whether it's self-directed, group-based, one-on-one, or a combination.</li>
-        <li><strong>Implementation & Monitoring:</strong> Once priorities are set, we move into action. You'll get clarity and accountability, with a plan to revisit as life evolves.</li>
+        <li><strong>Introductory Meeting:</strong> A no-obligation 30-minute call to see if there is a mutual fit.</li>
+        <li><strong>Orientation & Calibration:</strong> Choose your support level — self-directed, group, or one-on-one.</li>
+        <li><strong>Implementation & Monitoring:</strong> Get clarity and accountability, and adjust as life evolves.</li>
       </ol>
     </section>
 
-<!-- Services -->
+    <!-- Services -->
     <section class="mb-16">
       <h2 class="text-3xl font-bold text-diwy text-center mb-10">Services</h2>
       <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-6">
         We focus on comprehensive, practical areas that can make a meaningful impact:
       </p>
       <ul class="grid md:grid-cols-2 gap-4 list-disc list-inside text-lg text-gray-700 max-w-4xl mx-auto">
-        <li>Organizing and Simplifying Finances</li>
         <li>Budgeting and Cash Flow Management</li>
-        <li>Credit and Debt Management</li>
-        <li>Employee Benefits Optimization</li>
-        <li>Roth Conversions and Backdoor Contributions</li>
+        <li>Debt Strategy and Credit Optimization</li>
+        <li>Employee Benefits Guidance</li>
+        <li>Tax Planning and Roth Conversion Strategies</li>
         <li>Education Funding</li>
-        <li>Risk Management, Asset Protection and Insurance</li>
+        <li>Insurance and Risk Management</li>
         <li>Portfolio Allocation Guidance</li>
-        <li>Investment Selection and Monitoring Guidance</li>
-        <li>Crypto / Digital Assets</li>
-        <li>Tax Planning</li>
-        <li>Planning for Financial Independence / Retirement (including FIRE)</li>
+        <li>Investment Selection and Monitoring</li>
+        <li>Crypto and Digital Assets</li>
+        <li>Financial Independence and Retirement Planning</li>
         <li>Estate and Legacy Planning</li>
       </ul>
     </section>
 
-<!-- Engagement Levels -->    
-    <section class="max-w-4xl mx-auto pb-8">
+    <!-- Engagement Levels -->
+    <section class="pb-12">
       <h2 class="text-3xl font-bold text-diwy text-center mb-10">DIWY™ Engagement Levels</h2>
 
-      <div id="self-directed" class="mb-16">
-        <h3 class="text-2xl font-bold text-diwy mb-4">Self-Directed Support</h3>
-        <p class="text-gray-700 mb-4">For individuals who want tools and structure without meeting regularly with an advisor:</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Holistic financial assessment</li>
-          <li>Access to advanced financial planning software</li>
-          <li>Limited access to educational webinars</li>
-        </ul>
-        <p class="text-gray-800 font-semibold mb-4">$50/month — cancel anytime</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore Self-Directed'})">Explore Self-Directed</a>
-      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div>
+          <h3 class="text-xl font-bold text-diwy mb-2 text-center">Self-Directed Support</h3>
+          <p class="text-gray-700 text-center mb-2">Tools and structure without ongoing meetings:</p>
+          <ul class="list-disc list-inside text-gray-600 mb-2">
+            <li>Holistic financial assessment</li>
+            <li>Access to planning tools</li>
+            <li>Educational webinars</li>
+          </ul>
+          <p class="text-center font-semibold text-gray-800 mb-4">$50/month — cancel anytime</p>
+        </div>
 
-      <div id="group-support" class="mb-16">
-        <h3 class="text-2xl font-bold text-diwy mb-4">Group Support</h3>
-        <p class="text-gray-700 mb-4">Ideal for those who want support through community-based sessions:</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Everything in Self-Directed</li>
-          <li>Live webinars with Q&amp;A</li>
-          <li>Community engagement and shared learning</li>
-        </ul>
-        <p class="text-gray-800 font-semibold mb-4">$100/month — cancel anytime</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore Group Support'})">Explore Group Support</a>
-      </div>
+        <div>
+          <h3 class="text-xl font-bold text-diwy mb-2 text-center">Group Support</h3>
+          <p class="text-gray-700 text-center mb-2">Interactive support through community learning:</p>
+          <ul class="list-disc list-inside text-gray-600 mb-2">
+            <li>All Self-Directed features</li>
+            <li>Live Q&A webinars</li>
+            <li>Community accountability</li>
+          </ul>
+          <p class="text-center font-semibold text-gray-800 mb-4">$100/month — cancel anytime</p>
+        </div>
 
-      <div id="one-on-one" class="mb-16">
-        <h3 class="text-2xl font-bold text-diwy mb-4">One-on-One Support</h3>
-        <p class="text-gray-700 mb-4">Best for those seeking personalized, hands-on guidance. Includes everything in the other tiers, plus:</p>
-        <ul class="list-disc list-inside text-gray-600 mb-4">
-          <li>Collaborative planning sessions</li>
-          <li>Personalized implementation and strategy</li>
-          <li>No ongoing commitment or hidden fees</li>
-        </ul>
-        <p class="text-gray-800 font-semibold mb-4">$400 for the first hour — discounted rate for follow-ups withing 30-day window</p>
-        <a href="#" class="bg-diwy text-white px-4 py-2 rounded hover:bg-diwy-dark transition inline-block" onclick="gtag('event', 'click', {event_category: 'Engagement', event_label: 'Explore One-on-One'})">Explore One-on-One</a>
+        <div>
+          <h3 class="text-xl font-bold text-diwy mb-2 text-center">One-on-One Support</h3>
+          <p class="text-gray-700 text-center mb-2">Hands-on, personalized financial planning:</p>
+          <ul class="list-disc list-inside text-gray-600 mb-2">
+            <li>Live screen-share sessions</li>
+            <li>Custom implementation plans</li>
+            <li>No hidden fees or commitments</li>
+          </ul>
+          <p class="text-center font-semibold text-gray-800 mb-4">$400 for first hour — discounted after</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
-    <p>© <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
   </footer>
+
+  <!-- GA4 Event Tracking -->
+  <script>
+    // Time on page tracking
+    [30, 60, 120].forEach(seconds => {
+      setTimeout(() => {
+        gtag('event', 'time_on_page', {
+          label: `${seconds}_seconds`,
+          value: seconds
+        });
+      }, seconds * 1000);
+    });
+
+    // Outbound click tracking
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      link.addEventListener('click', () => {
+        gtag('event', 'outbound_click', {
+          event_category: 'Outbound Link',
+          event_label: link.href
+        });
+      });
+    });
+
+    // Scroll depth tracking
+    const scrollThresholds = [25, 50, 75, 100];
+    let scrollReached = {};
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollThresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !scrollReached[threshold]) {
+          scrollReached[threshold] = true;
+          gtag('event', 'scroll_depth', {
+            event_category: 'Scroll',
+            event_label: `${threshold}%`
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
-
