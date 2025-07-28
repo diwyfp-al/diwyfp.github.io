@@ -97,34 +97,39 @@
       }
     ];
 
-    function renderResources(data, keyword = '') {
-      const container = document.getElementById('accordionContainer');
-      container.innerHTML = '';
-      const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
+function renderResources(data, keyword = '') {
+  const container = document.getElementById('accordionContainer');
+  container.innerHTML = '';
+  const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
 
-      data.forEach(section => {
-        const items = section.items.filter(item =>
-          !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase())
-        );
-        if (!items.length) return;
+  data.forEach(section => {
+    const items = section.items.filter(item =>
+      !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase())
+    );
+    if (!items.length) return;
 
-        const sec = document.createElement('section');
-        sec.classList.add('mb-6');
-        sec.innerHTML = `
-          <h2 class="text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer" onclick="toggleSection(this)">
-            ${section.category}
-            <span class="text-lg">+</span>
-          </h2>
-          <ul class="accordion-content list-disc list-inside space-y-1 mt-2 hidden">
-            ${items.map(([name, url, desc]) => {
-              const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
-              const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
-              return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'outbound_click', { event_label: '${url}' })">${n}</a> – ${d}</li>`;
-            }).join('')}
-          </ul>`;
-        container.appendChild(sec);
-      });
-    }
+    const sec = document.createElement('section');
+    sec.classList.add('mb-6');
+
+    const expanded = !!keyword; // expand if searching
+    const symbol = expanded ? '−' : '+';
+    const contentClass = expanded ? 'accordion-content list-disc list-inside space-y-1 mt-2' : 'accordion-content list-disc list-inside space-y-1 mt-2 hidden';
+
+    sec.innerHTML = `
+      <h2 class="text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer" onclick="toggleSection(this)">
+        ${section.category}
+        <span class="text-lg">${symbol}</span>
+      </h2>
+      <ul class="${contentClass}">
+        ${items.map(([name, url, desc]) => {
+          const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
+          const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
+          return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'outbound_click', { event_label: '${url}' })">${n}</a> – ${d}</li>`;
+        }).join('')}
+      </ul>`;
+    container.appendChild(sec);
+  });
+}
 
     function toggleSection(header) {
       const ul = header.nextElementSibling;
