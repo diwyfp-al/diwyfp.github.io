@@ -3,27 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ | DIWY Financial Planning</title>
+  <title>FAQs | DIWY Financial Planning</title>
 
-  <!-- Tailwind CSS and Custom Styles -->
+  <meta name="description" content="Answers to common questions about DIWY Financial Planning's process, pricing, and services.">
+  <meta name="keywords" content="financial planning, FAQ, advice-only, pricing, fiduciary, DIWY, CFP">
+  <meta name="author" content="DIWY Financial Planning">
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --diwy-blue: #19215A;
-      --diwy-dark: #0f143c;
-    }
-    .bg-diwy {
-      background-color: var(--diwy-blue);
-    }
-    .hover\:bg-diwy-dark:hover {
-      background-color: var(--diwy-dark);
-    }
-    .text-diwy {
-      color: var(--diwy-blue);
-    }
-  </style>
 
-  <!-- Google Analytics 4 -->
+  <!-- GA4 tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,36 +20,49 @@
     gtag('js', new Date());
     gtag('config', 'G-S34LTCGWNF');
   </script>
+
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
+    }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800 pt-20 md:pt-20">
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-4">
+      <a href="index.html">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
-
-      
       <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy">Home</a>
-        <a href="services.html" class="text-gray-700 hover:text-diwy">Services</a>
-        <a href="resources.html" class="text-gray-700 hover:text-diwy">Resources</a>
-        <a href="faqs.html" class="text-diwy font-bold">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-        <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
+        <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
+        <a href="faqs.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client"
+           class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer"
+           onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
+        <a href="https://app.precisefp.com/w/raabzv"
+           class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium"
+           target="_blank" rel="noopener noreferrer"
+           onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
       </nav>
-
-      
     </div>
   </header>
 
-  <main class="pt-32 pb-16 px-6 max-w-4xl mx-auto">
+  <main class="pt-24 pb-16 px-6 max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold text-diwy mb-8">Frequently Asked Questions</h1>
     <div class="space-y-4">
-      <!-- FAQ Items with Analytics Tracking -->
+      <!-- FAQ Items -->
       <details class="group border rounded-lg p-4" data-question="Pronunciation" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">How do you pronounce DIWY? What does it mean?</summary>
-        <p class="mt-2">DIWY is pronounced <strong>"dee-wee"</strong>, like the word <strong>“kiwi.”</strong><br>It stands for <strong>Do It With You</strong>, because financial planning should be a collaborative experience.</p>
+        <p class="mt-2">DIWY is pronounced <strong>"dee-wee"</strong>, like <strong>“kiwi.”</strong> It stands for <strong>Do It With You</strong>, because financial planning should be a collaborative experience.</p>
       </details>
 
       <details class="group border rounded-lg p-4" data-question="Moving Money" onclick="trackFAQToggle(this)">
@@ -75,27 +77,27 @@
 
       <details class="group border rounded-lg p-4" data-question="Fees" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What do you charge?</summary>
-        <p class="mt-2">Flat-fee model starting at $400/hr. You only pay for time spent in meetings, not behind-the-scenes work. Additional meetings held within a 30-day period are eligble for discounted rates.</p>
+        <p class="mt-2">Flat-fee model starting at $400/hr. You only pay for time spent in meetings, not behind-the-scenes work. Additional meetings held within a 30-day period are eligible for discounted rates.</p>
       </details>
 
       <details class="group border rounded-lg p-4" data-question="Client Types" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Who do you work with?</summary>
-        <p class="mt-2">People from all walks of life, especially clients who want a <strong>collaborative partner</strong>.</p>
+        <p class="mt-2">People from all walks of life — especially clients who want a <strong>collaborative partner</strong>.</p>
       </details>
 
       <details class="group border rounded-lg p-4" data-question="Quick Questions" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What if I just have a few quick questions?</summary>
-        <p class="mt-2">You can attend an office hours Q&A, book one-time sessions or schedule multiple meetings. It's your choice.</p>
+        <p class="mt-2">You can attend an office hours Q&A, book one-time sessions, or schedule multiple meetings. It’s your choice.</p>
       </details>
 
       <details class="group border rounded-lg p-4" data-question="Virtual Meetings" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Do you meet virtually?</summary>
-        <p class="mt-2">Yes! All meetings are conducted virtually by phone or Zoom. Meetings are available 7-days a week.</p>
+        <p class="mt-2">Yes! All meetings are conducted virtually by phone or Zoom. Scheduling is flexible, including evenings and weekends.</p>
       </details>
 
-      <details class="group border rounded-lg p-4" data-question="Virtual Meetings" onclick="trackFAQToggle(this)">
+      <details class="group border rounded-lg p-4" data-question="In Person" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">Do you meet in-person?</summary>
-        <p class="mt-2">Yes! I'm available to meet in-person. Additional fees might be applicable for travel and accommodations. I'm available to meet in person 7-days a week.</p>
+        <p class="mt-2">Yes! In-person meetings are available upon request. Travel fees may apply depending on location.</p>
       </details>
 
       <details class="group border rounded-lg p-4" data-question="Getting Started" onclick="trackFAQToggle(this)">
@@ -105,10 +107,14 @@
 
       <details class="group border rounded-lg p-4" data-question="Tools Used" onclick="trackFAQToggle(this)">
         <summary class="cursor-pointer font-semibold text-diwy text-lg group-open:mb-2">What tools do you use?</summary>
-        <p class="mt-2">Secure collaborative software for organizing, tracking, and planning. Includes screen sharing and visual tools.</p>
+        <p class="mt-2">We use secure, collaborative software that includes data organization, visualization tools, and screen sharing for guided planning.</p>
       </details>
     </div>
   </main>
+
+  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  </footer>
 
   <script>
     function trackFAQToggle(el) {
@@ -121,6 +127,44 @@
         });
       }
     }
+
+    // Time on page
+    [30, 60, 120].forEach(seconds => {
+      setTimeout(() => {
+        gtag('event', 'time_on_page', {
+          label: `${seconds}_seconds`,
+          value: seconds
+        });
+      }, seconds * 1000);
+    });
+
+    // Outbound links
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      link.addEventListener('click', () => {
+        gtag('event', 'outbound_click', {
+          event_category: 'Outbound Link',
+          event_label: link.href
+        });
+      });
+    });
+
+    // Scroll depth
+    const scrollThresholds = [25, 50, 75, 100];
+    let scrollReached = {};
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollThresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !scrollReached[threshold]) {
+          scrollReached[threshold] = true;
+          gtag('event', 'scroll_depth', {
+            event_category: 'Scroll',
+            event_label: `${threshold}%`
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
