@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Process, Services & Engagement | DIWY Financial Planning</title>
+  <title>Resources | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DIWY Financial Planning offers a modern, collaborative process with flexible services and engagement models to meet your goals.">
-  <meta name="keywords" content="financial planning, advice-only, fiduciary, flat fee, DIWY, CFP, engagement levels">
+  <meta name="description" content="Curated educational and planning resources by DIWY Financial Planning.">
+  <meta name="keywords" content="financial resources, planning tools, advice-only, DIWY, CFP, budgeting, insurance, estate">
   <meta name="author" content="DIWY Financial Planning">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Google Analytics 4 -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,6 +17,8 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     :root {
       --diwy-blue: #19215A;
@@ -30,34 +30,39 @@
     html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 pt-16 md:pt-24">
+
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+
+  <!-- Header -->
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-4" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Logo'})">
+      <a href="index.html">
         <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
       </a>
       <nav class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Home'})">Home</a>
-        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Services'})">Services</a>
-        <a href="resources.html" class="text-diwy font-bold" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Resources'})">Resources</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'FAQs'})">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
-        <a href="contact.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'click', {event_category: 'Navigation', event_label: 'Schedule a Free Intro Call'})">Schedule a Free Intro Call</a>
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
+        <a href="resources.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
+        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
+        <a href="https://app.precisefp.com/w/raabzv" target="_blank" rel="noopener noreferrer" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
       </nav>
     </div>
   </header>
 
   <main class="pt-24 px-6 max-w-5xl mx-auto">
     <h1 class="text-3xl font-bold text-diwy text-center mb-6">Curated Resources</h1>
+
     <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded">
       <p class="text-sm text-gray-800">
-        <strong>Disclaimer:</strong> The links on this page are provided for educational and informational purposes only. Information is believed to be accurate at the time of posting but is not regularly monitored for changes. DIWY Financial Planning does not control or guarantee the accuracy, relevance, timeliness, or completeness of content on external websites. By clicking a link, users acknowledge they are leaving the DIWY Financial Planning website and accept responsibility for interacting with third-party content.
+        <strong>Disclaimer:</strong> These links are provided for educational purposes. DIWY Financial Planning does not control third-party content and is not responsible for its accuracy. You are leaving our website when you click.
       </p>
     </div>
 
     <div class="mb-6 text-sm text-gray-700">
       <p>
-        <strong>Have a suggestion?</strong> If a link appears to be broken, a resource seems outdated, or there is a recommendation for an addition or removal, please email 
+        <strong>Have a suggestion?</strong> If a link is broken or outdated, email us at 
         <a id="emailLink" href="#" class="text-blue-700 underline hover:text-diwy">[email protected]</a>.
       </p>
     </div>
@@ -67,13 +72,18 @@
       <input type="text" id="resourceSearch" placeholder="Type a keyword (e.g. insurance, investing, 529)..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
     </div>
 
-    <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-blue-900">
+    <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-diwy-dark">
       Expand All
     </button>
 
     <div id="accordionContainer"></div>
   </main>
 
+  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
   <script>
     const fallbackResources = [
       {
@@ -109,7 +119,7 @@
             ${items.map(([name, url, desc]) => {
               const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
               const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
-              return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'click', {event_category: 'Resources', event_label: '${name}'})">${n}</a> – ${d}</li>`;
+              return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'outbound_click', { event_label: '${url}' })">${n}</a> – ${d}</li>`;
             }).join('')}
           </ul>`;
         container.appendChild(sec);
@@ -119,8 +129,8 @@
     function toggleSection(header) {
       const ul = header.nextElementSibling;
       const symbol = header.querySelector('span');
-      const expanded = ul.classList.toggle('hidden');
-      symbol.textContent = expanded ? '+' : '−';
+      const hidden = ul.classList.toggle('hidden');
+      symbol.textContent = hidden ? '+' : '−';
     }
 
     document.getElementById('toggleAll').addEventListener('click', () => {
@@ -163,7 +173,34 @@
         link.href = `mailto:${email}`;
       }
     });
+
+    // GA: Time on page
+    [30, 60, 120].forEach(seconds => {
+      setTimeout(() => {
+        gtag('event', 'time_on_page', {
+          label: `${seconds}_seconds`,
+          value: seconds
+        });
+      }, seconds * 1000);
+    });
+
+    // GA: Scroll depth
+    const scrollThresholds = [25, 50, 75, 100];
+    let scrollReached = {};
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollThresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !scrollReached[threshold]) {
+          scrollReached[threshold] = true;
+          gtag('event', 'scroll_depth', {
+            event_category: 'Scroll',
+            event_label: `${threshold}%`
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
