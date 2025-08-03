@@ -19,8 +19,8 @@
   <meta name="author" content="DIWY Financial Planning">
 
   <!-- GA4 tracking -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
-  <script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
+  <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -28,37 +28,50 @@
   </script>
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="HeroImage.jpg" as="image">
+
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
- 
- 
-<style>
-  :root {
-    --diwy-blue: #19215A;
-    --diwy-dark: #0f143c;
-  }
-  .bg-diwy { background-color: var(--diwy-blue); }
-  .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
-  .text-diwy { color: var(--diwy-blue); }
 
-  @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 1s ease-out forwards;
-    opacity: 0;
-  }
+  <style>
+    :root {
+      --diwy-blue: #19215A;
+      --diwy-dark: #0f143c;
+    }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
 
-  /* New delay classes for more readable pacing */
-  .delay-500 { animation-delay: 0.5s; }
-  .delay-1000 { animation-delay: 1s; }
-  .delay-2000 { animation-delay: 2s; }
-  .delay-4000 { animation-delay: 4s; }
-  .delay-6000 { animation-delay: 6s; }
-  .delay-8000 { animation-delay: 8s; }
- 
-</style>
- 
+    /* Initial offscreen state */
+    .hero-text, .hero-sub, .hero-tagline, .hero-cta {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Animation state (triggered after window.onload) */
+    .fade-start .hero-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-start .hero-sub {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.4s;
+    }
+    .fade-start .hero-tagline {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.8s;
+    }
+    .fade-start .hero-cta {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.2s;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
@@ -83,44 +96,49 @@
 </header>
 
 <!-- Hero Section -->
- 
-<section class="relative h-screen bg-center bg-cover" style="background-image: url('HeroImage.jpg'); background-attachment: fixed;">
+<section class="relative h-screen bg-center bg-cover" style="background-image: url('HeroImage.jpg');">
   <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center text-white px-4 pt-20 md:pt-32">
     <div class="mb-12 text-white text-center px-4 md:px-8 lg:px-16">
 
-<!-- Headline -->
-      <h1 class="text-3xl md:text-5xl font-normal leading-relaxed animate-fade-in-up delay-500">
+      <!-- Headline -->
+      <h1 class="hero-text text-3xl md:text-5xl font-normal leading-relaxed">
         Collaborate with a CFP® professional<br>
         and make smarter financial decisions.
       </h1>
 
-<!-- Sub-headline -->     
-      <h2 class="text-2xl md:text-3xl mt-6 font-normal animate-fade-in-up delay-4000">
+      <!-- Sub-headline -->
+      <h2 class="hero-sub text-2xl md:text-3xl mt-6 font-normal">
         Advice-only, fiduciary guidance tailored to your goals.<br>
         No product sales. No asset minimums.
       </h2>
 
-<!-- Tagline -->      
-      <p class="text-lg md:text-2xl mt-8 italic animate-fade-in-up delay-6000">
+      <!-- Tagline -->
+      <p class="hero-tagline text-lg md:text-2xl mt-8 italic">
         Plan for yourself—not by yourself<sup>™</sup>
-      </p>    
-     
+      </p>
     </div>
 
-<!-- Call-to-Action -->
+    <!-- Call-to-Action -->
     <a href="about.html" onclick="gtag('event', 'hero_click', { 'label': 'Learn More' })"
-       class="bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300 animate-fade-in-up delay-8000">
+       class="hero-cta bg-diwy text-white px-6 py-3 rounded shadow hover:bg-diwy-dark text-base font-semibold transition-colors duration-300">
       Learn More
     </a>
   </div>
 </section>
+
+<script>
+  // Trigger fade-in animations AFTER the page is fully loaded
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-start');
+  });
+</script>
 
 <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
   <p>DIWY Financial Planning (CRD #335615) is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.</p>
   <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
 </footer>
 
-<script>
+<script defer>
   // Track time on page event at 30s, 60s, and 120s
   [30, 60, 120].forEach((seconds) => {
     setTimeout(() => {
@@ -130,8 +148,7 @@
       });
     }, seconds * 1000);
   });
-</script>
-<script>
+
   // Track outbound link clicks
   document.querySelectorAll('a[href^="http"]').forEach(link => {
     link.addEventListener('click', function () {
@@ -144,7 +161,7 @@
 
   // Track scroll depth milestones
   const scrollThresholds = [25, 50, 75, 100];
-  let scrollReached = {};
+  const scrollReached = {};
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -162,3 +179,4 @@
 </script>
 </body>
 </html>
+
