@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Schedule a Meeting | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Schedule time with DIWY Financial Planning. Embedded Calendly with options for prospective clients, existing clients, professional network, partners, and media.">
+  <meta name="description" content="Schedule time with DIWY Financial Planning. Options for prospective clients, existing clients, professional network, partners, and media.">
   <meta name="keywords" content="financial planning, advice-only, fiduciary, CFP, DIWY, scheduling">
   <meta name="author" content="DIWY Financial Planning">
 
@@ -19,7 +19,7 @@
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Tailwind CSS (match index.html) -->
+  <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <style>
@@ -28,10 +28,6 @@
     .hover\:bg-diwy-dark:hover{ background-color: var(--diwy-dark);} 
     .text-diwy{ color: var(--diwy-blue);} 
 
-    /* Inner page spacing to clear fixed header (match index body padding) */
-    /* Note: body has pt-24 md:pt-32 in markup */
-
-    /* Accessible accordion styling */
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
     .accordion summary { cursor: pointer; display:flex; align-items:center; gap:.5rem; }
@@ -39,14 +35,15 @@
     .accordion[open] summary .caret::after { content: "−"; }
     .accordion summary .caret::after { content: "+"; }
 
-    /* Calendly container height to prevent layout shift */
-    #calendly-embed { min-height: 720px; }
+    .url-row { display: flex; align-items: center; gap:.5rem; }
+    @media (max-width: 640px) { .url-row { align-items: flex-start; } }
+    .copy-btn:focus { outline: 2px solid #19215A; outline-offset: 2px; }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
 
-  <!-- Header (copied to match index.html) -->
+  <!-- Header -->
   <header role="banner" class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-4">
@@ -60,17 +57,29 @@
         <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{ 'label':'Services' })">Services</a>
         <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{ 'label':'Resources' })">Resources</a>
         <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{ 'label':'FAQs' })">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer" onclick="gtag('event','nav_click',{ 'label':'Client Portal' })">Client Portal</a>
-        <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer" onclick="gtag('event','nav_click',{ 'label':'Schedule Intro Call' })">Schedule a Free Intro Call</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer">Client Portal</a>
+        <a href="https://app.precisefp.com/w/raabzv" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" target="_blank" rel="noopener noreferrer">Schedule a Free Intro Call</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
   <main class="max-w-7xl mx-auto px-6">
+
+    <!-- Disclosure -->
+    <section class="mb-6">
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
+        <h2 class="font-bold text-yellow-800">Disclosure</h2>
+        <p class="mt-2 text-sm text-gray-700">
+          All interactions and communications with DIWY Financial Planning may be recorded and retained for quality assurance and regulatory purposes.
+          This includes emails, text messages, phone calls, and any other communication. By scheduling a meeting, you consent to having communications recorded and retained.
+        </p>
+      </div>
+    </section>
+
     <section class="mb-6">
       <h1 class="text-3xl md:text-4xl font-extrabold text-diwy">Schedule a Meeting</h1>
-      <p class="mt-2 max-w-3xl">Choose the option that fits your situation. Each section includes what to expect, any prerequisites, and a link to book. The calendar loads on this page.</p>
+      <p class="mt-2 max-w-3xl">Choose the option that fits your situation. Each section includes what to expect, any prerequisites, and a direct booking link.</p>
     </section>
 
     <!-- Quick links -->
@@ -87,79 +96,58 @@
     <!-- Accordions -->
     <section class="space-y-4">
 
-<!-- Prospective Clients -->
-<details id="prospective" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden" open>
-  <summary class="p-4 text-lg font-semibold text-diwy flex items-center">
-    Prospective Clients <span class="caret" aria-hidden="true"></span>
-  </summary>
-  <div class="px-5 pb-5 space-y-4">
-    <p class="text-sm">
-      A 30 minute phone call to learn about your goals and share how DIWY Financial Planning works. No cost or obligation.
-    </p>
+      <!-- Prospective Clients -->
+      <details id="prospective" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden" open>
+        <summary class="p-4 text-lg font-semibold text-diwy flex items-center">Prospective Clients <span class="caret" aria-hidden="true"></span></summary>
+        <div class="px-5 pb-5 space-y-4">
+          <p class="text-sm">A 30-minute phone call to learn about your goals and share how DIWY Financial Planning works. No cost or obligation.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-gray-50 rounded-xl p-4 border">
-        <h3 class="font-semibold">What to expect</h3>
-        <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-          <li>Brief overview of your situation and goals</li>
-          <li>Overview of services offered and fees</li>
-          <li>Next steps if there is a fit</li>
-        </ul>
-      </div>
-      <div class="bg-gray-50 rounded-xl p-4 border">
-        <h3 class="font-semibold">FAQs</h3>
-        <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-          <li>Other than completing the pre-meeting questionnaire, there is nothing else that you need to do prior to the meeting</li>
-          <li>There is no cost or obligation associated with the 30-minute introductory meeting</li>
-          <li>Free access to a financial planning tool will be made available after the meeting</li>
-        </ul>
-      </div>
-    </div>
+          <div class="flex flex-col gap-2">
+            <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+               href="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664"
+               target="_blank" rel="noopener"
+               onclick="try{gtag('event','questionnaire_click',{event_category:'engagement',event_label:'prospect_questionnaire'});}catch(e){}">
+              Complete the pre-meeting questionnaire
+            </a>
 
-    <!-- Embedded iframe
-    <div class="mt-4">
-    </div>
-     -->
-    
-    <div class="flex flex-wrap items-center gap-3">
-      <a
-        class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-        href="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664"
-        target="_blank"
-        rel="noopener"
-        onclick="try{gtag('event','questionnaire_click',{event_category:'engagement',event_label:'precisefp_prospect_questionnaire'});}catch(e){}"
-      >
-        Complete the pre-meeting questionnaire
-      </a>
-    </div>
-
-  </div>
-</details>
+            <div class="url-row text-xs text-gray-700">
+              <code class="break-all">https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664</code>
+              <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                      type="button"
+                      aria-label="Copy questionnaire link"
+                      data-url="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664">
+                <!-- Clipboard SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </details>
 
       <!-- Existing Clients -->
       <details id="clients" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
         <summary class="p-4 text-lg font-semibold text-diwy flex items-center">Existing Clients <span class="caret" aria-hidden="true"></span></summary>
-        <div class="px-5 pb-5 space-y-4">
-          <p class="text-sm">For current engagements and ongoing clients. Select a review or working session.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Prerequisites</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Have your latest documents handy</li>
-                <li>Update shared files if requested</li>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">FAQs</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>For virtual meetings, meeting time is the only billable time</li>
-                <li>Zoom by default. By phone or in person on request</li>
-              </ul>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-3">
-            <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark" href="#calendar" data-cal-url="https://calendly.com/alfaber/60minutemeeting" onclick="setCalendly(this.dataset.calUrl)">Load this calendar below</a>
-            <a class="px-4 py-2 rounded-md border" target ="_blank" rel="noopener" href="https://calendly.com/alfaber/60minutemeeting">https://calendly.com/alfaber/60minutemeeting</a>
+        <div class="px-5 pb-5 space-y-2">
+          <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+             href="https://calendly.com/alfaber/60minutemeeting" target="_blank" rel="noopener">
+            Book Client Meeting
+          </a>
+          <div class="url-row text-xs text-gray-700">
+            <code class="break-all">https://calendly.com/alfaber/60minutemeeting</code>
+            <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                    type="button"
+                    aria-label="Copy client meeting link"
+                    data-url="https://calendly.com/alfaber/60minutemeeting">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy
+            </button>
           </div>
         </div>
       </details>
@@ -167,27 +155,23 @@
       <!-- Professional Network -->
       <details id="network" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
         <summary class="p-4 text-lg font-semibold text-diwy flex items-center">Professional Network <span class="caret" aria-hidden="true"></span></summary>
-        <div class="px-5 pb-5 space-y-4">
-          <p class="text-sm">For peers and industry contacts. Use this for introductions and collaboration ideas.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Topics</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Sharing resources and best practices</li>
-                <li>Referrals in both directions</li>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Notes</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Please share an agenda in the invite</li>
-                <li>Phone or video options are available</li>
-              </ul>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-3">
-            <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark" href="#calendar" data-cal-url="https://calendly.com/alfaber/30-minute-zoom-or-phone" onclick="setCalendly(this.dataset.calUrl)">Load this calendar below</a>
-            <a class="px-4 py-2 rounded-md border" target="_blank" rel="noopener" href="https://calendly.com/alfaber/30-minute-zoom-or-phone">https://calendly.com/alfaber/30-minute-zoom-or-phone</a>
+        <div class="px-5 pb-5 space-y-2">
+          <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+             href="https://calendly.com/alfaber/30-minute-zoom-or-phone" target="_blank" rel="noopener">
+            Book Networking Call
+          </a>
+          <div class="url-row text-xs text-gray-700">
+            <code class="break-all">https://calendly.com/alfaber/30-minute-zoom-or-phone</code>
+            <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                    type="button"
+                    aria-label="Copy networking link"
+                    data-url="https://calendly.com/alfaber/30-minute-zoom-or-phone">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy
+            </button>
           </div>
         </div>
       </details>
@@ -195,27 +179,23 @@
       <!-- External Partners -->
       <details id="partners" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
         <summary class="p-4 text-lg font-semibold text-diwy flex items-center">External Partners <span class="caret" aria-hidden="true"></span></summary>
-        <div class="px-5 pb-5 space-y-4">
-          <p class="text-sm">For attorneys, accountants, insurance professionals, and platform partners.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Use cases</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Client collaboration and case reviews</li>
-                <li>Partner introductions and demos</li>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Prep</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Share materials before the call when possible</li>
-                <li>Include call objectives</li>
-              </ul>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-3">
-            <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark" href="#calendar" data-cal-url="https://calendly.com/alfaber/30-minute-zoom-or-phone" onclick="setCalendly(this.dataset.calUrl)">Load this calendar below</a>
-            <a class="px-4 py-2 rounded-md border" target="_blank" rel="noopener" href="https://calendly.com/alfaber/30-minute-zoom-or-phone">https://calendly.com/alfaber/30-minute-zoom-or-phone</a>
+        <div class="px-5 pb-5 space-y-2">
+          <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+             href="https://calendly.com/alfaber/30-minute-zoom-or-phone" target="_blank" rel="noopener">
+            Book Partner Call
+          </a>
+          <div class="url-row text-xs text-gray-700">
+            <code class="break-all">https://calendly.com/alfaber/30-minute-zoom-or-phone</code>
+            <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                    type="button"
+                    aria-label="Copy partner call link"
+                    data-url="https://calendly.com/alfaber/30-minute-zoom-or-phone">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy
+            </button>
           </div>
         </div>
       </details>
@@ -223,104 +203,99 @@
       <!-- Media & Speaking -->
       <details id="media" class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
         <summary class="p-4 text-lg font-semibold text-diwy flex items-center">Media & Speaking <span class="caret" aria-hidden="true"></span></summary>
-        <div class="px-5 pb-5 space-y-4">
-          <p class="text-sm">For journalists, podcasters, and event organizers.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Topics</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Advice-only planning and consumer education</li>
-                <li>Financial literacy and educator outreach</li>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">Details to include</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-                <li>Outlet or event name</li>
-                <li>Deadline or event date</li>
-              </ul>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-3">
-            <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark" href="#calendar" data-cal-url="https://calendly.com/alfaber/30-minute-zoom-or-phone" onclick="setCalendly(this.dataset.calUrl)">Load this calendar below</a>
-            <a class="px-4 py-2 rounded-md border" target="_blank" rel="noopener" href="https://calendly.com/alfaber/30-minute-zoom-or-phone">https://calendly.com/alfaber/30-minute-zoom-or-phone</a>
+        <div class="px-5 pb-5 space-y-2">
+          <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+             href="https://calendly.com/alfaber/30-minute-zoom-or-phone" target="_blank" rel="noopener">
+            Book Media/Interview
+          </a>
+          <div class="url-row text-xs text-gray-700">
+            <code class="break-all">https://calendly.com/alfaber/30-minute-zoom-or-phone</code>
+            <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                    type="button"
+                    aria-label="Copy media link"
+                    data-url="https://calendly.com/alfaber/30-minute-zoom-or-phone">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy
+            </button>
           </div>
         </div>
       </details>
-
-    </section>
-
-    <!-- Embedded Calendly -->
-    <section id="calendar" class="mt-8">
-      <h2 class="text-2xl font-bold text-diwy mb-2">Book Now</h2>
-      <p class="text-sm mb-4">The calendar loads here. If it does not appear, use the direct link above. Times show in your time zone.</p>
-      <div id="calendly-embed" class="bg-white rounded-2xl border shadow-sm p-2"></div>
     </section>
 
     <section class="mt-8 text-xs text-gray-600">
-      <p>By booking, you agree to DIWY Financial Planning policies and website terms. No products are sold. Engagements are advice-only.</p>
+      <p>By booking, you agree to DIWY Financial Planning policies and website terms. Engagements are advice-only. No products are sold.</p>
     </section>
 
     <footer class="py-10"></footer>
   </main>
 
-  <!-- Footer (copied to match index.html) -->
+  <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
     <p>DIWY Financial Planning (CRD #335615) is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.</p>
     <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
   </footer>
 
-  <!-- Calendly embed loader + analytics hooks -->
+  <!-- Copy-to-clipboard + analytics -->
   <script>
-    const DEFAULT_CAL_URL = 'https://calendly.com/alfaber/30-minute-zoom-or-phone';
-
-    function injectCalendly(url){
-      const container = document.getElementById('calendly-embed');
-      if(!container) return;
-      container.innerHTML = '<div class="calendly-inline-widget" data-url="' + encodeURI(url) + '" style="min-width:320px;height:720px;"></div>';
-      // Load external script once
-      if(!document.querySelector('script[data-calendly]')){
-        const s = document.createElement('script');
-        s.src = 'https://assets.calendly.com/assets/external/widget.js';
-        s.async = true; s.setAttribute('data-calendly','1');
-        document.body.appendChild(s);
-      }
-      try { gtag('event','load_calendly',{ event_category:'engagement', event_label:url }); } catch(e){}
+    function setCopiedState(btn){
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied</span>';
+      setTimeout(()=>{ btn.disabled = false; btn.innerHTML = original; }, 1500);
     }
-    function setCalendly(url){ injectCalendly(url || DEFAULT_CAL_URL); }
 
-    // Load default or ?cal= on DOM ready
-    document.addEventListener('DOMContentLoaded', () => {
-      const u = new URL(window.location.href);
-      const cal = u.searchParams.get('cal');
-      injectCalendly(cal || DEFAULT_CAL_URL);
-    });
-  </script>
+    function bindCopyButtons(){
+      document.querySelectorAll('.copy-btn').forEach(btn=>{
+        btn.addEventListener('click', async ()=>{
+          const url = btn.getAttribute('data-url') || '';
+          try {
+            await navigator.clipboard.writeText(url);
+            try { gtag('event','copy_link',{ event_category:'engagement', event_label:url }); } catch(e){}
+            setCopiedState(btn);
+          } catch (err) {
+            // Fallback for older browsers
+            const ta = document.createElement('textarea');
+            ta.value = url;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); setCopiedState(btn); } finally { document.body.removeChild(ta); }
+          }
+        });
+      });
+    }
 
-  <!-- Match index.html behavior: time on page, outbound clicks, scroll depth -->
-  <script defer>
-    [30,60,120].forEach((seconds)=>{
-      setTimeout(()=>{ gtag('event','time_on_page',{ label: `${seconds}_seconds`, value: seconds }); }, seconds*1000);
-    });
+    document.addEventListener('DOMContentLoaded', bindCopyButtons);
 
-    document.querySelectorAll('a[href^="http"]').forEach(link=>{
-      link.addEventListener('click', function(){
-        gtag('event','outbound_click',{ event_category:'Outbound Link', event_label: link.href });
+    // Outbound link analytics
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('a[href^="http"]').forEach(link=>{
+        link.addEventListener('click', function(){
+          try { gtag('event','outbound_click',{ event_category:'Outbound Link', event_label: link.href }); } catch(e){}
+        });
       });
     });
 
-    const scrollThresholds = [25,50,75,100];
-    const scrollReached = {};
-    window.addEventListener('scroll', ()=>{
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (window.scrollY / docHeight) * 100;
-      scrollThresholds.forEach(t=>{
-        if(scrollPercent >= t && !scrollReached[t]){
-          scrollReached[t] = true;
-          gtag('event','scroll_depth',{ event_category:'Scroll', event_label: `${t}%` });
-        }
+    // Scroll depth analytics
+    (function(){
+      const scrollThresholds = [25,50,75,100];
+      const scrollReached = {};
+      window.addEventListener('scroll', ()=>{
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (window.scrollY / docHeight) * 100;
+        scrollThresholds.forEach(t=>{
+          if(scrollPercent >= t && !scrollReached[t]){
+            scrollReached[t] = true;
+            try { gtag('event','scroll_depth',{ event_category:'Scroll', event_label: `${t}%` }); } catch(e){}
+          }
+        });
       });
-    });
+      [30,60,120].forEach((seconds)=>{
+        setTimeout(()=>{ try { gtag('event','time_on_page',{ label: `${seconds}_seconds`, value: seconds }); } catch(e){} }, seconds*1000);
+      });
+    })();
   </script>
 </body>
 </html>
