@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>About | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn more about DIWY Financial Planning's approach, process, and philosophy.">
-  <meta name="keywords" content="financial planning, fiduciary, advice-only, DIWY, about">
+  <meta name="description" content="Learn more about DIWY Financial Planning's approach, process, credentials, affiliations, and typical clients.">
+  <meta name="keywords" content="financial planning, fiduciary, advice-only, DIWY, about, CFP, ChFC, CLU, FPA, NAPFA">
   <meta name="author" content="DIWY Financial Planning">
 
   <!-- GA4 tracking -->
@@ -18,19 +18,26 @@
   </script>
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- TailwindCSS v2 (matches your site) -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     :root {
       --diwy-blue: #19215A;
       --diwy-dark: #0f143c;
     }
+    html { scroll-behavior: smooth; }
     .bg-diwy { background-color: var(--diwy-blue); }
     .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
     .text-diwy { color: var(--diwy-blue); }
+    /* Caret behavior shared across accordions */
+    .caret { transition: transform .2s ease; display:inline-block; width: 1rem; height: 1rem; }
+    details[open] .caret { transform: rotate(180deg); }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+<div id="top"></div>
 
 <header role="banner" class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -49,7 +56,6 @@
          class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer"
          onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
       <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
-
     </nav>
   </div>
 </header>
@@ -85,10 +91,321 @@
   </div>
 </section>
 
+<!-- TEAM BIOS -->
+<section id="bios" class="max-w-5xl mx-auto px-6 md:px-12 pb-12">
+  <h2 class="text-3xl font-bold text-diwy mb-4">Advisor Biography</h2>
+
+  <!-- ADVISOR ITEM: AL FABER -->
+  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+    <summary id="al-faber-summary"
+             class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer">
+      <span>Al Faber, CFP®, ChFC®, CLU®</span>
+      <span class="flex items-center space-x-3">
+        <a href="#top"
+           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap"
+           aria-label="Back to the top of the page">
+          Back to top
+        </a>
+        <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </summary>
+
+    <div class="px-5 pb-6 space-y-6" role="region" aria-labelledby="al-faber-summary">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+        <div class="md:col-span-2">
+          <img src="Headshot-AlFaber-20230120.jpg"
+               alt="Headshot of Al Faber, CFP®, ChFC®, CLU®"
+               class="w-full aspect-square object-cover rounded-2xl border" />
+
+          <!-- Credential logos directly under photo -->
+          <div class="mt-4">
+            <h4 class="font-semibold text-diwy text-center">Credentials</h4>
+            <div class="grid grid-cols-3 gap-3 items-center justify-items-center justify-center">
+              <a href="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/12410123" target="_blank" rel="noopener noreferrer"
+                 class="block" aria-label="CFP Board" title="CFP®">
+                <img src="images/logos/logo-cfp.jpg" alt="CFP Board logo" class="h-20 object-contain transition duration-200 transform hover:scale-105">
+              </a>
+              <a href="https://badges.theamericancollege.edu/880d1112-2033-4987-9db7-8a9bacac7161#acc.UfjbsAh8"
+                 target="_blank" rel="noopener noreferrer"
+                 class="block" aria-label="ChFC - The American College" title="ChFC®">
+                <img src="images/logos/logo-chfc.png" alt="ChFC - The American College logo" class="h-20 object-contain transition duration-200 transform hover:scale-105">
+              </a>
+              <a href="https://badges.theamericancollege.edu/9b3f2090-7dd6-4bae-8e4d-9fe36978e674#acc.M0nYGuLq"
+                 target="_blank" rel="noopener noreferrer"
+                 class="block" aria-label="CLU - The American College" title="CLU®">
+                <img src="images/logos/logo-clu.png" alt="CLU - The American College logo" class="h-20 object-contain transition duration-200 transform hover:scale-105">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="text-xl font-semibold text-diwy">Founder, DIWY Financial Planning</h3>
+
+          <p class="text-sm leading-relaxed">
+            Al Faber is the founder of DIWY Financial Planning, an advice-only Registered Investment Advisor (RIA) offering hourly financial planning to help clients make clear, confident decisions. With more than two decades of experience at firms including JPMorgan Chase, Morgan Stanley, Bloomberg, and HSBC, Al launched DIWYFP in 2025 so that clients can <em>Plan for yourself—not by yourself™.</em> This “do-it-with-you” approach emphasizes collaboration, education, empowerment, and transparency.
+          </p>
+          <p class="text-sm leading-relaxed">
+            A first-generation American, Al was born in Brooklyn, NY, to parents who immigrated from Central America and the Caribbean. He relocated to California in 1999 with his wife and two children and now splits his time between California, Florida, Nevada and New York.
+          </p>
+          <p class="text-sm leading-relaxed">
+            Al holds a BS in Electrical Engineering from Syracuse University and an MBA in Finance from Long Island University.
+          </p>
+          <p class="text-sm leading-relaxed">
+            Outside of work, he enjoys spending time with family and friends, travel, astronomy, cycling, mentoring, and civic engagement. He is also drawn to wind-powered activities, including paragliding and sailing small boats.
+          </p>
+        </div>
+      </div>
+
+      <!-- Affiliations -->
+      <div class="space-y-3">
+        <h4 class="text-2xl font-bold text-diwy text-center">Affiliations</h4>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-items-center">
+          <!-- Advice-Only Network -->
+          <a href="https://adviceonlynetwork.com/" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="Advice-Only Network">
+            <img src="images/logos/logo-adviceonlynetwork.svg" alt="Advice-Only Network logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+          <!-- Association of African American Financial Advisors (Quad-A) -->
+          <a href="https://www.quad-a.org/" target="_blank" rel="noopener noreferrer"
+             class="block bg-black p-2 rounded" aria-label="Quad-A (Association of African American Financial Advisors)">
+            <img src="images/logos/logo-aaaa.webp" alt="Quad-A logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+          <!-- CHIP Professionals -->
+          <a href="https://chipprofessionals.com/" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="CHIP Professionals">
+            <img src="images/logos/logo-chip.webp" alt="CHIP Professionals logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+          <!-- FeeOnlyNetwork -->
+          <a href="https://www.feeonlynetwork.com/financial-advisor/al-faber/" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="FeeOnlyNetwork">
+            <img src="images/logos/logo-feeonlynetwork.png" alt="FeeOnlyNetwork logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+         <!-- Financial Planning Association (FPA) -->
+          <a href="https://www.financialplanningassociation.org/"
+             target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="Financial Planning Association">
+            <img src="images/logos/logo-fpa.png" alt="Financial Planning Association logo" class="h-15 object-contain">
+          </a>
+
+          <!-- Garrett Planning Network -->
+          <a href="https://directory.garrettplanningnetwork.com/united-states/los-angeles/member/al-faber-cfp-reg-chfc-reg-clu-reg" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="Garrett Planning Network">
+            <img src="images/logos/logo-gpn.png" alt="Garrett Planning Network logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+          <!-- NAPFA -->
+          <a href="https://www.napfa.org/" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="NAPFA">
+            <img src="images/logos/logo-napfa.png" alt="NAPFA logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+
+          <!-- XY Planning Network -->
+          <a href="https://www.xyplanningnetwork.com/" target="_blank" rel="noopener noreferrer"
+             class="block" aria-label="XY Planning Network">
+            <img src="images/logos/logo-xypn.webp" alt="XY Planning Network logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
+          </a>
+        </div>
+      </div>
+
+      <!-- Calls to action -->
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href="scheduling.html#prospective"
+           class="inline-flex items-center justify-center rounded-2xl bg-diwy text-white px-4 py-2 text-sm hover:bg-diwy-dark">
+          Schedule a Meeting with Al
+        </a>
+        <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327"
+           class="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm hover:bg-gray-50"
+           aria-label="View ADV Part 2B">
+          View ADV Part 2B
+        </a>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- TYPICAL CLIENTS -->
+<section id="typical-clients" class="max-w-5xl mx-auto px-6 md:px-12 pb-12">
+  <h2 class="text-3xl font-bold text-diwy mb-4">Typical Clients</h2>
+
+  <div class="space-y-3">
+    <!-- Early Career and New Graduates -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>Early Career and New Graduates</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Recent college graduates and professionals in the first stages of their careers often need direction to set a strong foundation.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Maximize employee benefits such as 401(k), HSA, and stock plans</li>
+          <li>Choose investments that support long-term growth</li>
+          <li>Build and protect credit while managing student loans</li>
+          <li>Set up a budget, savings plan, and emergency fund</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- First-Generation Wealth Builders -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>First-Generation Wealth Builders</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Many clients are the first in their families to accumulate meaningful savings and investments. They want a trusted guide to help build, protect, and pass on wealth wisely.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Set financial priorities and balance multiple goals</li>
+          <li>Tax planning to keep more of what they earn</li>
+          <li>Insurance and risk management for financial security</li>
+          <li>Estate planning basics, including wills, trusts, and beneficiary designations</li>
+          <li>Generational planning and support for loved ones</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Life Events -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>Life Events</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Life changes often bring financial questions. Marriage, divorce, the birth of a child, or the death of a loved one all require careful adjustments.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Update insurance, estate documents, and beneficiaries</li>
+          <li>Plan for childcare, education, or elder care needs</li>
+          <li>Adjust tax planning and filing status</li>
+          <li>Redesign budgets and savings strategies</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Major Purchases -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>Major Purchases</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Buying a home, car, or other major purchase has long-term financial effects. Planning ahead helps prevent regret and debt stress.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Evaluate affordability and loan options</li>
+          <li>Plan down payments and reserves</li>
+          <li>Understand the total cost of ownership</li>
+          <li>Keep savings and retirement plans on track</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Inheritance or Settlement -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>Inheritance or Settlement</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Receiving a large settlement or inheritance can feel overwhelming. The right plan helps align money with values and goals.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Structure cash flow and protect assets</li>
+          <li>Address taxes and timing considerations</li>
+          <li>Create an investment plan aligned with purpose</li>
+          <li>Coordinate with attorneys and CPAs</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Retirement Readiness -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>Retirement Readiness</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>As retirement approaches, questions shift to timing, income, and lifestyle. Planning reduces anxiety and increases confidence.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Retirement income and withdrawal strategies</li>
+          <li>Tax-efficient conversions and account sequencing</li>
+          <li>Social Security and Medicare choices</li>
+          <li>Insurance, estate, and long-term care planning</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- FIRE: Financial Independence, Retire Early -->
+    <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+      <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+        <span>FIRE: Financial Independence, Retire Early</span>
+        <span class="flex items-center space-x-3">
+          <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+          <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+        <p>Some clients want to save aggressively and retire much earlier than traditional timelines. A structured plan helps balance ambition with sustainability.</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>High savings rate and investment discipline</li>
+          <li>Roth conversions and tax strategies</li>
+          <li>Health coverage planning before Medicare</li>
+          <li>Contingency planning and financial resilience</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
 <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
-  <p>DIWY Financial Planning (CRD #335615) is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.</p>
+  <p>
+    DIWY Financial Planning
+    (<a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327"
+        target="_blank" rel="noopener noreferrer"
+        class="underline text-diwy hover:text-diwy-dark">CRD #335615</a>)
+    is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.
+  </p>
   <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
 </footer>
+
+<!-- Force page to start at top (prevents scroll restoration on reload/back-forward) -->
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  // Handle bfcache restore and normal reload
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      window.scrollTo(0, 0);
+    }
+  });
+  window.addEventListener('load', function () {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  });
+</script>
 
 <!-- Google Analytics Event Tracking Scripts -->
 <script>
@@ -102,7 +419,7 @@
     }, seconds * 1000);
   });
 
-  // Outbound click tracking
+  // Outbound click tracking (fixed selector)
   document.querySelectorAll('a[href^="http"]').forEach(link => {
     link.addEventListener('click', () => {
       gtag('event', 'outbound_click', {
