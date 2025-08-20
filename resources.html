@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Resources | DIWY Financial Planning</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curated educational and planning resources by DIWY Financial Planning.">
-  <meta name="keywords" content="financial resources, planning tools, advice-only, DIWY, CFP, budgeting, insurance, estate">
-  <meta name="author" content="DIWY Financial Planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Curated educational and planning resources by DIWY Financial Planning." />
+  <meta name="keywords" content="financial resources, planning tools, advice-only, DIWY, CFP, budgeting, insurance, estate" />
+  <meta name="author" content="DIWY Financial Planning" />
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
@@ -17,90 +17,96 @@
     gtag('config', 'G-S34LTCGWNF');
   </script>
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    :root {
-      --diwy-blue: #19215A;
-      --diwy-dark: #0f143c;
-    }
+    :root { --diwy-blue:#19215A; --diwy-dark:#0f143c; }
     .bg-diwy { background-color: var(--diwy-blue); }
     .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
     .text-diwy { color: var(--diwy-blue); }
     html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
+
+    /* Loader */
+    #loader { position: fixed; inset: 0; background: rgba(255,255,255,.94); display: grid; place-items: center; z-index: 9999; transition: opacity .25s; }
+    #loader.hide { opacity: 0; pointer-events: none; }
+    #loader .panel { background:#fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.12); padding: 18px 22px; text-align:center; max-width: 420px; }
+    #spinner { width: 40px; height: 40px; border: 4px solid #e5e7eb; border-top-color: var(--diwy-blue); border-radius: 50%; margin: 4px auto 12px; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { #spinner { animation: none; } }
+    #loaderText { color: #374151; transition: color 0.5s ease, opacity 0.5s ease; } /* gray-700 */
+    #loaderText.slow { color: #92400e; opacity: 0.9; } /* amber-800 */
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+  <!-- Loading overlay -->
+  <div id="loader" aria-live="polite" aria-busy="true">
+    <div class="panel">
+      <div id="spinner" aria-hidden="true"></div>
+      <p id="loaderText" class="text-sm">
+        This page includes information from external resources. Please be patient while the data loads.
+      </p>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="index.html">
-        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      <a href="index.html" aria-label="DIWY Financial Planning Home">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20" />
       </a>
       <nav class="hidden md:flex items-center space-x-6 text-base">
-        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
-        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
-        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
-        <a href="resources.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
-        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
-        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
-        <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
-
+        <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Home'})">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'About'})">About</a>
+        <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Services'})">Services</a>
+        <a href="resources.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event','nav_click',{label:'Resources'})">Resources</a>
+        <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'FAQs'})">FAQs</a>
+        <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Client Portal'})">Client Portal</a>
+        <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event','nav_click',{label:'Schedule Intro Call'})">Schedule a Free Intro Call</a>
       </nav>
     </div>
   </header>
 
   <main class="pt-16 px-6 max-w-5xl mx-auto">
-    
-<!-- Disclaimer -->
-<section class="mb-6">
-  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
-    <h2 class="font-bold text-yellow-800">Disclaimer</h2>
-    <p class="mt-2 text-sm text-gray-700">
-      The links on this page are provided for educational purposes and convenience. Links are not an endorsement, DIWY Financial Planning does not control third-party content and is not responsible for its accuracy. You will be leaving this website when you click the links.
-    </p>
-  </div>
-</section>
+    <!-- Disclaimer -->
+    <section class="mb-6">
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
+        <h2 class="font-bold text-yellow-800">Disclaimer</h2>
+        <p class="mt-2 text-sm text-gray-700">
+          The links on this page are provided for educational purposes and convenience. Links are not an endorsement, DIWY Financial Planning does not control third-party content and is not responsible for its accuracy. You will be leaving this website when you click the links.
+        </p>
+      </div>
+    </section>
 
-<section class="mb-6">
-  <h1 class="text-3xl md:text-4xl font-extrabold text-diwy text-center mb-6">
-    Resources
-  </h1>
-</section>
+    <section class="mb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-diwy text-center mb-6">Resources</h1>
+    </section>
 
     <div class="mb-6 text-sm text-gray-700">
       <p>
-        <strong>Have a suggestion or feedback?</strong> If particular resource is especially useful or if a link is broken or outdated, send an email to 
-        <a id="emailLink" href="#" class="text-blue-700 underline hover:text-diwy">[email protected]</a>.
+        <strong>Have a suggestion or feedback?</strong> If a particular resource is especially useful or if a link is broken or outdated, send an email to
+        <a id="emailLink" href="#" class="text-blue-700 underline hover:text-diwy">[email&nbsp;protected]</a>.
       </p>
     </div>
 
     <div class="mb-6">
       <label for="resourceSearch" class="block text-diwy font-semibold mb-2">Search Resources</label>
-      <input type="text" id="resourceSearch" placeholder="Type a keyword (e.g. insurance, investing, 529)..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
+      <input id="resourceSearch" type="text" placeholder="Type a keyword (e.g. insurance, investing, 529)..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-200" />
     </div>
 
-    <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-diwy-dark">
-      Expand All
-    </button>
+    <button id="toggleAll" class="mb-6 px-4 py-2 bg-diwy text-white rounded hover:bg-diwy-dark">Expand All</button>
 
     <div id="accordionContainer"></div>
   </main>
 
-<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
-  <p>
-    DIWY Financial Planning 
-    (<a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327" 
-        target="_blank" rel="noopener noreferrer" 
-        class="underline text-diwy hover:text-diwy-dark">
-      CRD #335615
-    </a>) 
-    is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.
-  </p>
-  <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
-</footer>
+  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+    <p>
+      DIWY Financial Planning
+      (<a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327" target="_blank" rel="noopener noreferrer" class="underline text-diwy hover:text-diwy-dark">CRD #335615</a>)
+      is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.
+    </p>
+    <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  </footer>
 
   <!-- Scripts -->
   <script>
@@ -108,45 +114,38 @@
       {
         category: "Financial Planning Tools",
         items: [
-          ["RightCapital", "https://app.rightcapital.com/account/login?cobrand=rgd6DRCk6MSZw0uayp2Bfg&type=client", "Collaborative Financial Plan - Complimentary Access through DIWY Financial Planning"],
-          ["FinDash.com", "https://findash.ai/firm/diwyfp001", "Collaborative Financial Plan - Complimentary Access through DIWY Financial Planning"]
+          ["RightCapital","https://app.rightcapital.com/account/login?cobrand=rgd6DRCk6MSZw0uayp2Bfg&type=client","Collaborative Financial Plan - Complimentary access through DIWY Financial Planning"],
+          ["FinDash.com","https://findash.ai/firm/diwyfp001","Collaborative Financial Plan - Complimentary access through DIWY Financial Planning"]
         ]
       }
     ];
 
-function renderResources(data, keyword = '') {
-  const container = document.getElementById('accordionContainer');
-  container.innerHTML = '';
-  const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
+    let firstRenderComplete = false;
+    function hideLoaderAfterPaint(){
+      if (firstRenderComplete) return;
+      const container = document.getElementById('accordionContainer');
+      if (!container || container.children.length === 0) return;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const el = document.getElementById('loader');
+          if (!el) return;
+          el.setAttribute('aria-busy','false');
+          el.classList.add('hide');
+          firstRenderComplete = true;
+          if (window.gtag) gtag('event','resources_painted');
+        });
+      });
+    }
 
-  data.forEach(section => {
-    const items = section.items.filter(item =>
-      !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase())
-    );
-    if (!items.length) return;
-
-    const sec = document.createElement('section');
-    sec.classList.add('mb-6');
-
-    const expanded = !!keyword; // expand if searching
-    const symbol = expanded ? '−' : '+';
-    const contentClass = expanded ? 'accordion-content list-disc list-inside space-y-1 mt-2' : 'accordion-content list-disc list-inside space-y-1 mt-2 hidden';
-
-    sec.innerHTML = `
-      <h2 class="text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer" onclick="toggleSection(this)">
-        ${section.category}
-        <span class="text-lg">${symbol}</span>
-      </h2>
-      <ul class="${contentClass}">
-        ${items.map(([name, url, desc]) => {
-          const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
-          const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
-          return `<li><a href="${url}" target="_blank" class="text-blue-700 hover:underline" onclick="gtag('event', 'outbound_click', { event_label: '${url}' })">${n}</a> – ${d}</li>`;
-        }).join('')}
-      </ul>`;
-    container.appendChild(sec);
-  });
-}
+    setTimeout(() => {
+      if (!firstRenderComplete) {
+        const p = document.getElementById('loaderText');
+        if (p) {
+          p.textContent = 'Still loading external resources… please wait a little longer.';
+          p.classList.add('slow');
+        }
+      }
+    }, 8000);
 
     function toggleSection(header) {
       const ul = header.nextElementSibling;
@@ -155,71 +154,90 @@ function renderResources(data, keyword = '') {
       symbol.textContent = hidden ? '+' : '−';
     }
 
-    document.getElementById('toggleAll').addEventListener('click', () => {
+    function renderResources(data, keyword = '') {
+      const container = document.getElementById('accordionContainer');
+      container.innerHTML = '';
+      const regex = keyword ? new RegExp(`(${keyword})`, 'gi') : null;
+      let appended = 0;
+
+      data.forEach(section => {
+        const items = section.items.filter(item => !keyword || item.join(' ').toLowerCase().includes(keyword.toLowerCase()));
+        if (!items.length) return;
+        const sec = document.createElement('section');
+        sec.classList.add('mb-6');
+        const expanded = !!keyword;
+        const symbol = expanded ? '−' : '+';
+        const contentClass = expanded ? 'accordion-content list-disc list-inside space-y-1 mt-2' : 'accordion-content list-disc list-inside space-y-1 mt-2 hidden';
+        sec.innerHTML = `
+          <h2 class=\"text-xl font-semibold text-diwy flex justify-between items-center cursor-pointer\" onclick=\"toggleSection(this)\">
+            ${section.category}
+            <span class=\"text-lg\">${symbol}</span>
+          </h2>
+          <ul class=\"${contentClass}\">
+            ${items.map(([name, url, desc]) => {
+              const n = regex ? name.replace(regex, '<mark>$1</mark>') : name;
+              const d = regex ? desc.replace(regex, '<mark>$1</mark>') : desc;
+              const safeUrl = url.replace(/\"/g, '%22');
+              return `<li>
+                <a href=\"${safeUrl}\" target=\"_blank\" rel=\"noopener\" class=\"text-blue-700 hover:underline\" onclick=\"gtag('event','outbound_click',{event_label:'${safeUrl}'})\">${n}</a>
+                <span class=\\"text-gray-600\\"> – ${d}</span>
+                <div class=\\"text-xs text-gray-500 break-all\\">${safeUrl}</div>
+              </li>`;
+            }).join('')}
+          </ul>`;
+        container.appendChild(sec);
+        appended++;
+      });
+      if (appended > 0) hideLoaderAfterPaint();
+      if (window.gtag) gtag('event','resources_rendered');
+    }
+
+    const toggleAllBtn = document.getElementById('toggleAll');
+    toggleAllBtn.addEventListener('click', () => {
       const sections = document.querySelectorAll('#accordionContainer section');
-      const expanding = toggleAll.textContent.includes('Expand');
+      const expanding = toggleAllBtn.textContent.includes('Expand');
       sections.forEach(section => {
         const ul = section.querySelector('.accordion-content');
         const symbol = section.querySelector('span');
-        if (expanding) {
-          ul.classList.remove('hidden');
-          symbol.textContent = '−';
-        } else {
-          ul.classList.add('hidden');
-          symbol.textContent = '+';
-        }
+        if (!ul || !symbol) return;
+        if (expanding) { ul.classList.remove('hidden'); symbol.textContent = '−'; }
+        else { ul.classList.add('hidden'); symbol.textContent = '+'; }
       });
-      toggleAll.textContent = expanding ? 'Collapse All' : 'Expand All';
+      toggleAllBtn.textContent = expanding ? 'Collapse All' : 'Expand All';
     });
 
-    document.getElementById('resourceSearch').addEventListener('input', function () {
+    document.getElementById('resourceSearch').addEventListener('input', function(){
       const keyword = this.value.trim();
       renderResources(window._resourceData || fallbackResources, keyword);
     });
 
-    fetch("https://script.google.com/macros/s/AKfycbwTTAuxRfchBrjPU-QGkOA-ichOtfxYriB0H4QVwVb3xgRfk_bjl8a6rZDT-8ysZJQ6Jw/exec?sheet=resources")
+    fetch('https://script.google.com/macros/s/AKfycbwTTAuxRfchBrjPU-QGkOA-ichOtfxYriB0H4QVwVb3xgRfk_bjl8a6rZDT-8ysZJQ6Jw/exec?sheet=resources')
       .then(r => r.json())
-      .then(data => {
-        window._resourceData = data;
-        renderResources(data);
-      })
-      .catch(() => renderResources(fallbackResources));
+      .then(data => { window._resourceData = data; renderResources(data); })
+      .catch(() => { renderResources(fallbackResources); });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const user = "feedback";
-      const domain = "diwyfp.com";
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = 'feedback';
+      const domain = 'diwyfp.com';
       const email = `${user}@${domain}`;
-      const link = document.getElementById("emailLink");
-      if (link) {
-        link.textContent = email;
-        link.href = `mailto:${email}`;
-      }
+      const link = document.getElementById('emailLink');
+      if (link) { link.textContent = email; link.href = `mailto:${email}`; }
     });
 
-    // GA: Time on page
     [30, 60, 120].forEach(seconds => {
-      setTimeout(() => {
-        gtag('event', 'time_on_page', {
-          label: `${seconds}_seconds`,
-          value: seconds
-        });
-      }, seconds * 1000);
+      setTimeout(() => { if (window.gtag) gtag('event','time_on_page',{ label: `${seconds}_seconds`, value: seconds }); }, seconds * 1000);
     });
 
-    // GA: Scroll depth
     const scrollThresholds = [25, 50, 75, 100];
-    let scrollReached = {};
+    const scrollReached = {};
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 100;
       scrollThresholds.forEach(threshold => {
         if (scrollPercent >= threshold && !scrollReached[threshold]) {
           scrollReached[threshold] = true;
-          gtag('event', 'scroll_depth', {
-            event_category: 'Scroll',
-            event_label: `${threshold}%`
-          });
+          if (window.gtag) gtag('event','scroll_depth',{ event_category:'Scroll', event_label: `${threshold}%` });
         }
       });
     });
