@@ -22,16 +22,14 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <style>
-    :root {
-      --diwy-blue: #19215A;
-      --diwy-dark: #0f143c;
-    }
+    :root { --diwy-blue:#19215A; --diwy-dark:#0f143c; }
     html { scroll-behavior: smooth; }
     .bg-diwy { background-color: var(--diwy-blue); }
     .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
     .text-diwy { color: var(--diwy-blue); }
+
     /* Caret behavior shared across accordions */
-    .caret { transition: transform .2s ease; display:inline-block; width: 1rem; height: 1rem; }
+    .caret { transition: transform .2s ease; display:inline-block; width:1rem; height:1rem; }
     details[open] .caret { transform: rotate(180deg); }
   </style>
 </head>
@@ -47,15 +45,15 @@
       </a>
     </div>
     <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
-      <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
-      <a href="about.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
-      <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
-      <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
-      <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
+      <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Home'})">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event','nav_click',{label:'About'})">About</a>
+      <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Services'})">Services</a>
+      <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Resources'})">Resources</a>
+      <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'FAQs'})">FAQs</a>
       <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client"
          class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer"
-         onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
-      <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Free Intro Call</a>
+         onclick="gtag('event','nav_click',{label:'Client Portal'})">Client Portal</a>
+      <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event','nav_click',{label:'Schedule Intro Call'})">Schedule a Free Intro Call</a>
     </nav>
   </div>
 </header>
@@ -69,30 +67,92 @@
       Just thoughtful guidance from a CFP® professional who works with you to make confident financial decisions.
     </p>
 
-    <div class="grid md:grid-cols-2 gap-8 mt-12">
-      <div>
-        <h2 class="text-2xl font-semibold text-diwy mb-2">Why Choose DIWY Financial Planning?</h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li>Independent, fiduciary advice that puts your interests first</li>
-          <li>No product sales, no income or asset requirements.</li>
-          <li>Planning and implementation support.</li>
-          <li>Flexible, on-demand support when you need it</li>
-          <li>Collaborative technology-enabled delivery</li>
-          <li>Transparent flat-fee pricing</li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-2xl font-semibold text-diwy mb-2">A Planning Model That Fits Your Life</h2>
-<p class="text-gray-700 mb-4">
-  DIWY Financial Planning (DIWYFP) offers a planning process and fee model that reflect how planning actually happens in real life. Unlike most models, the burden of trust rests with the advisor, not the client. There are no upfront fees or ongoing commitments, and low barriers to entry and exit help foster mutual accountability.
-</p>
 
-<p class="text-gray-700">
-  Support is available when you need it, and there are no fees when you don't. Unlike fee-based arrangements, subscriptions, retainers, asset-based pricing models, or hourly structures that add hidden administrative charges, all DIWYFP fees are invoiced directly for advisor–client meeting time. Fees flex with the complexity and level of support required for each engagement. There are no hidden charges, your accounts are never debited automatically, and you never give up control or custody of your assets.
-</p>
+<!-- WHY CHOOSE DIWY -->
+<section id="why-choose" class="max-w-5xl mx-auto px-6 md:px-12 pb-8">
+  <h2 class="text-3xl font-bold text-diwy mb-4">Why Choose DIWY Financial Planning?</h2>
+
+  <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+      <span>A Planning Model That Fits Your Life</span>
+      <span class="flex items-center space-x-3">
+        <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+        <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </summary>
+
+    <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+      <ul class="list-disc list-inside space-y-1">
+        <li>Independent, fiduciary advice that puts client interests first</li>
+        <li>No product sales, no income or asset requirements</li>
+        <li>Planning and implementation support</li>
+        <li>Flexible, on-demand support when needed</li>
+        <li>Collaborative technology-enabled delivery</li>
+        <li>Transparent flat-fee pricing</li>
+      </ul>
+
+      <div>
+
+        <p class="mb-2">
+          DIWY Financial Planning (DIWYFP) offers a planning process and fee model that reflect how planning actually happens in real life. Unlike most models, the burden of trust rests with the advisor, not the client. There are no upfront fees or ongoing commitments, and low barriers to entry and exit help foster mutual accountability.
+        </p>
+        <p>
+          Support is available when needed, and there are no fees when not engaged. Unlike fee-based arrangements, subscriptions, retainers, asset-based pricing models, or hourly structures that add hidden administrative charges, all DIWYFP fees are invoiced directly for advisor–client meeting time. Fees flex with the complexity and level of support required for each engagement. There are no hidden charges, accounts are never debited automatically, and control and custody of assets always remain with the client.
+        </p>
       </div>
     </div>
-  </div>
+  </details>
+</section>
+
+
+
+<!-- ARE WE A FIT (now matches accordion format used elsewhere) -->
+<section id="fit" class="max-w-5xl mx-auto px-6 md:px-12 pb-8">
+  <h2 class="text-3xl font-bold text-diwy mb-4">Are We a Fit?</h2>
+
+  <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
+    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
+      <span>Expectations & Ideal Fit</span>
+      <span class="flex items-center space-x-3">
+        <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
+        <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+        </svg>
+      </span>
+    </summary>
+
+
+<div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
+  <p>DIWY Financial Planning is best suited for clients who value clarity, collaboration, and flexible, modular planning.</p>
+  <ol class="list-decimal list-inside space-y-2">
+    <li>
+      <span class="font-semibold">Virtual engagements.</span>
+      Although in-person meetings are available, they are less common and billed at higher fees than typical engagements.
+      Virtual meetings are conducted via Zoom. Camera use is optional, but clients must be able to share screens and use the financial planning tool.
+    </li>
+    <li>
+      <span class="font-semibold">Collaborative planning.</span>
+      If you are a pure delegator, this is probably not going to be a good fit. For best results, clients remain hands-on and actively engaged in the process. You control the intensity and frequency of engagements to help keep things managable.
+    </li>
+    <li>
+      <span class="font-semibold">Document and account access.</span>
+      A cloud-based vault is available for secure storage and exchange of documents. Linking accounts provides real-time
+      access to balances and transactions. Advisor access is strictly <em>view-only</em> and does not permit trading or transfers.
+    </li>
+    <li>
+      <span class="font-semibold">Income and asset requirements.</span>
+      There are no income or asset requirements, and levels of engagement are available to accommodate a wide range of income and net worth.
+      <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+        <li>DIWY Financial Planning is generally the best fit for clients with total net worth below $5 million.</li>
+        <li>The model is also best suited for clients whose total outstanding debt (excluding mortgages and student loans) is less than total household income.</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+  </details>
 </section>
 
 <!-- TEAM BIOS -->
@@ -105,11 +165,7 @@
              class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer">
       <span>Al Faber, CFP®, ChFC®, CLU®</span>
       <span class="flex items-center space-x-3">
-        <a href="#top"
-           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap"
-           aria-label="Back to the top of the page">
-          Back to top
-        </a>
+        <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
         <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
         </svg>
@@ -191,7 +247,7 @@
             <img src="images/logos/logo-feeonlynetwork.png" alt="FeeOnlyNetwork logo" class="h-20 object-contain transition duration-200 hover:opacity-80">
           </a>
 
-         <!-- Financial Planning Association (FPA) -->
+          <!-- Financial Planning Association (FPA) -->
           <a href="https://www.financialplanningassociation.org/"
              target="_blank" rel="noopener noreferrer"
              class="block" aria-label="Financial Planning Association">
@@ -225,10 +281,8 @@
           Schedule a Meeting with Al
         </a>
         <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327"
-          class="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm hover:bg-gray-50"
-          aria-label="View ADV Part 2B"
-          target="_blank" 
-          rel="noopener noreferrer">
+           class="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm hover:bg-gray-50"
+           aria-label="View ADV Part 2B" target="_blank" rel="noopener noreferrer">
           View ADV Part 2B
         </a>
       </div>
@@ -236,9 +290,29 @@
   </details>
 </section>
 
-<!-- TYPICAL CLIENTS -->
+<!-- TYPICAL CLIENTS (with master Expand/Collapse controls) -->
 <section id="typical-clients" class="max-w-5xl mx-auto px-6 md:px-12 pb-12">
-  <h2 class="text-3xl font-bold text-diwy mb-4">Typical Clients</h2>
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-3xl font-bold text-diwy">Typical Clients</h2>
+    <div class="flex items-center space-x-2">
+      <button
+        id="tc-expand-all"
+        type="button"
+        class="text-sm px-3 py-1 rounded-md border hover:bg-gray-50"
+        aria-controls="typical-clients"
+      >
+        Expand All
+      </button>
+      <button
+        id="tc-collapse-all"
+        type="button"
+        class="text-sm px-3 py-1 rounded-md border hover:bg-gray-50"
+        aria-controls="typical-clients"
+      >
+        Collapse All
+      </button>
+    </div>
+  </div>
 
   <div class="space-y-3">
     <!-- Early Career and New Graduates -->
@@ -254,6 +328,7 @@
         <p>Recent college graduates and professionals in the first stages of their careers often need direction to set a strong foundation.</p>
         <ul class="list-disc list-inside space-y-1">
           <li>Maximize employee benefits such as 401(k), HSA, and stock plans</li>
+          <li>Guidance with compensation negotiations</li>
           <li>Choose investments that support long-term growth</li>
           <li>Build and protect credit while managing student loans</li>
           <li>Set up a budget, savings plan, and emergency fund</li>
@@ -274,6 +349,7 @@
         <p>Many clients are the first in their families to accumulate meaningful savings and investments. They want a trusted guide to help build, protect, and pass on wealth wisely.</p>
         <ul class="list-disc list-inside space-y-1">
           <li>Set financial priorities and balance multiple goals</li>
+          <li>Guidance for dealing with money dynamics with family and friends</li>
           <li>Tax planning to keep more of what they earn</li>
           <li>Insurance and risk management for financial security</li>
           <li>Estate planning basics, including wills, trusts, and beneficiary designations</li>
@@ -316,6 +392,7 @@
         <ul class="list-disc list-inside space-y-1">
           <li>Evaluate affordability and loan options</li>
           <li>Plan down payments and reserves</li>
+          <li>Help with negotiating transaction prices (buy side and sell side)</li>
           <li>Understand the total cost of ownership</li>
           <li>Keep savings and retirement plans on track</li>
         </ul>
@@ -325,14 +402,14 @@
     <!-- Inheritance or Settlement -->
     <details class="group accordion bg-white rounded-2xl shadow-sm border overflow-hidden transition-colors hover:bg-gray-50">
       <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between cursor-pointer hover:text-diwy-dark">
-        <span>Inheritance or Settlement</span>
+        <span>Business Sale, Inheritance or Settlement</span>
         <span class="flex items-center space-x-3">
           <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap" aria-label="Back to the top of the page">Back to top</a>
           <svg class="caret text-diwy" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.232l3.71-3a.75.75 0 01.94 1.16l-4.2 3.4a.75.75 0 01-.94 0l-4.2-3.4a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
         </span>
       </summary>
       <div class="px-5 pb-5 space-y-3 text-sm leading-relaxed">
-        <p>Receiving a large settlement or inheritance can feel overwhelming. The right plan helps align money with values and goals.</p>
+        <p>Receiving a sudden large sum of money can feel overwhelming. The right plan helps align money with values and goals.</p>
         <ul class="list-disc list-inside space-y-1">
           <li>Structure cash flow and protect assets</li>
           <li>Address taxes and timing considerations</li>
@@ -382,35 +459,48 @@
       </div>
     </details>
   </div>
+
+  <!-- Scoped controls script -->
+  <script>
+    (function () {
+      const section = document.getElementById('typical-clients');
+      if (!section) return;
+      const expandBtn = section.querySelector('#tc-expand-all');
+      const collapseBtn = section.querySelector('#tc-collapse-all');
+      const detailsList = Array.from(section.querySelectorAll('details.accordion'));
+
+      function setAll(open) {
+        detailsList.forEach(d => { d.open = open; });
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', open ? 'expand_all' : 'collapse_all', { section: 'Typical Clients' });
+          }
+        } catch (e) {}
+      }
+
+      expandBtn?.addEventListener('click', () => setAll(true));
+      collapseBtn?.addEventListener('click', () => setAll(false));
+    })();
+  </script>
 </section>
+
 
 <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
   <p>
-    DIWY Financial Planning
-    (<a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327"
-        target="_blank" rel="noopener noreferrer"
-        class="underline text-diwy hover:text-diwy-dark">CRD #335615</a>)
-    is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted.
+    DIWY Financial Planning is a Registered Investment Adviser (RIA) offering advisory services in the state of California and other jurisdictions where exempted. CRD #335615,
+    <a href="https://files.adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=986327"
+       target="_blank" rel="noopener noreferrer"
+       class="underline text-diwy hover:text-diwy-dark">Form ADV</a>
+    
   </p>
   <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
 </footer>
 
 <!-- Force page to start at top (prevents scroll restoration on reload/back-forward) -->
 <script>
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-  // Handle bfcache restore and normal reload
-  window.addEventListener('pageshow', function (e) {
-    if (e.persisted) {
-      window.scrollTo(0, 0);
-    }
-  });
-  window.addEventListener('load', function () {
-    if (!location.hash) {
-      window.scrollTo(0, 0);
-    }
-  });
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  window.addEventListener('pageshow', function (e) { if (e.persisted) window.scrollTo(0, 0); });
+  window.addEventListener('load', function () { if (!location.hash) window.scrollTo(0, 0); });
 </script>
 
 <!-- Google Analytics Event Tracking Scripts -->
@@ -418,26 +508,20 @@
   // Track time on page at 30s, 60s, 120s
   [30, 60, 120].forEach(seconds => {
     setTimeout(() => {
-      gtag('event', 'time_on_page', {
-        label: `${seconds}_seconds`,
-        value: seconds
-      });
+      gtag('event','time_on_page',{label:`${seconds}_seconds`, value:seconds});
     }, seconds * 1000);
   });
 
-  // Outbound click tracking (fixed selector)
+  // Outbound click tracking
   document.querySelectorAll('a[href^="http"]').forEach(link => {
     link.addEventListener('click', () => {
-      gtag('event', 'outbound_click', {
-        event_category: 'Outbound Link',
-        event_label: link.href
-      });
+      gtag('event','outbound_click',{event_category:'Outbound Link', event_label:link.href});
     });
   });
 
   // Scroll depth tracking
   const scrollThresholds = [25, 50, 75, 100];
-  let scrollReached = {};
+  const scrollReached = {};
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -445,10 +529,7 @@
     scrollThresholds.forEach(threshold => {
       if (scrollPercent >= threshold && !scrollReached[threshold]) {
         scrollReached[threshold] = true;
-        gtag('event', 'scroll_depth', {
-          event_category: 'Scroll',
-          event_label: `${threshold}%`
-        });
+        gtag('event','scroll_depth',{event_category:'Scroll', event_label:`${threshold}%`});
       }
     });
   });
