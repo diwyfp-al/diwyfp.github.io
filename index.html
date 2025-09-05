@@ -45,7 +45,7 @@
     .text-diwy { color: var(--diwy-blue); }
 
     /* Initial offscreen state */
-    .hero-text, .hero-sub, .hero-tagline, .hero-cta {
+    .hero-text, .hero-sub, .hero-explain, .hero-tagline, .hero-cta {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease, transform 0.8s ease;
@@ -61,15 +61,20 @@
       transform: translateY(0);
       transition-delay: 0.4s;
     }
-    .fade-start .hero-tagline {
+    .fade-start .hero-explain {
       opacity: 1;
       transform: translateY(0);
       transition-delay: 0.8s;
     }
+    .fade-start .hero-tagline {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 1.0s;
+    }
     .fade-start .hero-cta {
       opacity: 1;
       transform: translateY(0);
-      transition-delay: 1.2s;
+      transition-delay: 1.4s;
     }
   </style>
 </head>
@@ -109,8 +114,13 @@
       <!-- Sub-headline -->
       <h2 class="hero-sub text-2xl md:text-3xl mt-6 font-normal">
         Advice-only, fiduciary guidance tailored to your goals.<br>
-        No product sales. No asset minimums.
+        No product sales. No asset requirements.<br>
       </h2>
+
+      <!-- New DIWY explanation -->
+      <p class="hero-explain text-lg md:text-xl mt-6">
+        DIWY is a "Do-It-With-You" approach to financial planning
+      </p>
 
       <!-- Tagline -->
       <p class="hero-tagline text-lg md:text-2xl mt-8 italic">
@@ -188,4 +198,3 @@
 </script>
 </body>
 </html>
-
