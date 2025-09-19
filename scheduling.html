@@ -837,5 +837,24 @@
   });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1); // e.g. "clients"
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target && target.tagName.toLowerCase() === 'div') {
+        const details = target.querySelector('details');
+        if (details) {
+          const wasClosed = !details.hasAttribute('open');
+          details.setAttribute('open', 'true');
+          if (wasClosed) {
+            details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
