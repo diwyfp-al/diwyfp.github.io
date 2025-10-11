@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Schedule a Meeting | DIWY Financial Planning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DIWY Financial Planning. Schedule time with DIWYFP. Options for prospective clients, existing clients, professional network, partners, and media.">
-  <meta name="keywords" content="financial planning, advice-only, fiduciary, CFP, DIWY, scheduling">
+  <meta name="description" content="DIWY Financial Planning. Schedule time with DIWYFP. Options for prospective clients, existing clients, professional network, partners, vendors, pro bono, media, and group sessions.">
+  <meta name="keywords" content="financial planning, advice-only, fiduciary, CFP, DIWY, DIWYFP, scheduling">
   <meta name="author" content="DIWY Financial Planning">
 
   <!-- GA4 tracking (match index.html) -->
@@ -41,9 +41,7 @@
       html { scroll-behavior: auto; }
     }
 
-    body {
-      padding-bottom: 600px; /* adjust as needed */
-    }
+    body { padding-bottom: 600px; }
 
     /* Accessible accordion caret */
     details > summary { list-style: none; }
@@ -51,7 +49,7 @@
     .accordion summary { cursor: pointer; display:flex; align-items:center; gap:.5rem; }
     .accordion summary .caret { margin-left:auto; font-weight:700; }
     .accordion summary .caret::after { content: "+"; }
-    .accordion[open] summary .caret::after { content: "−"; } /* must come AFTER the default rule */
+    .accordion[open] summary .caret::after { content: "−"; }
 
     /* Anchor jump behavior for fixed header */
     [id] { scroll-margin-top: 8rem; }
@@ -95,16 +93,13 @@
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
         <h2 class="font-bold text-yellow-800">Disclosure Regarding Communication Recording and Retention</h2>
         <p class="mt-2 text-sm text-gray-700">
-          All communications with DIWY Financial Planning (DIWYFP) are subject to recording and retention for purposes of quality assurance, 
-          compliance monitoring, and satisfaction of regulatory requirements.<br>
-          <br>
-          This includes, but is not limited to, responses to questionnaires, written correspondence (including email and text messages), 
-          telephone conversations, and meetings conducted virtually or in person.<br>
-          <br>
-          By engaging with DIWYFP, you consent to such recording and retention. All such records are maintained in a secure manner 
-          consistent with applicable regulatory and industry standards.<br>
-        
-</p>
+          All communications with DIWY Financial Planning (DIWYFP) are subject to recording and retention for purposes of quality assurance,
+          compliance monitoring, and satisfaction of regulatory requirements.<br><br>
+          This includes, but is not limited to, responses to questionnaires, written correspondence (including email and text messages),
+          telephone conversations, and meetings conducted virtually or in person.<br><br>
+          By engaging with DIWYFP, you consent to such recording and retention. All such records are maintained in a secure manner
+          consistent with applicable regulatory and industry standards.
+        </p>
       </div>
     </section>
 
@@ -119,742 +114,749 @@
 
     <!-- Quick links -->
     <section class="mb-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-3">
         <a href="#prospective" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Prospective Clients</a>
         <a href="#clients" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Existing Clients</a>
         <a href="#network" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Professional Network</a>
         <a href="#partners" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">External Partners</a>
         <a href="#vendors" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Vendors</a>
-      	<a href="#probono" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Pro Bono</a>
+        <a href="#probono" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Pro Bono</a>
         <a href="#media" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Media &amp; Speaking</a>
+        <a href="#groups" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Group Sessions</a>
       </div>
     </section>
 
     <!-- Accordions -->
     <section class="space-y-4">
 
-      <div class="flex justify-end mb-2">
-        <a href="#" id="expand-all"
-          class="text-sm text-diwy underline hover:text-diwy-dark">
-          Expand All
-        </a>
+      <div class="flex justify-end items-center gap-3 mb-2">
+        <a href="#" id="expand-all" class="text-sm text-diwy underline hover:text-diwy-dark">Expand All</a>
+        <span class="text-gray-300" aria-hidden="true">|</span>
+        <a href="#" id="collapse-all" class="text-sm text-diwy underline hover:text-diwy-dark">Collapse All</a>
       </div>
 
-<!-- Prospective Clients -->
-<div id="prospective">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-      <span>Prospective Clients</span>
-      <span class="flex items-center space-x-3">
-        <a href="#top"
-           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-           aria-label="Back to the top of the page">
-          Back to top
-        </a>
-        <span class="caret" aria-hidden="true"></span>
-      </span>
-    </summary>
+      <!-- Prospective Clients -->
+      <div id="prospective">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Prospective Clients</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
 
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute phone call to learn about your goals and share how DIWY Financial Planning works. No cost or obligation.
-      </p>
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">A 30-minute phone call to learn about your goals and share how DIWY Financial Planning works. No cost or obligation.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Brief overview of your situation and goals</li>
-            <li>Overview of services offered and fees</li>
-            <li>Next steps if there is a fit</li>
-          </ul>
-        </div>
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Before completing the pre-meeting questionnaire, please review this website to better understand DIWYFP services and fees.</li>
-            <li>There is no cost or obligation associated with the 30-minute introductory meeting</li>
-            <li>Free access to a financial planning tool will be made available after the meeting</li>
-          </ul>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Brief overview of your situation and goals</li>
+                  <li>Overview of services offered and fees</li>
+                  <li>Next steps if there is a fit</li>
+                </ul>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Before completing the pre-meeting questionnaire, please review this website to better understand DIWYFP services and fees.</li>
+                  <li>There is no cost or obligation associated with the 30-minute introductory meeting</li>
+                  <li>Free access to a financial planning tool will be made available after the meeting</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664"
+                 target="_blank" rel="noopener"
+                 onclick="try{gtag('event','questionnaire_click',{event_category:'engagement',event_label:'prospect_questionnaire'});}catch(e){}">
+                Pre-meeting Questionnaire
+              </a>
+
+              <div class="url-row text-xs text-gray-700">
+                <code>https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy questionnaire link"
+                        data-url="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
 
-      <div class="flex flex-col gap-2">
-        <a
-          class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-          href="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664"
-          target="_blank" rel="noopener"
-          onclick="try{gtag('event','questionnaire_click',{event_category:'engagement',event_label:'prospect_questionnaire'});}catch(e){}">
-          Pre-meeting Questionnaire
-        </a>
+      <!-- Existing Clients -->
+      <div id="clients">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Existing Clients</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
 
-        <div class="url-row text-xs text-gray-700">
-          <code>https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664</code>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy questionnaire link"
-                  data-url="https://findash.ai/firm/27kmBn3ynwaJ0CKuDomP/onboarding/flow_1751291358664">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">A 60-minute billable Zoom or phone meeting.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Mutual expectations</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Be punctual</li>
+                  <li>Avoid distractions and background noise</li>
+                  <li>Be logged into the financial planning tool</li>
+                  <li>Meetings are done via Zoom to foster collaboration. Cameras do not need to be turned on.</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Meetings are available 7 days a week. If a time shows as available, you may book it.</li>
+                  <li>Client cancellations or reschedules with 48+ hours’ notice have no repercussions.</li>
+                  <li>
+                    Client changes within 48 hours or no-shows may be subject to the following:
+                    <ul class="mt-2 space-y-1 pl-10 sm:pl-12" style="list-style-type: circle;">
+                      <li>First meeting of an engagement: No fee, but your 30-day engagement window begins on the originally scheduled date.</li>
+                      <li>Later meetings: The next meeting begins a new engagement window with billing and discounts reset to meeting #1.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    If DIWY Financial Planning cancels or reschedules:
+                    <ul class="mt-2 space-y-1 pl-10 sm:pl-12" style="list-style-type: circle;">
+                      <li>Your rescheduled meeting is free,</li>
+                      <li>Your 30-day engagement window resets, and</li>
+                      <li>All meetings in the new 30-day engagement window are billed at the lowest hourly rate stated in your Financial Planning Agreement.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/60mincallorzoom" target="_blank" rel="noopener">
+                Book Client Meeting
+              </a>
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/60mincallorzoom</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs" type="button" aria-label="Copy client meeting link" data-url="https://calendly.com/alfaber/60mincallorzoom">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
-    </div>
-  </details>
-</div>
 
-<!-- Existing Clients -->
-<div id="clients">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-      <span>Existing Clients</span>
-      <span class="flex items-center space-x-3">
-        <a href="#top"
-           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-           aria-label="Back to the top of the page">
-          Back to top
-        </a>
-        <span class="caret" aria-hidden="true"></span>
-      </span>
-    </summary>
+      <!-- Professional Network -->
+      <div id="network">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>
+              Professional Network
+              <span class="font-normal text-gray-700 text-sm">
+                (For use by IARs, RRs, and individuals that are members of professional network(ing) associations)
+              </span>
+            </span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
 
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 60-minute billable Zoom or phone meeting.
-      </p>
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">
+              A 30-minute Zoom or phone meeting for introductions and collaboration. For advisors, attorneys, accountants, mortgage and insurance professionals, HR leaders, educators, etc.
+            </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Mutual expectations</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Be punctual</li>
-            <li>Avoid distractions and background noise</li>
-            <li>Be logged into the financial planning tool</li>
-            <li>Meetings are done via Zoom to foster collaboration. Cameras do not need to be turned on.</li>
-          </ul>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Brief introductions and services overview</li>
+                  <li>Discussion of ways to collaborate and cross-refer (no kickbacks, fee sharing or soft dollar arrangements)</li>
+                  <li>Fit, next steps, and follow-up</li>
+                  <li>No client-specific discussions on this call without client consent</li>
+                </ul>
+              </div>
 
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Meetings are available 7 days a week. If a time shows as available, you may book it.</li>
-            <li>Client cancellations or reschedules with 48+ hours’ notice have no repercussions.</li>
-            <li>
-              Client changes within 48 hours or no-shows may be subject to the following:
-              <ul class="mt-2 space-y-1 pl-10 sm:pl-12" style="list-style-type: circle;">
-                <li>
-                  First meeting of an engagement:
-                  No fee, but your 30-day engagement window begins on the originally scheduled date.
-                </li>
-                <li>
-                  Later meetings:
-                  The next meeting begins a new engagement window with billing and discounts reset to meeting #1.
-                </li>
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Meetings are available 7 days a week</li>
+                  <li>No preparation is required</li>
+                  <li>No cost for this networking call</li>
+                  <li>Client consent is required for any client-specific discussion</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Prerequisites</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Optional: agenda or goals for the call</li>
+                  <li>Share your website and/or LinkedIn profile</li>
+                  <li>If discussing a client, obtain client authorization first</li>
+                  <li>Share materials via secure channels, not via email</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/30mincallorzoom" target="_blank" rel="noopener">
+                Book Networking Meeting
+              </a>
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/30mincallorzoom</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs" type="button" aria-label="Copy networking link" data-url="https://calendly.com/alfaber/30mincallorzoom">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- External Partners -->
+      <div id="partners">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>
+              External Partners
+              <span class="font-normal text-gray-700 text-sm">
+                (If DIWYFP or DIWYFP clients <strong>do not</strong> need to pay a fee to use your products or services, this is your section)
+              </span>
+            </span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">
+              A 30-minute Zoom or phone meeting for product and solution providers to coordinate on shared clients or joint initiatives. No referral fees, revenue sharing or soft dollar arrangements.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Project scope and timelines</li>
+                  <li>Roles, deliverables, and communication cadence</li>
+                  <li>Data-sharing and confidentiality protocols</li>
+                  <li>Compliance alignment and next steps</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Client authorization is required for any client-specific discussion</li>
+                  <li>Secure channels are used for document exchange</li>
+                  <li>No pay-to-play arrangements</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Prerequisites</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Engagement name and client initials (if applicable)</li>
+                  <li>Client authorization for shared-client work</li>
+                  <li>Draft scope or brief, if available</li>
+                  <li>Preferred secure channel for documents and a compliance contact</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/30mincallorzoom" target="_blank" rel="noopener">
+                Book Partner Meeting
+              </a>
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/30mincallorzoom</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs" type="button" aria-label="Copy partner call link" data-url="https://calendly.com/alfaber/30mincallorzoom">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Vendors -->
+      <div id="vendors">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>
+              Vendors
+              <span class="font-normal text-gray-700 text-sm">
+                (If DIWYFP or DIWYFP clients need to pay a fee to use your products or services, this is your section)
+              </span>
+            </span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">
+              A 30-minute call for current or prospective vendors to discuss services, pricing, and how they may support DIWY Financial Planning.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Overview of your service or product</li>
+                  <li>Discussion of integration or support options</li>
+                  <li>Review of compliance and security standards</li>
+                  <li>Next steps if there is a potential fit</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>No vendor fees or sponsorship arrangements are accepted</li>
+                  <li>Meetings are strictly exploratory</li>
+                  <li>Confidential information should only be shared via secure channels</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Prerequisites</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Review DIWYFP website to understand business model and client focus</li>
+                  <li>Provide a short summary of your offering</li>
+                  <li>Be prepared to share security and compliance documentation</li>
+                  <li>No unsolicited client-related proposals</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/30mincall"
+                 target="_blank" rel="noopener">
+                Book Vendor Meeting
+              </a>
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/30mincall</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy vendor scheduling link"
+                        data-url="https://calendly.com/alfaber/30mincall">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Pro Bono -->
+      <div id="probono">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Pro Bono Financial Planning</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">
+              A 30-minute screening call for individuals seeking pro bono financial planning services or organizations making referrals.
+              Engagements are advice-only. No products are sold.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Overview of your situation or referral</li>
+                  <li>Eligibility review and next steps</li>
+                  <li>Scope, goals, and timeline for support</li>
+                  <li>Resources or referrals if a better fit</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>There is no cost for pro bono services</li>
+                  <li>Focus is on education, guidance, and action steps</li>
+                  <li>Confidentiality and privacy are observed</li>
+                  <li>There may be a waiting list</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Prerequisites</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>For individuals: brief summary of goals and timing</li>
+                  <li>For organizations: referral contact and program details</li>
+                  <li>Any relevant documents you can share securely</li>
+                  <li>Email <a href="mailto:probono@diwyfp.com" class="underline text-diwy">probono@diwyfp.com</a> with questions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="mailto:probono@diwyfp.com">
+                Request Pro Bono Screening
+              </a>
+
+              <div class="url-row text-xs text-gray-700">
+                <a href="mailto:probono@diwyfp.com" class="underline">probono@diwyfp.com</a>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy pro bono email"
+                        data-url="probono@diwyfp.com">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Media & Speaking -->
+      <div id="media">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Media &amp; Speaking Requests</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+            <p class="text-sm">
+              A 30-minute briefing to discuss interviews, expert quotes, webinars, podcasts, or workshops. Topics include advice-only planning,
+              fiduciary standards, budgeting and cash flow, credit and debt, student loans, retirement planning, estate basics,
+              and financial education for educators.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">What to expect</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Goals, audience, format, and timeline</li>
+                  <li>Talking points and key takeaways</li>
+                  <li>Bio, credentials, and materials</li>
+                  <li>Logistics for live or recorded sessions</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">FAQs</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Short-notice requests are possible</li>
+                  <li>On the record unless agreed otherwise</li>
+                  <li>Media kit, headshot, and logo available on request</li>
+                  <li>
+                    Attribution:
+                    <div class="ml-6">
+                      Al Faber, CFP®, ChFC®, CLU®<br>
+                      Financial Advisor<br>
+                      DIWY Financial Planning
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-4 border">
+                <h3 class="font-semibold">Prerequisites</h3>
+                <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+                  <li>Outlet or event name and date</li>
+                  <li>Audience, format (live or recorded), and timing</li>
+                  <li>Deadline or air date and requested topics</li>
+                  <li>Bio length, headshot specs, and AV requirements</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/30mincall" target="_blank" rel="noopener">
+                Book Media/Speaking Meeting
+              </a>
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/30mincall</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy media link"
+                        data-url="https://calendly.com/alfaber/30mincall">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Group Sessions (Office Hours) -->
+      <div id="groups">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Group Sessions</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+
+            <!-- Single FAQs box with only the requested points -->
+            <div class="bg-gray-50 rounded-xl p-4 border">
+              <h3 class="font-semibold">FAQs</h3>
+              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+  <li>Office Hours are billed at $200 per 30-day window, payable in advance.</li>
+  <li>Your 30-day window begins with the first session you attend.</li>
+  <li>During an active window, you may attend any or all sessions offered.</li>
+  <li>If fewer than four sessions are offered during your 30-day window, you may attend any or all of the next three scheduled sessions at no additional charge.</li>
+<li>If you are unable to attend any sessions in a paid window, you may request a refund, or apply the fee to future sessions.</li>
+  <li>Attending any session within a window triggers the full $200 fee, partial refunds are not available.</li>
+  <li>Capacity is limited and attendees will be accepted on a first-come, first-served basis.</li>
+  <li>To maximize your benefit, reserve spots for the sessions you plan to attend when booking your first session.</li>
+
               </ul>
-            </li>
-            <li>
-              If DIWY Financial Planning cancels or reschedules:
-              <ul class="mt-2 space-y-1 pl-10 sm:pl-12" style="list-style-type: circle;">
-                <li>Your rescheduled meeting is free,</li>
-                <li>Your 30-day engagement window resets, and</li>
-                <li>All meetings in the new 30-day engagement window are billed at the lowest hourly rate stated in your Financial Planning Agreement.</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/officehours"
+                 target="_blank" rel="noopener"
+                 onclick="try{gtag('event','group_session_click',{event_category:'engagement',event_label:'office_hours_schedule'});}catch(e){}">
+                Reserve Office Hours
+              </a>
+
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/officehours</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy Office Hours link"
+                        data-url="https://calendly.com/alfaber/officehours">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="text-xs text-gray-600">
+              <p>Lower fees for comparable services may be available from other sources.</p>
+            </div>
+          </div>
+        </details>
       </div>
-
-      <div class="flex flex-col gap-2">
-        <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-           href="https://calendly.com/alfaber/60mincallorzoom" target="_blank" rel="noopener">
-          Book Client Meeting
-        </a>
-        <div class="url-row text-xs text-gray-700">
-          <code>https://calendly.com/alfaber/60mincallorzoom</code>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy client meeting link"
-                  data-url="https://calendly.com/alfaber/60mincallorzoom">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
-      </div>
-    </div>
-  </details>
-</div>
-
-<!-- Professional Network -->
-<div id="network">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-<summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-  <span>
-    Professional Network 
-    <span class="font-normal text-gray-700 text-sm">
-      (For use by IARs, RRs, and individuals that are members of professional network(ing) associations)
-    </span>
-  </span>
-  <span class="flex items-center space-x-3">
-    <a href="#top"
-       class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-       aria-label="Back to the top of the page">
-      Back to top
-    </a>
-    <span class="caret" aria-hidden="true"></span>
-  </span>
-</summary>
-
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute Zoom or phone meeting for introductions and collaboration. For advisors, attorneys, accountants, mortgage and insurance professionals, HR leaders, educators, etc.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Brief introductions and services overview</li>
-            <li>Discussion of ways to collaborate and cross-refer (no kickbacks, fee sharing or soft dollar arrangements)</li>
-            <li>Fit, next steps, and follow-up</li>
-            <li>No client-specific discussions on this call without client consent</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Meetings are available 7 days a week</li>
-            <li>No preparation is required</li>
-            <li>No cost for this networking call</li>
-            <li>Client consent is required for any client-specific discussion</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Prerequisites</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Optional: agenda or goals for the call</li>
-            <li>Share your website and/or LinkedIn profile</li>
-            <li>If discussing a client, obtain client authorization first</li>
-            <li>Share materials via a secure channels, not via email</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-2">
-        <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-           href="https://calendly.com/alfaber/30mincallorzoom" target="_blank" rel="noopener">
-          Book Networking Meeting
-        </a>
-        <div class="url-row text-xs text-gray-700">
-          <code>https://calendly.com/alfaber/30mincallorzoom</code>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy networking link"
-                  data-url="https://calendly.com/alfaber/30mincallorzoom">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
-      </div>
-    </div>
-  </details>
-</div>
-
-<!-- External Partners -->
-<div id="partners">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-<summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-  <span>
-    External Partners 
-    <span class="font-normal text-gray-700 text-sm">
-      (If DIWYFP or DIWYFP clients <strong>do not</strong> need to pay a fee to use your products or services, this is your section)
-    </span>
-  </span>
-  <span class="flex items-center space-x-3">
-    <a href="#top"
-       class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-       aria-label="Back to the top of the page">
-      Back to top
-    </a>
-    <span class="caret" aria-hidden="true"></span>
-  </span>
-</summary>
-
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute Zoom or phone meeting for product and solution providers to coordinate on shared clients or joint initiatives. No referral fees, revenue sharing or soft dollar arrangements.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Project scope and timelines</li>
-            <li>Roles, deliverables, and communication cadence</li>
-            <li>Data-sharing and confidentiality protocols</li>
-            <li>Compliance alignment and next steps</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Client authorization is required for any client-specific discussion</li>
-            <li>Secure channels are used for document exchange</li>
-            <li>No pay-to-play arrangements</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Prerequisites</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Engagement name and client initials (if applicable)</li>
-            <li>Client authorization for shared-client work</li>
-            <li>Draft scope or brief, if available</li>
-            <li>Preferred secure channel for documents and a compliance contact</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-2">
-        <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-           href="https://calendly.com/alfaber/30mincallorzoom" target="_blank" rel="noopener">
-          Book Partner Meeting
-        </a>
-        <div class="url-row text-xs text-gray-700">
-          <code>https://calendly.com/alfaber/30mincallorzoom</code>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy partner call link"
-                  data-url="https://calendly.com/alfaber/30mincallorzoom">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
-      </div>
-    </div>
-  </details>
-</div>
-
-<!-- Vendors -->
-<div id="vendors">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-<summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-  <span>
-    Vendors 
-    <span class="font-normal text-gray-700 text-sm">
-      (If DIWYFP or DIWYFP clients need to pay a fee to use your products or services, this is your section)
-    </span>
-  </span>
-  <span class="flex items-center space-x-3">
-    <a href="#top"
-       class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-       aria-label="Back to the top of the page">
-      Back to top
-    </a>
-    <span class="caret" aria-hidden="true"></span>
-  </span>
-</summary>
-
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute call for current or prospective vendors to discuss services, pricing, and how they may support DIWY Financial Planning.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- What to expect -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Overview of your service or product</li>
-            <li>Discussion of integration or support options</li>
-            <li>Review of compliance and security standards</li>
-            <li>Next steps if there is a potential fit</li>
-          </ul>
-        </div>
-
-        <!-- FAQs -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>No vendor fees or sponsorship arrangements are accepted</li>
-            <li>Meetings are strictly exploratory</li>
-            <li>Confidential information should only be shared via secure channels</li>
-          </ul>
-        </div>
-
-        <!-- Prerequisites -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Prerequisites</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Review DIWYFP website to understand business model and client focus</li>
-            <li>Provide a short summary of your offering</li>
-            <li>Be prepared to share security and compliance documentation</li>
-            <li>No unsolicited client-related proposals</li>
-          </ul>
-        </div>
-      </div>
-
-<div class="flex flex-col gap-2">
-  <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-     href="https://calendly.com/alfaber/30mincall"
-     target="_blank" rel="noopener">
-    Book Vendor Meeting
-  </a>
-  <div class="url-row text-xs text-gray-700">
-    <code>https://calendly.com/alfaber/30mincall</code>
-    <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-            type="button"
-            aria-label="Copy vendor scheduling link"
-            data-url="https://calendly.com/alfaber/30mincall">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-      </svg>
-      Copy
-    </button>
-  </div>
-</div>
-    </div>
-  </details>
-</div>
-
-
-<!-- Pro Bono -->
-<div id="probono">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-      <span>Pro Bono Financial Planning</span>
-      <span class="flex items-center space-x-3">
-        <a href="#top"
-           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-           aria-label="Back to the top of the page">
-          Back to top
-        </a>
-        <span class="caret" aria-hidden="true"></span>
-      </span>
-    </summary>
-
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute screening call for individuals seeking pro bono financial planning services or organizations making referrals. 
-        Engagements are advice-only. No products are sold.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- What to expect -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Overview of your situation or referral</li>
-            <li>Eligibility review and next steps</li>
-            <li>Scope, goals, and timeline for support</li>
-            <li>Resources or referrals if a better fit</li>
-          </ul>
-        </div>
-
-        <!-- FAQs -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>There is no cost for pro bono services</li>
-            <li>Focus is on education, guidance, and action steps</li>
-            <li>Confidentiality and privacy are observed</li>
-            <li>There may be a waiting list</li>
-          </ul>
-        </div>
-
-        <!-- Prerequisites -->
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Prerequisites</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>For individuals: brief summary of goals and timing</li>
-            <li>For organizations: referral contact and program details</li>
-            <li>Any relevant documents you can share securely</li>
-            <li>Email <a href="mailto:probono@diwyfp.com" class="underline text-diwy">probono@diwyfp.com</a> with questions</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Primary action + visible URLs -->
-      <div class="flex flex-col gap-2">
-        <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-           href="mailto:probono@diwyfp.com">
-          Request Pro Bono Screening
-        </a>
-
-        
-        <!-- Visible email row with copy button -->
-        <div class="url-row text-xs text-gray-700">
-          <a href="mailto:probono@diwyfp.com" class="underline">probono@diwyfp.com</a>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy pro bono email"
-                  data-url="probono@diwyfp.com">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
-      </div>
-    </div>
-  </details>
-</div>
-
-
-<!-- Media & Speaking -->
-<div id="media">
-  <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-    <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-      <span>Media &amp; Speaking Requests</span>
-      <span class="flex items-center space-x-3">
-        <a href="#top"
-           class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link"
-           aria-label="Back to the top of the page">
-          Back to top
-        </a>
-        <span class="caret" aria-hidden="true"></span>
-      </span>
-    </summary>
-
-    <div class="px-5 pb-5 space-y-4">
-      <p class="text-sm">
-        A 30-minute briefing to discuss interviews, expert quotes, webinars, podcasts, or workshops. Topics include advice-only planning, fiduciary standards, budgeting and cash flow, credit and debt, student loans, retirement planning, estate basics, and financial education for educators.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">What to expect</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Goals, audience, format, and timeline</li>
-            <li>Talking points and key takeaways</li>
-            <li>Bio, credentials, and materials</li>
-            <li>Logistics for live or recorded sessions</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">FAQs</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Short-notice requests are possible</li>
-            <li>On the record unless agreed otherwise</li>
-            <li>Media kit, headshot, and logo available on request</li>
-<li>
-  Attribution:
-  <div class="ml-6">
-    Al Faber, CFP®, ChFC®, CLU®<br>
-    Financial Advisor<br>
-    DIWY Financial Planning
-  </div>
-</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 rounded-xl p-4 border">
-          <h3 class="font-semibold">Prerequisites</h3>
-          <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-            <li>Outlet or event name and date</li>
-            <li>Audience, format (live or recorded), and timing</li>
-            <li>Deadline or air date and requested topics</li>
-            <li>Bio length, headshot specs, and AV requirements</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-2">
-        <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-           href="https://calendly.com/alfaber/30mincall" target="_blank" rel="noopener">
-          Book Media/Speaking Meeting
-        </a>
-        <div class="url-row text-xs text-gray-700">
-          <code>https://calendly.com/alfaber/30mincall</code>
-          <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                  type="button"
-                  aria-label="Copy media link"
-                  data-url="https://calendly.com/alfaber/30mincall">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            Copy
-          </button>
-        </div>
-      </div>
-    </div>
-  </details>
-</div>
 
     </section>
 
   </main>
 
   <!-- Footer -->
-<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
-  <p>
-    DIWY Financial Planning, LLC is a Registered Investment Adviser. Advisory services are provided only in states where registered 
-    or exempt from registration. Information on this Site is for educational purposes only and should not be considered investment, 
-    legal, or tax advice. CRD #335615,
-    <a href="https://adviserinfo.sec.gov/firm/summary/335615"
-       target="_blank" rel="noopener noreferrer"
-       class="underline text-diwy hover:text-diwy-dark">Form ADV</a>
-  </p>
-  <div class="mt-3 space-x-4">
-    <a href="disclaimer.html" class="underline text-diwy hover:text-diwy-dark">Disclaimer</a>
-    <a href="privacy.html" class="underline text-diwy hover:text-diwy-dark">Privacy Policy</a>
-  </div>
-  <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
-</footer>
+  <footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+    <p>
+      DIWY Financial Planning, LLC is a Registered Investment Adviser. Advisory services are provided only in states where registered
+      or exempt from registration. Information on this Site is for educational purposes only and should not be considered investment,
+      legal, or tax advice. CRD #335615,
+      <a href="https://adviserinfo.sec.gov/firm/summary/335615"
+         target="_blank" rel="noopener noreferrer"
+         class="underline text-diwy hover:text-diwy-dark">Form ADV</a>
+    </p>
+    <div class="mt-3 space-x-4">
+      <a href="disclaimer.html" class="underline text-diwy hover:text-diwy-dark">Disclaimer</a>
+      <a href="privacy.html" class="underline text-diwy hover:text-diwy-dark">Privacy Policy</a>
+    </div>
+    <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  </footer>
 
   <!-- Copy-to-clipboard + analytics -->
- <script>
-  function setCopiedState(btn){
-    const original = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = '<span class="inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied</span>';
-    setTimeout(()=>{ btn.disabled = false; btn.innerHTML = original; }, 1500);
-  }
+  <script>
+    function setCopiedState(btn){
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="inline-flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied</span>';
+      setTimeout(()=>{ btn.disabled = false; btn.innerHTML = original; }, 1500);
+    }
 
-  function bindCopyButtons(){
-    document.querySelectorAll('.copy-btn').forEach(btn=>{
-      btn.addEventListener('click', async ()=>{
-        const url = btn.getAttribute('data-url') || '';
-        try {
-          await navigator.clipboard.writeText(url);
-          try { gtag('event','copy_link',{ event_category:'engagement', event_label:url }); } catch(e){}
-          setCopiedState(btn);
-        } catch (err) {
-          // Fallback for older browsers
-          const ta = document.createElement('textarea');
-          ta.value = url;
-          document.body.appendChild(ta);
-          ta.select();
-          try { document.execCommand('copy'); setCopiedState(btn); } finally { document.body.removeChild(ta); }
-        }
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', bindCopyButtons);
-
-  // Outbound link analytics
-  document.addEventListener('DOMContentLoaded', ()=>{
-    document.querySelectorAll('a[href^="http"]').forEach(link=>{
-      link.addEventListener('click', function(){
-        try { gtag('event','outbound_click',{ event_category:'Outbound Link', event_label: link.href }); } catch(e){}
-      });
-    });
-  });
-
-  // Scroll depth + time on page analytics
-  (function(){
-    const scrollThresholds = [25,50,75,100];
-    const scrollReached = {};
-    window.addEventListener('scroll', ()=>{
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (window.scrollY / docHeight) * 100;
-      scrollThresholds.forEach(t=>{
-        if(scrollPercent >= t && !scrollReached[t]){
-          scrollReached[t] = true;
-          try { gtag('event','scroll_depth',{ event_category:'Scroll', event_label: `${t}%` }); } catch(e){}
-        }
-      });
-    });
-    [30,60,120].forEach((seconds)=>{
-      setTimeout(()=>{ try { gtag('event','time_on_page',{ label: `${seconds}_seconds`, value: seconds }); } catch(e){} }, seconds*1000);
-    });
-  })();
-</script>
-
-<script>
-  // Keep accordions from toggling when clicking the Back to top link in <summary>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('summary a.back-to-top-link').forEach(a => {
-      a.addEventListener('click', e => {
-        e.stopPropagation();
-      });
-      ['mousedown','keydown'].forEach(evt =>
-        a.addEventListener(evt, e => e.stopPropagation())
-      );
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Handle quick links: open target accordion, collapse all if "Back to top"
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function () {
-        const targetId = this.getAttribute('href').substring(1);
-
-        if (targetId === 'top') {
-          // Collapse all
-          document.querySelectorAll('details.accordion[open]').forEach(d => {
-            d.removeAttribute('open');
-          });
-          return;
-        }
-
-        // Otherwise auto-open the targeted accordion
-        const target = document.getElementById(targetId);
-        if (target && target.tagName.toLowerCase() === 'div') {
-          const details = target.querySelector('details');
-          if (details) {
-            details.setAttribute('open','true');
+    function bindCopyButtons(){
+      document.querySelectorAll('.copy-btn').forEach(btn=>{
+        btn.addEventListener('click', async ()=>{
+          const url = btn.getAttribute('data-url') || '';
+          try {
+            await navigator.clipboard.writeText(url);
+            try { gtag('event','copy_link',{ event_category:'engagement', event_label:url }); } catch(e){}
+            setCopiedState(btn);
+          } catch (err) {
+            // Fallback for older browsers
+            const ta = document.createElement('textarea');
+            ta.value = url;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); setCopiedState(btn); } finally { document.body.removeChild(ta); }
           }
-        }
-      });
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Expand All functionality
-    const expandAll = document.getElementById('expand-all');
-    if (expandAll) {
-      expandAll.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('details.accordion').forEach(d => {
-          d.setAttribute('open', 'true');
         });
       });
     }
-  });
-</script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash.substring(1); // e.g. "clients"
-    if (hash) {
-      const target = document.getElementById(hash);
-      if (target && target.tagName.toLowerCase() === 'div') {
-        const details = target.querySelector('details');
-        if (details) {
-          const wasClosed = !details.hasAttribute('open');
-          details.setAttribute('open', 'true');
-          if (wasClosed) {
-            details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.addEventListener('DOMContentLoaded', bindCopyButtons);
+
+    // Outbound link analytics
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('a[href^="http"]').forEach(link=>{
+        link.addEventListener('click', function(){
+          try { gtag('event','outbound_click',{ event_category:'Outbound Link', event_label: link.href }); } catch(e){}
+        });
+      });
+    });
+
+    // Scroll depth + time on page analytics
+    (function(){
+      const scrollThresholds = [25,50,75,100];
+      const scrollReached = {};
+      window.addEventListener('scroll', ()=>{
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (window.scrollY / docHeight) * 100;
+        scrollThresholds.forEach(t=>{
+          if(scrollPercent >= t && !scrollReached[t]){
+            scrollReached[t] = true;
+            try { gtag('event','scroll_depth',{ event_category:'Scroll', event_label: `${t}%` }); } catch(e){}
+          }
+        });
+      });
+      [30,60,120].forEach((seconds)=>{
+        setTimeout(()=>{ try { gtag('event','time_on_page',{ label: `${seconds}_seconds`, value: seconds }); } catch(e){} }, seconds*1000);
+      });
+    })();
+  </script>
+
+  <script>
+    // Keep accordions from toggling when clicking the Back to top link in <summary>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('summary a.back-to-top-link').forEach(a => {
+        a.addEventListener('click', e => { e.stopPropagation(); });
+        ['mousedown','keydown'].forEach(evt =>
+          a.addEventListener(evt, e => e.stopPropagation())
+        );
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Handle quick links: open target accordion, collapse all if "Back to top"
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function () {
+          const targetId = this.getAttribute('href').substring(1);
+
+          if (targetId === 'top') {
+            document.querySelectorAll('details.accordion[open]').forEach(d => {
+              d.removeAttribute('open');
+            });
+            return;
+          }
+
+          const target = document.getElementById(targetId);
+          if (target && target.tagName.toLowerCase() === 'div') {
+            const details = target.querySelector('details');
+            if (details) { details.setAttribute('open','true'); }
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Expand All and Collapse All functionality
+      const expandAll = document.getElementById('expand-all');
+      const collapseAll = document.getElementById('collapse-all');
+
+      if (expandAll) {
+        expandAll.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('details.accordion').forEach(d => {
+            d.setAttribute('open', 'true');
+          });
+        });
+      }
+
+      if (collapseAll) {
+        collapseAll.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('details.accordion[open]').forEach(d => {
+            d.removeAttribute('open');
+          });
+        });
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        const target = document.getElementById(hash);
+        if (target && target.tagName.toLowerCase() === 'div') {
+          const details = target.querySelector('details');
+          if (details) {
+            const wasClosed = !details.hasAttribute('open');
+            details.setAttribute('open', 'true');
+            if (wasClosed) {
+              details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           }
         }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
