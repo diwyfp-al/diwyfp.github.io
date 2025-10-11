@@ -117,12 +117,13 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-3">
         <a href="#prospective" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Prospective Clients</a>
         <a href="#clients" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Existing Clients</a>
+        <a href="#groups" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Group Sessions</a>
         <a href="#network" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Professional Network</a>
         <a href="#partners" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">External Partners</a>
         <a href="#vendors" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Vendors</a>
         <a href="#probono" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Pro Bono</a>
         <a href="#media" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Media &amp; Speaking</a>
-        <a href="#groups" class="block bg-white shadow-sm rounded-xl p-4 border hover:shadow text-center">Group Sessions</a>
+
       </div>
     </section>
 
@@ -258,6 +259,65 @@
                   Copy
                 </button>
               </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Group Sessions (Office Hours) -->
+      <div id="groups">
+        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
+            <span>Group Sessions</span>
+            <span class="flex items-center space-x-3">
+              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
+              <span class="caret" aria-hidden="true"></span>
+            </span>
+          </summary>
+
+          <div class="px-5 pb-5 space-y-4">
+
+            <!-- Single FAQs box with only the requested points -->
+            <div class="bg-gray-50 rounded-xl p-4 border">
+              <h3 class="font-semibold">FAQs</h3>
+              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
+  <li>Office Hours are billed at $200 per 30-day window, payable in advance.</li>
+  <li>Your 30-day window begins with the first session you attend.</li>
+  <li>During an active window, you may attend any or all sessions offered.</li>
+  <li>If fewer than four sessions are offered during your 30-day window, you may attend any or all of the next three scheduled sessions at no additional charge.</li>
+<li>If you are unable to attend any sessions in a paid window, you may request a refund, or apply the fee to future sessions.</li>
+  <li>Attending any session within a window triggers the full $200 fee, partial refunds are not available.</li>
+  <li>Capacity is limited and attendees will be accepted on a first-come, first-served basis.</li>
+  <li>To maximize your benefit, reserve spots for the sessions you plan to attend when booking your first session.</li>
+
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
+                 href="https://calendly.com/alfaber/officehours"
+                 target="_blank" rel="noopener"
+                 onclick="try{gtag('event','group_session_click',{event_category:'engagement',event_label:'office_hours_schedule'});}catch(e){}">
+                Reserve Office Hours
+              </a>
+
+              <div class="url-row text-xs text-gray-700">
+                <code>https://calendly.com/alfaber/officehours</code>
+                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
+                        type="button"
+                        aria-label="Copy Office Hours link"
+                        data-url="https://calendly.com/alfaber/officehours">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="text-xs text-gray-600">
+              <p>Lower fees for comparable services may be available from other sources.</p>
             </div>
           </div>
         </details>
@@ -637,64 +697,7 @@
         </details>
       </div>
 
-      <!-- Group Sessions (Office Hours) -->
-      <div id="groups">
-        <details class="accordion bg-white rounded-2xl shadow-sm border overflow-hidden">
-          <summary class="p-4 text-lg font-semibold text-diwy flex items-center justify-between">
-            <span>Group Sessions</span>
-            <span class="flex items-center space-x-3">
-              <a href="#top" class="text-sm text-diwy underline hover:text-diwy-dark whitespace-nowrap back-to-top-link" aria-label="Back to the top of the page">Back to top</a>
-              <span class="caret" aria-hidden="true"></span>
-            </span>
-          </summary>
 
-          <div class="px-5 pb-5 space-y-4">
-
-            <!-- Single FAQs box with only the requested points -->
-            <div class="bg-gray-50 rounded-xl p-4 border">
-              <h3 class="font-semibold">FAQs</h3>
-              <ul class="list-disc list-inside text-sm mt-1 space-y-1">
-  <li>Office Hours are billed at $200 per 30-day window, payable in advance.</li>
-  <li>Your 30-day window begins with the first session you attend.</li>
-  <li>During an active window, you may attend any or all sessions offered.</li>
-  <li>If fewer than four sessions are offered during your 30-day window, you may attend any or all of the next three scheduled sessions at no additional charge.</li>
-<li>If you are unable to attend any sessions in a paid window, you may request a refund, or apply the fee to future sessions.</li>
-  <li>Attending any session within a window triggers the full $200 fee, partial refunds are not available.</li>
-  <li>Capacity is limited and attendees will be accepted on a first-come, first-served basis.</li>
-  <li>To maximize your benefit, reserve spots for the sessions you plan to attend when booking your first session.</li>
-
-              </ul>
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <a class="px-4 py-2 bg-diwy text-white rounded-md shadow hover:bg-diwy-dark"
-                 href="https://calendly.com/alfaber/officehours"
-                 target="_blank" rel="noopener"
-                 onclick="try{gtag('event','group_session_click',{event_category:'engagement',event_label:'office_hours_schedule'});}catch(e){}">
-                Reserve Office Hours
-              </a>
-
-              <div class="url-row text-xs text-gray-700">
-                <code>https://calendly.com/alfaber/officehours</code>
-                <button class="copy-btn inline-flex items-center px-2 py-1 border rounded text-xs"
-                        type="button"
-                        aria-label="Copy Office Hours link"
-                        data-url="https://calendly.com/alfaber/officehours">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  Copy
-                </button>
-              </div>
-            </div>
-
-            <div class="text-xs text-gray-600">
-              <p>Lower fees for comparable services may be available from other sources.</p>
-            </div>
-          </div>
-        </details>
-      </div>
 
     </section>
 
