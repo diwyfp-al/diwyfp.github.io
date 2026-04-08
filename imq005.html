@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Introductory Meeting Questionnaire #005 | DIWY Financial Planning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete the DIWY Financial Planning Introductory Meeting Questionnaire #005 before your first meeting.">
+  <meta name="keywords" content="DIWY Financial Planning, introductory meeting questionnaire, pre-meeting questionnaire, financial planning">
+  <meta name="author" content="DIWY Financial Planning">
+
+  <!-- GA4 tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S34LTCGWNF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S34LTCGWNF');
+  </script>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    :root { --diwy-blue:#19215A; --diwy-dark:#0f143c; }
+    html { scroll-behavior: smooth; }
+    .bg-diwy { background-color: var(--diwy-blue); }
+    .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
+    .text-diwy { color: var(--diwy-blue); }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
+<div id="top"></div>
+
+<header role="banner" class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <a href="index.html">
+        <img src="LogoDIWY20250324MO.png" alt="DIWY Financial Planning Logo" class="h-20">
+      </a>
+    </div>
+    <nav role="navigation" class="hidden md:flex items-center space-x-6 text-base">
+      <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Home'})">Home</a>
+      <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'About'})">About</a>
+      <a href="services.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Services'})">Services</a>
+      <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'Resources'})">Resources</a>
+      <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event','nav_click',{label:'FAQs'})">FAQs</a>
+      <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client"
+         class="text-gray-700 hover:text-diwy" target="_blank" rel="noopener noreferrer"
+         onclick="gtag('event','nav_click',{label:'Client Portal'})">Client Portal</a>
+      <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event','nav_click',{label:'Schedule Intro Call'})">Schedule a Call/Meeting</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pt-16 pb-12 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-4xl font-bold text-diwy text-center mb-6">Introductory Meeting Questionnaire #005</h1>
+    <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">
+      Please complete this short questionnaire before your introductory meeting. Your responses will help make our conversation more focused, efficient, and useful.
+    </p>
+
+    <div class="bg-white rounded-2xl shadow-sm border overflow-hidden p-3 md:p-5">
+      <iframe
+        src="https://findash.ai/embed/firm/diwyfp001/onboarding/flow_1755488277536"
+        width="100%"
+        height="900"
+        frameborder="0"
+        style="border: none; border-radius: 12px;"
+        title="DIWYFP Pre-Meeting Questionnaire I005">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+  <p>
+    DIWY Financial Planning is a Registered Investment Adviser. Advisory services are provided only in states where registered or exempt from registration. Information on this Site is for educational purposes only and should not be considered investment, legal, or tax advice. CRD #335615,
+    <a href="https://adviserinfo.sec.gov/firm/summary/335615"
+       target="_blank" rel="noopener noreferrer"
+       class="underline text-diwy hover:text-diwy-dark">Form ADV</a>
+  </p>
+  <div class="mt-3 space-x-4">
+    <a href="disclaimer.html" class="underline text-diwy hover:text-diwy-dark">Disclaimer</a>
+    <a href="privacy.html" class="underline text-diwy hover:text-diwy-dark">Privacy Policy</a>
+  </div>
+  <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+</footer>
+
+<script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  window.addEventListener('pageshow', function (e) { if (e.persisted) window.scrollTo(0, 0); });
+  window.addEventListener('load', function () { if (!location.hash) window.scrollTo(0, 0); });
+</script>
+
+<script>
+  [30, 60, 120].forEach(seconds => {
+    setTimeout(() => {
+      gtag('event','time_on_page',{label:`${seconds}_seconds`, value:seconds});
+    }, seconds * 1000);
+  });
+
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    link.addEventListener('click', () => {
+      gtag('event','outbound_click',{event_category:'Outbound Link', event_label:link.href});
+    });
+  });
+
+  const scrollThresholds = [25, 50, 75, 100];
+  const scrollReached = {};
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollThresholds.forEach(threshold => {
+      if (scrollPercent >= threshold && !scrollReached[threshold]) {
+        scrollReached[threshold] = true;
+        gtag('event','scroll_depth',{event_category:'Scroll', event_label:`${threshold}%`});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
