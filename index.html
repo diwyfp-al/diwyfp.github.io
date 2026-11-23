@@ -172,11 +172,13 @@
         Services
       </a>
 
-      <a href="resources.html"
-         class="text-gray-700 hover:text-diwy"
-         onclick="gtag('event','nav_click',{'label':'Resources'})">
-        Resources
-      </a>
+      <details class="relative group">
+        <summary class="text-gray-700 hover:text-diwy cursor-pointer list-none py-2" aria-label="Resources submenu">Resources &#9662;</summary>
+        <div class="absolute top-full left-0 z-50 min-w-max rounded-md border border-gray-200 bg-white shadow-lg py-2">
+          <a class="block px-4 py-2 text-gray-700 hover:text-diwy hover:bg-gray-50" href="/blog/">Articles</a>
+          <a class="block px-4 py-2 text-gray-700 hover:text-diwy hover:bg-gray-50" href="resources.html">Resources Directory</a>
+        </div>
+      </details>
 
       <a href="faqs.html"
          class="text-gray-700 hover:text-diwy"
@@ -268,11 +270,11 @@
         Services
       </a>
 
-      <a href="resources.html"
-         class="block py-3 text-gray-700 hover:text-diwy border-b border-gray-100"
-         onclick="gtag('event','nav_click',{'label':'Resources'})">
-        Resources
-      </a>
+      <details class="border-b border-gray-100">
+        <summary class="block py-3 text-gray-700 hover:text-diwy cursor-pointer">Resources</summary>
+        <a href="/blog/" class="block py-3 pl-5 text-gray-700 hover:text-diwy">Articles</a>
+        <a href="resources.html" class="block py-3 pl-5 text-gray-700 hover:text-diwy">Resources Directory</a>
+      </details>
 
       <a href="faqs.html"
          class="block py-3 text-gray-700 hover:text-diwy border-b border-gray-100"
@@ -404,7 +406,7 @@
 
       <!-- Tagline -->
       <p class="hero-tagline text-lg md:text-2xl mt-8 italic">
-        Plan for yourself—not by yourself&trade;
+        Plan for yourself—not by yourself&reg;
       </p>
 
     </div>
