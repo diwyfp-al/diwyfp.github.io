@@ -30,7 +30,7 @@
     .text-diwy { color: var(--diwy-blue); }
     html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
   </style>
-</head>
+<style>.diwy-resources-menu{position:relative;color:#374151}.diwy-resources-menu summary{cursor:pointer;list-style:none;white-space:nowrap}.diwy-resources-menu summary::-webkit-details-marker{display:none}.diwy-resources-menu summary::after{content:" ▾";font-size:.75em}.diwy-resources-options{position:absolute;top:100%;left:0;z-index:100;background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px #0002;border-radius:8px;padding:8px;min-width:190px}.diwy-resources-options a{display:block;padding:9px 12px;color:#374151;white-space:nowrap}.diwy-resources-options a:hover{color:#19215A;background:#f3f4f6}</style></head>
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
 
   <header class="bg-white shadow py-4 px-6 fixed top-0 left-0 right-0 z-50">
@@ -43,7 +43,7 @@
         <a href="index.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Home' })">Home</a>
         <a href="about.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'About' })">About</a>
         <a href="services.html" class="text-gray-700 hover:text-diwy font-bold" onclick="gtag('event', 'nav_click', { 'label': 'Services' })">Services</a>
-        <a href="resources.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Resources' })">Resources</a>
+        <details class="diwy-resources-menu"><summary>Resources</summary><div class="diwy-resources-options"><a href="/blog/">Articles</a><a href="/resources.html">Resources Directory</a></div></details>
         <a href="faqs.html" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'FAQs' })">FAQs</a>
         <a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-diwy" onclick="gtag('event', 'nav_click', { 'label': 'Client Portal' })">Client Portal</a>
         <a href="scheduling.html" class="ml-4 bg-diwy text-white px-4 py-2 rounded-md shadow hover:bg-diwy-dark text-sm font-medium" onclick="gtag('event', 'nav_click', { 'label': 'Schedule Intro Call' })">Schedule a Call/Meeting</a>
