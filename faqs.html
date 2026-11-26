@@ -30,14 +30,15 @@
     .hover\:bg-diwy-dark:hover { background-color: var(--diwy-dark); }
     .text-diwy { color: var(--diwy-blue); }
   </style>
-<style>.diwy-resources-menu{position:relative;color:#374151}.diwy-resources-menu summary{cursor:pointer;list-style:none;white-space:nowrap}.diwy-resources-menu summary::-webkit-details-marker{display:none}.diwy-resources-menu summary::after{content:" ▾";font-size:.75em}.diwy-resources-options{position:absolute;top:100%;left:0;z-index:100;background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px #0002;border-radius:8px;padding:8px;min-width:190px}.diwy-resources-options a{display:block;padding:9px 12px;color:#374151;white-space:nowrap}.diwy-resources-options a:hover{color:#19215A;background:#f3f4f6}</style><link rel="stylesheet" href="/site-navigation.css"><meta property="og:type" content="website"><meta property="og:title" content="FAQs | DIWY Financial Planning"><meta property="og:description" content="Answers to common questions about DIWY Financial Planning's process, pricing, and services."><meta property="og:url" content="https://www.diwyfp.com/faqs.html"><meta name="twitter:card" content="summary"></head>
+<style>.diwy-resources-menu{position:relative;color:#374151}.diwy-resources-menu summary{cursor:pointer;list-style:none;white-space:nowrap}.diwy-resources-menu summary::-webkit-details-marker{display:none}.diwy-resources-menu summary::after{content:" ▾";font-size:.75em}.diwy-resources-options{position:absolute;top:100%;left:0;z-index:100;background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px #0002;border-radius:8px;padding:8px;min-width:190px}.diwy-resources-options a{display:block;padding:9px 12px;color:#374151;white-space:nowrap}.diwy-resources-options a:hover{color:#19215A;background:#f3f4f6}</style><link rel="stylesheet" href="/site-navigation.css"><meta property="og:type" content="website"><meta property="og:title" content="FAQs | DIWY Financial Planning"><meta property="og:description" content="Answers to common questions about DIWY Financial Planning's process, pricing, and services."><meta property="og:url" content="https://www.diwyfp.com/faqs.html"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/site-layout.css">
+</head>
 
 <body class="bg-gray-50 text-gray-800 pt-24 md:pt-32">
 
   <header class="site-header" role="banner"><div class="site-inner"><a class="site-logo" href="/" aria-label="DIWY Financial Planning Home"><img src="/LogoDIWY20250324MO.png" alt="DIWY Financial Planning logo"></a><nav class="site-desktop" aria-label="Desktop navigation"><a href="/">Home</a><a href="/about.html">About</a><a href="/services.html">Services</a><details class="site-resources"><summary>Resources</summary><div class="site-resources-panel"><a href="/blog/">Articles</a><a href="/resources.html">Resources Directory</a></div></details><a href="/faqs.html" aria-current="page">FAQs</a><a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer">Client Portal</a><a class="site-cta" href="/scheduling.html">Schedule a Call/Meeting</a></nav><details class="site-mobile"><summary aria-label="Toggle mobile navigation">Menu</summary><nav class="site-mobile-panel" aria-label="Mobile navigation"><a href="/">Home</a><a href="/about.html">About</a><a href="/services.html">Services</a><details class="site-resources"><summary>Resources</summary><div class="site-resources-panel"><a href="/blog/">Articles</a><a href="/resources.html">Resources Directory</a></div></details><a href="/faqs.html" aria-current="page">FAQs</a><a href="https://app.rightcapital.com/account/login?cobrand=j-zbuBEsfc3p-GhP428gMg&type=client" target="_blank" rel="noopener noreferrer">Client Portal</a><a class="site-cta" href="/scheduling.html">Schedule a Call/Meeting</a></nav></details></div></header>
 
-  <main class="pt-24 pb-16 px-6 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-diwy mb-8">Frequently Asked Questions</h1>
+  <main class="site-content pt-24 pb-16">
+    <h1 class="site-page-title text-3xl font-bold text-diwy mb-8">Frequently Asked Questions</h1>
     <div class="space-y-4">
       <!-- FAQ Items -->
       <details class="group border rounded-lg p-4" data-question="Pronunciation" onclick="trackFAQToggle(this)">
@@ -116,18 +117,22 @@
     </div>
   </main>
 
-<footer class="bg-white border-t border-gray-200 py-8 px-6 md:px-12 text-sm text-gray-600 text-center">
+<footer class="site-footer">
   <p>
-    DIWY Financial Planning is a Registered Investment Adviser. Advisory services are provided only in states where registered or exempt from registration. Information on this Site is for educational purposes only and should not be considered investment, legal, or tax advice. CRD #335615,
-    <a href="https://adviserinfo.sec.gov/firm/summary/335615"
-       target="_blank" rel="noopener noreferrer"
-       class="underline text-diwy hover:text-diwy-dark">Form ADV</a>
+    DIWY Financial Planning is a Registered Investment Adviser.
+    Advisory services are provided only in states where registered or exempt from registration.
+    Information on this Site is for educational purposes only and should not be considered investment, legal, or tax advice.
+    CRD #335615,
+    <a href="https://adviserinfo.sec.gov/firm/summary/335615" target="_blank" rel="noopener noreferrer">Form ADV</a>
   </p>
-  <div class="mt-3 space-x-4">
-    <a href="disclaimer.html" class="underline text-diwy hover:text-diwy-dark">Disclaimer</a>
-    <a href="privacy.html" class="underline text-diwy hover:text-diwy-dark">Privacy Policy</a>
+  <div class="site-footer-links">
+    <a href="/disclaimer.html">Disclaimer</a>
+    <a href="/privacy.html">Privacy Policy</a>
   </div>
-  <p class="text-xs text-gray-500 mt-2">&copy; <script>document.write(new Date().getFullYear())</script> DIWY Financial Planning. All rights reserved.</p>
+  <p class="site-footer-copyright">
+    &copy; <span id="site-footer-year">2026</span> DIWY Financial Planning. All rights reserved.
+  </p>
+  <script>document.getElementById('site-footer-year').textContent = new Date().getFullYear();</script>
 </footer>
 
   <script>
